@@ -1,3 +1,6 @@
+const clientId = '5b705282459d426f99205ec01cbc31fa';
+const redirectUri = 'https://jedwardsedwards.github.io/ruins/home.html';
+
 const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code');
 
