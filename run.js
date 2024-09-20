@@ -1,6 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('code');
 
+console.log(urlParams)
+console.log(code)
+
 const getToken = async code => {
 
   // stored in the previous step
@@ -22,6 +25,8 @@ const getToken = async code => {
 
   const body = await fetch(url, payload);
   const response =await body.json();
+
+  console.log(response)
 
   localStorage.setItem('access_token', response.access_token);
 }
