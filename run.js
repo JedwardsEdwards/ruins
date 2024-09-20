@@ -33,5 +33,7 @@ const getToken = async code => {
   localStorage.setItem('access_token', response.access_token);
 }
 
+getToken(code)
+
 const token = localStorage.getItem("access_token")
 console.log(token)
