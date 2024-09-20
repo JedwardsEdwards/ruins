@@ -22,7 +22,7 @@ function base64urlencode(a) {
     .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''))
 }
 
-const hashed = sha256(verifyCode)
+const hashed = sha256(codeVerifier)
 const codeChallenge = base64urlencode(hashed)
 
 console.log(codeChallenge)
