@@ -29,7 +29,7 @@ const codeChallenge = base64encode(hashed);
 console.log(codeChallenge)
 
 const clientId = '5b705282459d426f99205ec01cbc31fa';
-const redirectUri = 'https://jedwardsedwards.github.io/ruins/';
+const redirectUri = 'https://jedwardsedwards.github.io/ruins/home.html';
 
 const scope = 'user-read-private user-read-email';
 const authUrl = new URL("https://accounts.spotify.com/authorize")
