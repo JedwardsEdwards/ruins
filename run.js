@@ -25,10 +25,11 @@ const getToken = async code => {
       grant_type: 'authorization_code',
       code,
       redirect_uri: redirectUri,
-      code_verifier: codeVerifier,
+      code_verifier: codeVerifier
     }),
   }
 
+  console.log(payload)
   const body = await fetch(url, payload);
   const response =await body.json();
 
