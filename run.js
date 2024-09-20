@@ -11,6 +11,7 @@ const getToken = async code => {
 
   // stored in the previous step
   let codeVerifier = localStorage.getItem('code_verifier');
+   const url = "https://accounts.spotify.com/api/token";
 
   console.log(codeVerifier);
   
