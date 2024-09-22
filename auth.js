@@ -8,7 +8,6 @@ const generateRandomString = (length) => {
 
 
 
-console.log(codeVerifier)
 function sha256(plain) { 
     // returns promise ArrayBuffer
     const encoder = new TextEncoder();
@@ -33,6 +32,8 @@ async function pkce_challenge_from_verifier(v) {
 
 //const hashed = sha256(codeVerifier)
 const codeVerifier  = base64urlencode(generateRandomString(64));
+console.log(codeVerifier)
+
 const codeChallenge = pkce_challenge_from_verifier(codeVerifier)
 
 console.log(codeChallenge)
