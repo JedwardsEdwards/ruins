@@ -76,7 +76,7 @@
         processTokenResponse(data);
 
         // clear search query params in the url
-        window.history.replaceState({}, document.title, '/');
+        //window.history.replaceState({}, document.title, '/');
       })
       .catch(handleError);
   }
