@@ -31,7 +31,7 @@ async function pkce_challenge_from_verifier(v) {
 }
 
 //const hashed = sha256(codeVerifier)
-const codeVerifier  = base64urlencode(generateRandomString(64));
+const codeVerifier  = generateRandomString(64);
 console.log(codeVerifier)
 
 const codeChallenge = pkce_challenge_from_verifier(codeVerifier)
