@@ -6,7 +6,7 @@ const generateRandomString = (length) => {
   return values.reduce((acc, x) => acc + possible[x % possible.length], "");
 }
 
-const codeVerifier  = generateRandomString(64);
+
 
 console.log(codeVerifier)
 function sha256(plain) { 
@@ -32,6 +32,7 @@ async function pkce_challenge_from_verifier(v) {
 }
 
 //const hashed = sha256(codeVerifier)
+const codeVerifier  = base64urlencode(generateRandomString(64));
 const codeChallenge = pkce_challenge_from_verifier(codeVerifier)
 
 console.log(codeChallenge)
