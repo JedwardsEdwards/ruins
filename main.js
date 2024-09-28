@@ -275,7 +275,4 @@
     .getElementById('logout-button')
     .addEventListener('click', logout, false);
 
-  document.getElementById("play-pause")
-    .onclick = togglePlayback;
-
 })();
