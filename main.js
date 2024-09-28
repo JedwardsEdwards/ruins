@@ -17,7 +17,7 @@ const oauthPlaceholder = document.getElementById('oauth');
 const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
-let checkState = false;
+let checkState = true;
 let playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
 
 if (code) {
