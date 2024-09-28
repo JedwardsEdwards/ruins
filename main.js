@@ -176,7 +176,7 @@
       };
     const callback = (EmbedController) => {
         console.log("attempting to add playback controls");
-        document.querySelector('#play-pause').addEventListener('click', (EmbedController) => {EmbedController.togglePlay()});
+        document.querySelector('#play-pause').addEventListener('click', (EmbedController) => {console.log(EmbedController); EmbedController.togglePlay()});
         console.log("done adding playback controls");
     };
     IFrameAPI.createController(element, options, callback);
