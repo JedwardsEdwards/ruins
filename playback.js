@@ -17,7 +17,7 @@
   };
   
   function playlistDetails() {
-    fetch('https://api.spotify.com/v1/me/player", {
+    fetch("https://api.spotify.com/v1/me/player", {
       headers: {
         Authorization: 'Bearer ' + access_token,
       },
@@ -31,7 +31,8 @@
       })
       .then((data) => {
         console.log(data);
-        //document.getElementById('login').style.display = 'none';
+        //document.getElementById('track-details').innerHTML = trackDetailsTemplate(data)
+          //style.display = 'none';
         //document.getElementById('loggedin').style.display = 'unset';
         //mainPlaceholder.innerHTML = userProfileTemplate(data);
       })
