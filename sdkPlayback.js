@@ -1,3 +1,19 @@
+function transferPlayback() {
+   fetch("https://api.spotify.com/v1/me/player", {
+       method: "PUT",
+       headers: {
+         Authorization: 'Bearer ' + access_token,
+       },
+    })
+      .then(async (response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+        mainPlaceholder.innerHTML = errorTemplate(error.error);
+      })
+};
+
 window.onSpotifyWebPlaybackSDKReady = () => {
   const token = access_token;
   const player = new Spotify.Player({
@@ -8,6 +24,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
   // Ready
   player.addListener('ready', ({ device_id }) => {
     console.log('Ready with Device ID', device_id);
+    transferPlayback();
   });
   
   // Not Ready
