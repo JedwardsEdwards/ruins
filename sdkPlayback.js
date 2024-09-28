@@ -1,39 +1,3 @@
-
-function apiRequest(url, method = "GET", body = "") {
-    params = {
-       method: method,
-       headers: {
-         Authorization: 'Bearer ' + access_token,
-       }
-    }
-    if (method != "GET") {
-        params["body"] = body
-    }
-    fetch(url, params)
-      .then(async (response) => {
-        console.log(response);
-        return response.json();
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-};
-
-function transferPlaybackold() {
-  devices = apiRequest("https://api.spotify.com/v1/me/player/devices")["devices"];
-  console.log(devices);
-  let id = ""
-  for (device in devices) {
-    if (device["name"] == "Web Playback SDK Quick Start Player") {
-       id = device["id"];
-    };
-  };
-  data = {"device_ids": [id]};
-  console.log(data);
-  apiRequest("https://api.spotify.com/v1/me/player", "PUT", JSON.stringify(data));
-};
-
-
 function transferPlayback(id) {
     fetch("https://api.spotify.com/v1/me/player", {
        method: "PUT",
