@@ -7,10 +7,10 @@
     const callback = (EmbedController) => {
         console.log(EmbedController);
         document.querySelector('#play-pause').addEventListener('click', () => {checkState = false; EmbedController.togglePlay(); checkState = true});
-       
+        playlistDetails();
         EmbedController.addListener('playback_update', e => {
           console.log("update received from playback");
-           playlistDetails();
+           
           //document.getElementById('progressTimestamp').innerText = `${parseInt(e.data.position / 1000, 10)} s`;
         });
 
