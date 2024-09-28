@@ -175,9 +175,8 @@
         uri: 'spotify:playlist:73p0zWLYMp2Rs2Kh3PM5Le'
       };
     const callback = (EmbedController) => {
-        console.log("attempting to add playback controls");
-        document.querySelector('#play-pause').addEventListener('click', () => {console.log(EmbedController); EmbedController.loadUri('spotify:episode:7makk4oTQel546B0PZlDM5'); EmbedController.play(); EmbedController.togglePlay()});
-        console.log("done adding playback controls");
+        console.log(EmbedController);
+        document.querySelector('#play-pause').addEventListener('click', () => {EmbedController.togglePlay()});
     };
     IFrameAPI.createController(element, options, callback);
   };
