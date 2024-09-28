@@ -170,6 +170,7 @@
   }
 
   window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    console.log(IFrameAPI);
     const element = document.getElementById('embed-iframe');
     const options = {
         uri: 'spotify:playlist:73p0zWLYMp2Rs2Kh3PM5Le'
