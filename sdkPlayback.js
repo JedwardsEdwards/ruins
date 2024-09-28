@@ -1,12 +1,15 @@
 
 function apiRequest(url, method = "GET", body = "") {
-    fetch(url, {
+    params = {
        method: method,
        headers: {
          Authorization: 'Bearer ' + access_token,
-       },
-       body: body
-    })
+       }
+    }
+    if (method != "GET") {
+        params["body"] = body
+    }
+    fetch(url, params)
       .then(async (response) => {
         console.log(response);
       })
