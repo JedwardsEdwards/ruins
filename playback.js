@@ -10,7 +10,7 @@
         playlistDetails();
         EmbedController.addListener('playback_update', e => {
           console.log("update received from playback");
-           
+        
           //document.getElementById('progressTimestamp').innerText = `${parseInt(e.data.position / 1000, 10)} s`;
         });
 
