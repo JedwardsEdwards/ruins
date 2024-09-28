@@ -1,17 +1,32 @@
-function transferPlayback() {
-   fetch("https://api.spotify.com/v1/me/player", {
-       method: "PUT",
+
+function apiRequest(url, method = "GET", body = "") {
+    fetch(url, {
+       method: method,
        headers: {
          Authorization: 'Bearer ' + access_token,
        },
+       body: body
     })
       .then(async (response) => {
         console.log(response);
       })
       .catch((error) => {
         console.error(error);
-        mainPlaceholder.innerHTML = errorTemplate(error.error);
       })
+};
+
+function transferPlayback() {
+  devices = apiRequest("https://api.spotify.com/v1/me/player/devices")["devices"];
+  console.log(devices);
+  let id = ""
+  for (device in devices) {
+    if (device["name"] == "Web Playback SDK Quick Start Player") {
+       id = device["id"];
+    };
+  };
+  data:{"device_ids": [id]};
+  console.log(data);
+  apiRequest("https://api.spotify.com/v1/me/player", "PUT", JSON.stringify(data));
 };
 
 window.onSpotifyWebPlaybackSDKReady = () => {
