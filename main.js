@@ -176,7 +176,7 @@
       };
     const callback = (EmbedController) => {
         console.log("attempting to add playback controls");
-        document.querySelector('#play-pause').addEventListener('click', (EmbedController) => {console.log(EmbedController); EmbedController.loadUri('spotify:episode:7makk4oTQel546B0PZlDM5'); EmbedController.play(); EmbedController.togglePlay()});
+        document.querySelector('#play-pause').addEventListener('click', () => {console.log(EmbedController); EmbedController.loadUri('spotify:episode:7makk4oTQel546B0PZlDM5'); EmbedController.play(); EmbedController.togglePlay()});
         console.log("done adding playback controls");
     };
     IFrameAPI.createController(element, options, callback);
