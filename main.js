@@ -169,6 +169,15 @@
       });
   }
 
+  window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    const element = document.getElementById('embed-iframe');
+    const options = {
+        uri: 'spotify:playlist:73p0zWLYMp2Rs2Kh3PM5Le'
+      };
+    const callback = (EmbedController) => {};
+    IFrameAPI.createController(element, options, callback);
+  };
+  
   function userProfileTemplate(data) {
     return `<h1>Logged in as ${data.display_name}</h1>
       <table>
