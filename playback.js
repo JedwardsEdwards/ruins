@@ -17,7 +17,7 @@
   };
   
   function playlistDetails() {
-    fetch('https://api.spotify.com/v1/playlists/' + playlistId + '/tracks', {
+    fetch('https://api.spotify.com/v1/me/player", {
       headers: {
         Authorization: 'Bearer ' + access_token,
       },
