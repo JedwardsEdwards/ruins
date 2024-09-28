@@ -175,7 +175,7 @@
         uri: 'spotify:playlist:73p0zWLYMp2Rs2Kh3PM5Le'
       };
     const callback = (EmbedController) => {
-        document.querySelectorAll('#play-pause').addEventListener('click', EmbedController.togglePlay());
+        document.querySelectorAll('#play-pause').forEach(button => {button.addEventListener('click', EmbedController.togglePlay())});
     };
     IFrameAPI.createController(element, options, callback);
   };
