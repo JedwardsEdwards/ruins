@@ -12,6 +12,7 @@ function apiRequest(url, method = "GET", body = "") {
     fetch(url, params)
       .then(async (response) => {
         console.log(response);
+        return response.json();
       })
       .catch((error) => {
         console.error(error);
