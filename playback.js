@@ -6,17 +6,22 @@
       };
     const callback = (EmbedController) => {
         console.log(EmbedController);
-        document.querySelector('#play-pause').addEventListener('click', () => {EmbedController.togglePlay()});
-        playlistDetails();
+        document.querySelector('#play-pause').addEventListener('click', () => {checkState = false; EmbedController.togglePlay(); checkState = true});
+       
         EmbedController.addListener('playback_update', e => {
           console.log("update received from playback");
+           playlistDetails();
           //document.getElementById('progressTimestamp').innerText = `${parseInt(e.data.position / 1000, 10)} s`;
         });
+
+        checkState = true;
     };
     IFrameAPI.createController(element, options, callback);
   };
   
   function playlistDetails() {
+    if (!checkState) {
+      return ()};
     fetch("https://api.spotify.com/v1/me/player", {
       headers: {
         Authorization: 'Bearer ' + access_token,
