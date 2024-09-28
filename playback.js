@@ -1,4 +1,3 @@
-(function () {
   window.onSpotifyIframeApiReady = (IFrameAPI) => {
     console.log(IFrameAPI);
     const element = document.getElementById('embed-iframe');
@@ -45,6 +44,4 @@
   function trackDetailTemplate(data) {
   };
   
-  const trackIndex = 0;
-  const playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
-  })();
+
