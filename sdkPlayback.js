@@ -24,7 +24,7 @@ function transferPlayback() {
        id = device["id"];
     };
   };
-  data:{"device_ids": [id]};
+  data = {"device_ids": [id]};
   console.log(data);
   apiRequest("https://api.spotify.com/v1/me/player", "PUT", JSON.stringify(data));
 };
