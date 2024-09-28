@@ -17,10 +17,7 @@ const oauthPlaceholder = document.getElementById('oauth');
 const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
-const trackIndex = 0;
-const playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
-
-const checkState = false;
+let checkState = false;
 
 if (code) {
   // we have received the code from spotify and will exchange it for a access_token
