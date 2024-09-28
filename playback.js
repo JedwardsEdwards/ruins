@@ -9,6 +9,10 @@
         console.log(EmbedController);
         document.querySelector('#play-pause').addEventListener('click', () => {EmbedController.togglePlay()});
         playlistDetails();
+        EmbedController.addListener('playback_update', e => {
+          console.log("update received from playback");
+          //document.getElementById('progressTimestamp').innerText = `${parseInt(e.data.position / 1000, 10)} s`;
+        });
     };
     IFrameAPI.createController(element, options, callback);
   };
