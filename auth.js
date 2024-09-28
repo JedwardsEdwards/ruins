@@ -168,19 +168,6 @@
         mainPlaceholder.innerHTML = errorTemplate(error.error);
       });
   }
-
-  window.onSpotifyIframeApiReady = (IFrameAPI) => {
-    console.log(IFrameAPI);
-    const element = document.getElementById('embed-iframe');
-    const options = {
-        uri: 'spotify:playlist:73p0zWLYMp2Rs2Kh3PM5Le'
-      };
-    const callback = (EmbedController) => {
-        console.log(EmbedController);
-        document.querySelector('#play-pause').addEventListener('click', () => {EmbedController.togglePlay()});
-    };
-    IFrameAPI.createController(element, options, callback);
-  };
     
   function userProfileTemplate(data) {
     return `<h1>Logged in as ${data.display_name}</h1>
