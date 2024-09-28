@@ -177,7 +177,12 @@
     const callback = (EmbedController) => {};
     IFrameAPI.createController(element, options, callback);
   };
-  
+
+  function togglePlayback() {
+    const embed = document.getElementById('embed-container').getElementsByTagName('iframe');
+    embed.contentWindow.postMessage({command: 'toggle'}, '*');
+  }
+    
   function userProfileTemplate(data) {
     return `<h1>Logged in as ${data.display_name}</h1>
       <table>
@@ -272,4 +277,8 @@
   document
     .getElementById('logout-button')
     .addEventListener('click', logout, false);
+
+  document.getElementById("play-pause")
+    .onclick = togglePlayback;
+
 })();
