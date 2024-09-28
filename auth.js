@@ -42,7 +42,7 @@
         {
           response_type: 'code',
           client_id,
-          scope: 'user-read-private user-read-email user-read-playback-state',
+          scope: 'user-read-private user-read-email user-read-playback-state user-modify-playback-state',
           code_challenge_method: 'S256',
           code_challenge,
           redirect_uri,
