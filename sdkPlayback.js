@@ -30,6 +30,26 @@ function updatePlayer(track) {
     };
 };
 
+function setMix() {
+    log("setMix", "kicking off playlist");
+    const id = "73p0zWLYMp2Rs2Kh3PM5Le";
+    fetch("https://api.spotify.com/v1/me/player/play", {
+       method: "PUT",
+       headers: {
+         Authorization: 'Bearer ' + access_token,
+       },
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + id})
+    })
+      .then(async (response) => {
+        console.log(response);
+        //return response.json();
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+};
+
+    
 function initSpotifyPlayer() {
     log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
