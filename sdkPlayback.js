@@ -30,8 +30,8 @@ function updatePlayer(track) {
     };
 };
 
-function getMixDetails(id) {
-    fetch("https://api.spotify.com/v1/playlists/" + id, {
+function setMixDetails(id) {
+    fetch("https://api.spotify.com/v1/playlists/" + id + "?fields=name", {
         headers: {
         Authorization: 'Bearer ' + access_token,
         },
@@ -45,12 +45,11 @@ function getMixDetails(id) {
       })
       .then((data) => {
         console.log(data);
-        return data;
+        document.getElementById('mix-details').innerHTML = data.name;
       })
   }
 
-function setMix(id) {
-    log("setMix", "kicking off playlist");
+function startMix(id) {
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
@@ -60,12 +59,16 @@ function setMix(id) {
     })
       .then(async (response) => {
         console.log(response);
-        document.getElementById('mix-details').innerHTML = getMixDetails(id).name;
         //return response.json();
       })
       .catch((error) => {
         console.error(error);
       })
+};
+
+function setMix(id) {
+    setMixDetails(id);
+    startMix(id);
 };
 
 function setMixOne() {
