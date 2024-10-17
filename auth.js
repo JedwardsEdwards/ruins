@@ -203,6 +203,13 @@ function errorTemplate(data) {
 
 function trackDetailsTemplate(data) {
     return `<h2>TRACK: ${data.name} </h2>
-      <h2>ARTIST: ${data.artists[0].name} </h2>`;
+      <h2>ARTIST: ${data.artists.name.join(", "} </h2>`;
 };
 
+function trackDetailTemplate(data) {
+  const artist = data.items[trackIndex].track.artists.name.join(", ");
+  console.log(artist)
+  const track = data.items[trackIndex].name;
+  console.log(track)
+  return `<h1>${track}</h1><h2>${artist}</h2>`;
+};
