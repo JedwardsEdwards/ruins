@@ -33,6 +33,10 @@ document
   .getElementById('logout-button')
   .addEventListener('click', logout, false);
 
+document
+  .getElementById('mix-one-button')
+  .addEventListener('click', setMix, false);
+
 function log(sig, msg) {
   console.log(sig + "|" + msg);
 };
