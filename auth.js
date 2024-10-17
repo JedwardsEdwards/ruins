@@ -201,3 +201,8 @@ function errorTemplate(data) {
       </table>`;
   }
 
+function trackDetailsTemplate(data) {
+    return `<h2>TRACK: ${data.name} </h2>
+      <h2>ARTIST: ${data.artists[0].name} </h2>`;
+};
+
