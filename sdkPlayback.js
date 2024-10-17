@@ -19,6 +19,10 @@ function transferPlayback(id) {
 function updatePlayer(track) {
     const id = track["id"];
     if (track["id"] != current_track["id"]) {
+        if (expires_at < Date.now()) {
+            refreshToken();
+            return;
+        }
         log("updatePlayer", "updating the current track details, current id:" + current_track["id"] + ", and new id: " + track["id"]);
         localStorage.setItem('current_track', track);
         current_track = track;
