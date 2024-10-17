@@ -1,3 +1,10 @@
+// TODO
+// test reload from each page
+// test navigate between pages
+// see if we can display loading until the player is actually ready > use first update and a loaded boolean perhaps
+// load the mix page after the mix has been set
+// don't auto play the mix page
+
 // Your client id from your app in the spotify dashboard:
 // https://developer.spotify.com/dashboard/applications
 const client_id = '5b705282459d426f99205ec01cbc31fa';
