@@ -36,6 +36,7 @@ function log(sig, msg) {
   console.log(sig + "|" + msg);
 };
 
+// just set this to empty, we set up the player when we've sure log in is successful
 window.onSpotifyWebPlaybackSDKReady = () => {console.log("do nothing")};
 
 function init(code) {
@@ -49,7 +50,7 @@ function init(code) {
     log("init", "current token: " + access_token);  
     getUserData();
     displayLoggedIn();
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    initSpotifyPlayer();
   } else {
     // we are not logged in so show the login button
     document.getElementById('login').style.display = 'unset';
