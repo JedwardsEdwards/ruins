@@ -16,13 +16,12 @@ function transferPlayback(id) {
       })
 };
 
-function updatePlayer(current_track) {
-    const id = current_track["id"];
-    if (id != current_id) {
-        log("updatePlayer", "updating the current track details, current id:" + current_id + ", and new id: " + id);
-        localStorage.setItem('current_id', id);
-        // TODO - delete this
-        window.TRACK = current_track;
+function updatePlayer(track) {
+    const id = track["id"];
+    if (track["id"] != current_track["id"]) {
+        log("updatePlayer", "updating the current track details, current id:" + current_track["id"] + ", and new id: " + track["id"]);
+        localStorage.setItem('current_track', track);
+        current_track = track;
         document.getElementById('track-details').innerHTML = trackDetailsTemplate(current_track);
     };
 };
