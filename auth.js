@@ -136,7 +136,7 @@
     // load data of logged in user
     getUserData();
     displayLoggedIn();
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    initSpotifyPlayer();
   }
 
 function getUserData() {
