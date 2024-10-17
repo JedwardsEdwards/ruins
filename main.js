@@ -19,7 +19,7 @@ const code = args.get('code');
 
 let checkState = true;
 let playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
-let current_id = "";
+let current_id = localStorage.getItem('current_id');
 
 document
   .getElementById('login-button')
