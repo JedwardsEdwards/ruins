@@ -68,7 +68,7 @@ document
 
 document
   .getElementById('mix-one-button')
-  .addEventListener('click', setMixOne, false);
+  .addEventListener('click', homeToMixOne, false);
 
 function log(sig, msg) {
   console.log(sig + "|" + msg);
