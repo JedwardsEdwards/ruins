@@ -42,7 +42,7 @@ function init(code) {
     exchangeToken(code);
   } else if (access_token && refresh_token && expires_at) {
     // we are already authorized and reload our tokens from localStorage
-    log("init";"current token: " + access_token);
+    log("init", "current token: " + access_token);
     document.getElementById('loggedin').style.display = 'unset';
   
     oauthPlaceholder.innerHTML = oAuthTemplate({
