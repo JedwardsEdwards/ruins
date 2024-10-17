@@ -153,8 +153,8 @@ function getUserData() {
   }
 
 function displayLoggedIn() {
-  document.getElementById('login').style.display = 'none';
-  document.getElementById('loggedin').style.display = 'unset';
+  document.getElementById('login-page').style.display = 'none';
+  document.getElementById('home-page').style.display = 'unset';
 };
 
 function trackDetailsTemplate(data) {
