@@ -57,7 +57,7 @@
   async function exchangeToken(code) {
     const code_verifier = localStorage.getItem('code_verifier');
 
-    fetch('https://accounts.spotify.com/api/token', {
+    await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -83,7 +83,7 @@
   }
 
   async function refreshToken() {
-    fetch('https://accounts.spotify.com/api/token', {
+    await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -138,7 +138,7 @@
   }
 
   async function getUserData() {
-    fetch('https://api.spotify.com/v1/me', {
+    await fetch('https://api.spotify.com/v1/me', {
       headers: {
         Authorization: 'Bearer ' + access_token,
       },
