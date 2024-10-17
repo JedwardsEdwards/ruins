@@ -134,7 +134,7 @@
     localStorage.setItem('expires_at', expires_at);
 
     // load data of logged in user
-    await getUserData();
+    getUserData();
   }
 
   async function getUserData() {
