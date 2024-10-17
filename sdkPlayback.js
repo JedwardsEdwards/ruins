@@ -16,19 +16,20 @@ function transferPlayback(id) {
       })
 };
 
-function checkPlayerState() {
-    player.getCurrentState().then(state => {
-    if (!state) {
-    console.error('User is not playing music through the Web Playback SDK');
-    return;
-    }
+function checkPlayerState(player) {
+    player.getCurrentState()
+        .then(state => {
+            if (!state) {
+            console.error('User is not playing music through the Web Playback SDK');
+            return;
+            };
+        
+            var current_track = state.track_window.current_track;
+            var next_track = state.track_window.next_tracks[0];
     
-    var current_track = state.track_window.current_track;
-    var next_track = state.track_window.next_tracks[0];
-    
-    console.log('Currently Playing', current_track);
-    console.log('Playing Next', next_track);
-    });
+            console.log('Currently Playing', current_track);
+            console.log('Playing Next', next_track);
+        });
 };
 
 function initSpotifyPlayer() {
@@ -67,4 +68,6 @@ function initSpotifyPlayer() {
     document.getElementById('play-pause').onclick = function() {
         player.togglePlay();
         };
+
+    return player;
     };
