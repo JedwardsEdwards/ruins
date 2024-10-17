@@ -9,8 +9,7 @@ function transferPlayback(id) {
     })
       .then(async (response) => {
         console.log(response);
-        startMix(playlistId);
-
+        startMix(id);
         //return response.json();
       })
       .catch((error) => {
@@ -52,6 +51,7 @@ function setMixDetails(id) {
   }
 
 function startMix(id) {
+    console.log(player);
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
