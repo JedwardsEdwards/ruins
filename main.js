@@ -52,10 +52,7 @@ function homeToMix(id) {
   displayMixPage();
   setMixDetails(id);
   localStorage.setItem("playlistId", id);
-  playlistId=id;
-  if (typeof Spotify !== 'undefined'){
-      initSpotifyPlayer();
-  };
+
 };
 
 function homeToMixOne() {
