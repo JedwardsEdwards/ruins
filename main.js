@@ -45,21 +45,14 @@ function init(code) {
   if (code) {
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-    displayLoggedIn()
-      .catch((error) => {
-        console.error(error);
-        mainPlaceholder.innerHTML = errorTemplate(error.error);
-      });
+    displayLoggedIn();
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
   } else if (access_token && refresh_token && expires_at) {
     // we are already authorized and reload our tokens from localStorage
     log("init", "current token: " + access_token);  
-    getUserData()
-      .displayLoggedIn()
-      .catch((error) => {
-        console.error(error);
-        mainPlaceholder.innerHTML = errorTemplate(error.error);
-      });
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer
+    getUserData();
+    displayLoggedIn();
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
   } else {
     // we are not logged in so show the login button
     document.getElementById('login').style.display = 'unset';
