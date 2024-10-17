@@ -20,26 +20,6 @@ const code = args.get('code');
 let checkState = true;
 let playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
 
-if (code) {
-  // we have received the code from spotify and will exchange it for a access_token
-  exchangeToken(code);
-} else if (access_token && refresh_token && expires_at) {
-  // we are already authorized and reload our tokens from localStorage
-  document.getElementById('loggedin').style.display = 'unset';
-
-  oauthPlaceholder.innerHTML = oAuthTemplate({
-    access_token,
-    refresh_token,
-    expires_at,
-  });
-
-  getUserData();
-  //initPlayer();
-} else {
-  // we are not logged in so show the login button
-  document.getElementById('login').style.display = 'unset';
-}
-
 document
   .getElementById('login-button')
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
@@ -51,3 +31,34 @@ document
 document
   .getElementById('logout-button')
   .addEventListener('click', logout, false);
+
+function log(sig, msg) {
+  console.log(sig + "|" msg)
+};
+
+function init(code) {
+  if (code) {
+    // we have received the code from spotify and will exchange it for a access_token
+    exchangeToken(code);
+  } else if (access_token && refresh_token && expires_at) {
+    // we are already authorized and reload our tokens from localStorage
+    log("init";"current token: " + access_token);
+    document.getElementById('loggedin').style.display = 'unset';
+  
+    oauthPlaceholder.innerHTML = oAuthTemplate({
+      access_token,
+      refresh_token,
+      expires_at,
+    });
+  
+    getUserData();
+    window.onSpotifyWebPlaybackSDKReady = initPlayer
+  } else {
+    // we are not logged in so show the login button
+    document.getElementById('login').style.display = 'unset';
+    window.onSpotifyWebPlaybackSDKReady = () => {console.log("do nothing")};
+  }
+  };
+
+init(code);
+
