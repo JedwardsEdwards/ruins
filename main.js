@@ -46,13 +46,13 @@ function init(code) {
   if (code) {
     log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
-    await exchangeToken(code);
+    exchangeToken(code);
     displayLoggedIn();
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
   } else if (access_token && refresh_token && expires_at) {
     // we are already authorized and reload our tokens from localStorage
     log("init", "current token: " + access_token);  
-    await getUserData();
+    getUserData();
     displayLoggedIn();
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
   } else {
