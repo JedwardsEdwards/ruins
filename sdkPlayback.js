@@ -49,10 +49,11 @@ window.onSpotifyWebPlaybackSDKReady = () => {
             console.log('The Web Playback SDK successfully connected to Spotify!');
         } else {
             console.log("FAIL");
-        })
+        });
+    
     document.getElementById('play-pause').onclick = function() {
-    player.togglePlay();
-    };
+        player.togglePlay();
+        };
     window.PLAYER = player;
     console.log("done with OnSpotifyWebPlaybackSDKReady");
     };
