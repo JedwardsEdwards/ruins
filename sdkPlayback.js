@@ -56,7 +56,7 @@ function startMix(id) {
        headers: {
          Authorization: 'Bearer ' + access_token,
        },
-       body: JSON.stringify({"context_uri": "spotify:playlist:" + playlistId})
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + id})
     })
       .then(async (response) => {
         console.log(response);
