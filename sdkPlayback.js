@@ -16,7 +16,8 @@ function transferPlayback(id) {
       })
 };
 
-window.onSpotifyWebPlaybackSDKReady = () => {
+//window.onSpotifyWebPlaybackSDKReady = () => {
+function initSpotifyPlayer() {
     console.log("onSpotifyWebPlaybackSDKReady called");
     console.log("current access_token = " + access_token);
     const token = access_token;
