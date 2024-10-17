@@ -34,30 +34,37 @@ document
 
 function log(sig, msg) {
   console.log(sig + "|" + msg);
-  };
+};
+
+function displayLoggedIn() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('loggedin').style.display = 'unset';
+};
 
 function init(code) {
   if (code) {
     // we have received the code from spotify and will exchange it for a access_token
-    exchangeToken(code);
+    exchangeToken(code)
+      .displayLoggedIn()
+      .catch((error) => {
+        console.error(error);
+        mainPlaceholder.innerHTML = errorTemplate(error.error);
+      });
   } else if (access_token && refresh_token && expires_at) {
     // we are already authorized and reload our tokens from localStorage
-    log("init", "current token: " + access_token);
-    document.getElementById('loggedin').style.display = 'unset';
-  
-    oauthPlaceholder.innerHTML = oAuthTemplate({
-      access_token,
-      refresh_token,
-      expires_at,
-    });
-  
-    getUserData();
+    log("init", "current token: " + access_token);  
+    getUserData()
+      .displayLoggedIn()
+      .catch((error) => {
+        console.error(error);
+        mainPlaceholder.innerHTML = errorTemplate(error.error);
+      });
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer
   } else {
     // we are not logged in so show the login button
     document.getElementById('login').style.display = 'unset';
     window.onSpotifyWebPlaybackSDKReady = () => {console.log("do nothing")};
   }
-  };
+};
 
 init(code);
