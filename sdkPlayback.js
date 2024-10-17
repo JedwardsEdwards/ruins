@@ -50,7 +50,7 @@ function getMixDetails(id) {
 
 function setMix(id) {
     log("setMix", "kicking off playlist");
-    details = getMixDetails(id);
+    const details = getMixDetails(id);
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
