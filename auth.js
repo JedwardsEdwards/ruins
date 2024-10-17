@@ -77,7 +77,7 @@
         // clear search query params in the url
         console.log(document.title)
         console.log(redirect_uri)
-        window.history.replaceState({}, document.title, '/');
+        window.history.replaceState({},"", document.title, '/');
       })
       .catch(handleError);
   }
