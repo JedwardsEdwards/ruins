@@ -71,6 +71,12 @@ function initSpotifyPlayer() {
     document.getElementById('play-pause').onclick = function() {
         player.togglePlay();
         };
+     document.getElementById('next-track').onclick = function() {
+        player.nextTrack();
+        };
+     document.getElementById('previous-track').onclick = function() {
+        player.previousTrack();
+        };
     document.getElementById('playback-container').style.display = 'unset';
     
     window.player = player;
