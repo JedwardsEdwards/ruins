@@ -30,9 +30,27 @@ function updatePlayer(track) {
     };
 };
 
-function setMix() {
+function getMixDetails(id) {
+    fetch("https://api.spotify.com/v1/playlists/" + id, {
+        headers: {
+        Authorization: 'Bearer ' + access_token,
+        },
+    })
+      .then(async (response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw await response.json();
+        }
+      })
+      .then((data) => {
+        return data;
+      })
+  }
+
+function setMix(id) {
     log("setMix", "kicking off playlist");
-    const id = "73p0zWLYMp2Rs2Kh3PM5Le";
+    details = getMixDetails(id);
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
@@ -42,6 +60,7 @@ function setMix() {
     })
       .then(async (response) => {
         console.log(response);
+        document.getElementById('mix-details').innerHTML = details.name;
         //return response.json();
       })
       .catch((error) => {
@@ -49,7 +68,11 @@ function setMix() {
       })
 };
 
-    
+function setMixOne {
+    const id = "73p0zWLYMp2Rs2Kh3PM5Le";
+    setMix(id);
+};
+
 function initSpotifyPlayer() {
     log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
