@@ -1,5 +1,5 @@
 function transferPlayback(id) {
-    console.log("transferPlayback called");
+    log("transferPlayback", "transferring to device: " + id);
     fetch("https://api.spotify.com/v1/me/player", {
        method: "PUT",
        headers: {
@@ -95,8 +95,6 @@ function initSpotifyPlayer() {
     player.addListener('player_state_changed', ({
         track_window: { current_track }
             }) => {
-         console.log(player);
-
             updatePlayer(current_track);
         });
     
