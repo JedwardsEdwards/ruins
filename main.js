@@ -52,7 +52,7 @@ function init(code) {
     });
   
     getUserData();
-    window.onSpotifyWebPlaybackSDKReady = initPlayer
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer
   } else {
     // we are not logged in so show the login button
     document.getElementById('login').style.display = 'unset';
