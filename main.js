@@ -92,8 +92,8 @@ function init(code) {
   } else if (access_token && refresh_token && expires_at) {
     // we are already authorized and reload our tokens from localStorage
     log("init", "current token: " + access_token);  
-    getUserData();
-    displayHomePage();
+    //getUserData();
+    //displayHomePage();
   } else {
     // we are not logged in so show the login button
     document.getElementById('login-page').style.display = 'unset';
