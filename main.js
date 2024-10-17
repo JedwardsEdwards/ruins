@@ -17,7 +17,7 @@ const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
 let checkState = true;
-let playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
+let playlistId = localStorage.getItem("playlistId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 
 function displayHomePage() {
@@ -44,12 +44,13 @@ function mixToHome() {
 };
 
 function homeToMix(id) {
-  window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+  displayMixPage();
+  setMixDetails(id);
+  localStorage.setItem("playlistId", id);
+  playlistId=id;
   if (typeof Spotify !== 'undefined'){
       initSpotifyPlayer();
   };
-  displayMixPage();
-  setMix(id);
 };
 
 function homeToMixOne() {
