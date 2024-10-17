@@ -20,6 +20,23 @@ let checkState = true;
 let playlistId = "73p0zWLYMp2Rs2Kh3PM5Le";
 let current_track = localStorage.getItem('current_track') || {id: null};
 
+function displayHomePage() {
+  document.getElementById('login-page').style.display = 'none';
+  document.getElementById('home-page').style.display = 'unset';
+  document.getElementById('mix-page').style.display = 'none';
+};
+
+function displayMixPage() {
+  document.getElementById('login-page').style.display = 'none';
+  document.getElementById('home-page').style.display = 'none';
+  document.getElementById('mix-page').style.display = 'unset';
+};
+
+function mixToHome() {
+  player.pause();
+  displayHomePage();
+};
+
 document
   .getElementById('login-button')
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
@@ -31,6 +48,10 @@ document
 document
   .getElementById('logout-button')
   .addEventListener('click', logout, false);
+
+document
+  .getElementById('home-button')
+  .addEvenetListener('click', mixToHome, false);
 
 document
   .getElementById('mix-one-button')
