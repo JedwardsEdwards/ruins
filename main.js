@@ -51,7 +51,7 @@ document
 
 document
   .getElementById('home-button')
-  .addEvenetListener('click', mixToHome, false);
+  .addEventListener('click', mixToHome, false);
 
 document
   .getElementById('mix-one-button')
