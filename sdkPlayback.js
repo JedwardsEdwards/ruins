@@ -1,4 +1,5 @@
 function transferPlayback(id) {
+    console.log("transferPlayback called");
     fetch("https://api.spotify.com/v1/me/player", {
        method: "PUT",
        headers: {
@@ -16,6 +17,7 @@ function transferPlayback(id) {
 };
 
 window.onSpotifyWebPlaybackSDKReady = () => {
+ console.log("onSpotifyWebPlaybackSDKReady called");
   const token = access_token;
   const player = new Spotify.Player({
     name: 'Web Playback SDK Quick Start Player',
