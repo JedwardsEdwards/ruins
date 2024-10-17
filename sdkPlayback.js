@@ -44,9 +44,9 @@ function initSpotifyPlayer() {
     
     player.connect().then(success => {
         if (success) {
-            log("player.connect";"The Web Playback SDK successfully connected to Spotify!");
+            log("player.connect", "The Web Playback SDK successfully connected to Spotify!");
         } else {
-            log("player.connect";"FAIL");
+            log("player.connect", "FAIL");
         }});
     
     document.getElementById('play-pause').onclick = function() {
