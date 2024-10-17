@@ -16,7 +16,7 @@ function transferPlayback(id) {
       })
 };
 
-window.onSpotifyWebPlaybackSDKReady = () => {
+function onSpotifyWebPlaybackSDKReady() {
     console.log("onSpotifyWebPlaybackSDKReady called");
     const token = access_token;
     const player = new Spotify.Player({
