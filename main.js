@@ -16,6 +16,8 @@ const mainPlaceholder = document.getElementById('main');
 const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
+let current_page = localStorage.getItem("current_page") || "login";
+
 let playlistId = localStorage.getItem("playlistId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 
@@ -39,10 +41,14 @@ function displayMixPage() {
 
 function mixToHome() {
   player.pause();
+  current_page = "home";
+  localStorage.setItem("current_page", "home");
   displayHomePage();
 };
 
 function homeToMix(id) {
+  current_page = "mix";
+  localStorage.setItem("current_page", "mix");
   displayMixPage();
   setMixDetails(id);
   localStorage.setItem("playlistId", id);
@@ -89,11 +95,10 @@ function init(code) {
     log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-  } else if (access_token && refresh_token && expires_at) {
-    // we are already authorized and reload our tokens from localStorage
-    log("init", "current token: " + access_token);  
-    //getUserData();
-    //displayHomePage();
+  } else if (current_page = "home") {
+    displayHomePage();
+  } else if (current_page = "mix") {
+    displayMixPage();
   } else {
     // we are not logged in so show the login button
     document.getElementById('login-page').style.display = 'unset';
