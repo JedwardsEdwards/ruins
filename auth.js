@@ -133,12 +133,6 @@
     localStorage.setItem('refresh_token', refresh_token);
     localStorage.setItem('expires_at', expires_at);
 
-    oauthPlaceholder.innerHTML = oAuthTemplate({
-      access_token,
-      refresh_token,
-      expires_at,
-    });
-
     // load data of logged in user
     getUserData();
   }
@@ -158,14 +152,7 @@
       })
       .then((data) => {
         console.log(data);
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('loggedin').style.display = 'unset';
-        mainPlaceholder.innerHTML = userProfileTemplate(data);
       })
-      .catch((error) => {
-        console.error(error);
-        mainPlaceholder.innerHTML = errorTemplate(error.error);
-      });
   }
     
   function userProfileTemplate(data) {
