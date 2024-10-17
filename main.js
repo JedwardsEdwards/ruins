@@ -22,13 +22,19 @@ let current_track = localStorage.getItem('current_track') || {id: null};
 
 function displayHomePage() {
   document.getElementById('login-page').style.display = 'none';
+  document.getElementById('logout-button').style.display = 'unset';
   document.getElementById('home-page').style.display = 'unset';
+  document.getElementById('home-button').style.display = 'none';
   document.getElementById('mix-page').style.display = 'none';
+  document.getElementById('mix-details').style.display = 'none';
 };
 
 function displayMixPage() {
   document.getElementById('login-page').style.display = 'none';
+  document.getElementById('logout-button').style.display = 'unset';
   document.getElementById('home-page').style.display = 'none';
+  document.getElementById('home-button').style.display = 'unset';
+  document.getElementById('mix-page').style.display = 'unset';
   document.getElementById('mix-page').style.display = 'unset';
 };
 
