@@ -17,7 +17,7 @@ function transferPlayback(id) {
 };
 
 function initSpotifyPlayer() {
-    log("initSpotifyPlayer";"called, current access token: " + access_token);
+    log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
     const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
