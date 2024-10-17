@@ -54,7 +54,7 @@
     });
   }
 
-  function exchangeToken(code) {
+  async exchangeToken(code) {
     const code_verifier = localStorage.getItem('code_verifier');
 
     fetch('https://accounts.spotify.com/api/token', {
@@ -82,7 +82,7 @@
       .catch(handleError);
   }
 
-  function refreshToken() {
+  async refreshToken() {
     fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
@@ -134,10 +134,10 @@
     localStorage.setItem('expires_at', expires_at);
 
     // load data of logged in user
-    getUserData();
+    await getUserData();
   }
 
-  function getUserData() {
+  async getUserData() {
     fetch('https://api.spotify.com/v1/me', {
       headers: {
         Authorization: 'Bearer ' + access_token,
