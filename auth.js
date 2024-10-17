@@ -128,10 +128,6 @@
 
     getUserData();
     displayHomePage();
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-      initSpotifyPlayer();
-    };
   }
 
 function getUserData() {
