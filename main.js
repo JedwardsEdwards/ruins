@@ -33,7 +33,7 @@ document
   .addEventListener('click', logout, false);
 
 function log(sig, msg) {
-  console.log(sig + "|" msg)
+  console.log(sig + "|" msg);
 };
 
 function init(code) {
