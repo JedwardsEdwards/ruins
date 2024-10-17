@@ -50,9 +50,10 @@ function homeToMix(id) {
   current_page = "mix";
   localStorage.setItem("current_page", "mix");
   displayMixPage();
-  setMixDetails(id);
+  playlistId = id;
   localStorage.setItem("playlistId", id);
-
+  setMixDetails(id);
+  startMix(id);
 };
 
 function homeToMixOne() {
