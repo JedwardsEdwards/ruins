@@ -121,4 +121,5 @@ function initSpotifyPlayer() {
     document.getElementById('playback-container').style.display = 'unset';
     
     window.player = player;
+    log("initSpotifyPlayer", "done");
     };
