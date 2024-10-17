@@ -36,6 +36,8 @@ function log(sig, msg) {
   console.log(sig + "|" + msg);
 };
 
+window.onSpotifyWebPlaybackSDKReady = () => {console.log("do nothing")};
+
 function init(code) {
   log("init", "current code: " + code);
   if (code) {
@@ -51,7 +53,6 @@ function init(code) {
   } else {
     // we are not logged in so show the login button
     document.getElementById('login').style.display = 'unset';
-    window.onSpotifyWebPlaybackSDKReady = () => {console.log("do nothing")};
   }
 };
 
