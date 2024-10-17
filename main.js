@@ -42,7 +42,9 @@ function displayLoggedIn() {
 };
 
 function init(code) {
+  log("init", "current code: " + code);
   if (code) {
+    log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
     displayLoggedIn();
