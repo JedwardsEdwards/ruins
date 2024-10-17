@@ -44,8 +44,8 @@ function displayLoggedIn() {
 function init(code) {
   if (code) {
     // we have received the code from spotify and will exchange it for a access_token
-    exchangeToken(code)
-      .displayLoggedIn()
+    exchangeToken(code);
+    displayLoggedIn()
       .catch((error) => {
         console.error(error);
         mainPlaceholder.innerHTML = errorTemplate(error.error);
