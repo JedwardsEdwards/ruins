@@ -202,6 +202,6 @@ function errorTemplate(data) {
   }
 
 function trackDetailsTemplate(data) {
-    return `<h2>TRACK: ${data.name} </h2>`;
-      //<h2>ARTIST: ${data.artists.name.join(", ")} </h2>`;
+    return `<h2>TRACK: ${data.name} </h2>
+      <h2>ARTIST: ${data.artists.map(a => a.name).join(", ")} </h2>`;
 };
