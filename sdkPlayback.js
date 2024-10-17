@@ -9,7 +9,6 @@ function transferPlayback(id) {
     })
       .then(async (response) => {
         console.log(response);
-        startMix(id);
         //return response.json();
       })
       .catch((error) => {
