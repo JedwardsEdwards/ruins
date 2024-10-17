@@ -21,6 +21,7 @@ function updatePlayer(current_track) {
     const id = current_track["id"];
     if (id != current_id) {
         localStorage.setItem('current_id', id);
+        window.TRACK = current_track;
         document.getElementById('track-details').innerHTML(trackDetailsTemplate(current_track))
     };
 };
