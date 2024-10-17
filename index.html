@@ -7,7 +7,10 @@
   <style type="text/css">
       #login-page,
       #home-page, 
-      #mix-page {
+      #mix-page,
+      #mix-details,
+      #home-button,
+      #logout-button {
           display: none;
       }
       td {
@@ -23,6 +26,10 @@
 
 <body>
 <div>
+  <div id="banner">
+        <div id="mix-details"></div>
+        <button id="home-button">Home</button>
+        <button id="logout-button">Logout</button>
   <div id="login-page">
     <h1>LOGIN PAGE</h1>
     <button id="login-button">
@@ -30,20 +37,12 @@
     </button>
   </div>
   <div id="home-page">
-    <div id="home-banner">
-        <button id="logout-button">Logout</button>
-    </div>
     <h1>HOME PAGE</h1>
     <div id="mix-selector">
        <input id="mix-one-button" type="button" value="mix-one" />
     </div>
   </div>
   <div id="mix-page">
-    <div id="mix-banner">
-        <div id="mix-details"></div>
-        <button id="home-button">Home</button>
-        <button id="logout-button">Logout</button>
-    </div>
     <h1>MIX PAGE</h1>
     <div id="track-details"></div>
     <div id="playback-container">
