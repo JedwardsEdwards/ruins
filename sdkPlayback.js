@@ -67,14 +67,8 @@ function startMix(id) {
 };
 
 function setMix(id) {
-    displayMixPage();
     setMixDetails(id);
     startMix(id);
-};
-
-function setMixOne() {
-    const id = "73p0zWLYMp2Rs2Kh3PM5Le";
-    setMix(id);
 };
 
 function initSpotifyPlayer() {
