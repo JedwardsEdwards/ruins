@@ -50,7 +50,10 @@ function init(code) {
     log("init", "current token: " + access_token);  
     getUserData();
     displayLoggedIn();
-    initSpotifyPlayer();
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    if (typeof Spotify !== 'undefined'){
+      initSpotifyPlayer();
+    };
   } else {
     // we are not logged in so show the login button
     document.getElementById('login').style.display = 'unset';
