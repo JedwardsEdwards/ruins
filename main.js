@@ -36,19 +36,12 @@ function log(sig, msg) {
   console.log(sig + "|" + msg);
 };
 
-function displayLoggedIn() {
-  document.getElementById('login').style.display = 'none';
-  document.getElementById('loggedin').style.display = 'unset';
-};
-
 function init(code) {
   log("init", "current code: " + code);
   if (code) {
     log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-    displayLoggedIn();
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
   } else if (access_token && refresh_token && expires_at) {
     // we are already authorized and reload our tokens from localStorage
     log("init", "current token: " + access_token);  
