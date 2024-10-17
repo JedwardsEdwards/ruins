@@ -127,7 +127,7 @@
     localStorage.setItem('expires_at', expires_at);
 
     getUserData();
-    displayLoggedIn();
+    displayHomePage();
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
     if (typeof Spotify !== 'undefined'){
       initSpotifyPlayer();
@@ -152,9 +152,16 @@ function getUserData() {
       })
   }
 
-function displayLoggedIn() {
+function displayHomePage() {
   document.getElementById('login-page').style.display = 'none';
   document.getElementById('home-page').style.display = 'unset';
+  document.getElementById('mix-page').style.display = 'none';
+};
+
+function displayMixPage() {
+  document.getElementById('login-page').style.display = 'none';
+  document.getElementById('home-page').style.display = 'none';
+  document.getElementById('mix-page').style.display = 'unset';
 };
 
 function trackDetailsTemplate(data) {
