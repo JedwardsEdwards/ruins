@@ -87,7 +87,7 @@ function init(code) {
     // we are already authorized and reload our tokens from localStorage
     log("init", "current token: " + access_token);  
     getUserData();
-    displayHome();
+    displayHomePage();
   } else {
     // we are not logged in so show the login button
     document.getElementById('login-page').style.display = 'unset';
