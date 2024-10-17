@@ -54,10 +54,10 @@
     });
   }
 
-  async function exchangeToken(code) {
+  function exchangeToken(code) {
     const code_verifier = localStorage.getItem('code_verifier');
 
-    await fetch('https://accounts.spotify.com/api/token', {
+    fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -82,8 +82,8 @@
       .catch(handleError);
   }
 
-  async function refreshToken() {
-    await fetch('https://accounts.spotify.com/api/token', {
+ function refreshToken() {
+    fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -135,10 +135,12 @@
 
     // load data of logged in user
     getUserData();
+    displayLoggedIn();
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
   }
 
-  async function getUserData() {
-    await fetch('https://api.spotify.com/v1/me', {
+function getUserData() {
+    fetch('https://api.spotify.com/v1/me', {
       headers: {
         Authorization: 'Bearer ' + access_token,
       },
@@ -154,8 +156,14 @@
         console.log(data);
       })
   }
-    
-  function userProfileTemplate(data) {
+
+
+function displayLoggedIn() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('loggedin').style.display = 'unset';
+};
+
+function userProfileTemplate(data) {
     return `<h1>Logged in as ${data.display_name}</h1>
       <table>
           <tr><td>Display name</td><td>${data.display_name}</td></tr>
@@ -168,7 +176,7 @@
       </table>`;
   }
 
-  function oAuthTemplate(data) {
+function oAuthTemplate(data) {
     return `<h2>oAuth info</h2>
       <table>
         <tr>
@@ -186,7 +194,7 @@
       </table>`;
   }
 
-  function errorTemplate(data) {
+function errorTemplate(data) {
     return `<h2>Error info</h2>
       <table>
         <tr>
