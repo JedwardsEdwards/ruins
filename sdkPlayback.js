@@ -20,10 +20,10 @@ function updatePlayer(current_track) {
     console.log('Currently Playing', current_track);
     const id = current_track["id"];
     if (id != current_id) {
-        log("updatePlayer", "updating the current track details");
+        log("updatePlayer", "updating the current track details, current id:" + current_id + ", and new id: " + id);
         localStorage.setItem('current_id', id);
         window.TRACK = current_track;
-        document.getElementById('track-details').innerHTML(trackDetailsTemplate(current_track))
+        document.getElementById('track-details').innerHTML = trackDetailsTemplate(current_track);
     };
 };
 
