@@ -68,6 +68,7 @@ function initSpotifyPlayer() {
     document.getElementById('play-pause').onclick = function() {
         player.togglePlay();
         };
-
+    document.getElementById('playback-container').style.display = 'unset';
+    
     window.player = player;
     };
