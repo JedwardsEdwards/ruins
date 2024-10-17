@@ -67,6 +67,8 @@ function startMix(id) {
 };
 
 function setMix(id) {
+    document.getElementById('home-page').style.display = 'none';
+    document.getElementById('mix-page').style.display = 'unset';
     setMixDetails(id);
     startMix(id);
 };
