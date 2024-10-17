@@ -152,18 +152,6 @@ function getUserData() {
       })
   }
 
-function displayHomePage() {
-  document.getElementById('login-page').style.display = 'none';
-  document.getElementById('home-page').style.display = 'unset';
-  document.getElementById('mix-page').style.display = 'none';
-};
-
-function displayMixPage() {
-  document.getElementById('login-page').style.display = 'none';
-  document.getElementById('home-page').style.display = 'none';
-  document.getElementById('mix-page').style.display = 'unset';
-};
-
 function trackDetailsTemplate(data) {
     return `<h2>TRACK: ${data.name} </h2>
       <h2>ARTIST: ${data.artists.map(a => a.name).join(", ")} </h2>`;
