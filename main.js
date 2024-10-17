@@ -10,7 +10,6 @@ let expires_at = localStorage.getItem('expires_at') || null;
 
 // References for HTML rendering
 const mainPlaceholder = document.getElementById('main');
-const oauthPlaceholder = document.getElementById('oauth');
 
 // If the user has accepted the authorize request spotify will come back to your application with the code in the response query string
 // Example: http://127.0.0.1:8080/?code=NApCCg..BkWtQ&state=profile%2Factivity
@@ -61,7 +60,7 @@ function init(code) {
     };
   } else {
     // we are not logged in so show the login button
-    document.getElementById('login').style.display = 'unset';
+    document.getElementById('login-page').style.display = 'unset';
   }
 };
 
