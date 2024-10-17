@@ -17,8 +17,7 @@ function transferPlayback(id) {
 };
 
 function initSpotifyPlayer() {
-    console.log("onSpotifyWebPlaybackSDKReady called");
-    console.log("current access_token = " + access_token);
+    log("initSpotifyPlayer";"called, current access token: " + access_token);
     const token = access_token;
     const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
@@ -26,7 +25,6 @@ function initSpotifyPlayer() {
         volume: 0.5
         });
     
-    console.log("adding listeners");
     player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
         transferPlayback(device_id);
@@ -44,17 +42,14 @@ function initSpotifyPlayer() {
       console.error(message);
         });
     
-    console.log("attempting connection");
     player.connect().then(success => {
         if (success) {
-            console.log('The Web Playback SDK successfully connected to Spotify!');
+            log("player.connect";"The Web Playback SDK successfully connected to Spotify!");
         } else {
-            console.log("FAIL");
+            log("player.connect";"FAIL");
         }});
     
     document.getElementById('play-pause').onclick = function() {
         player.togglePlay();
         };
-    window.PLAYER = player;
-    console.log("done with OnSpotifyWebPlaybackSDKReady");
     };
