@@ -16,20 +16,13 @@ function transferPlayback(id) {
       })
 };
 
-function checkPlayerState(player) {
-    player.getCurrentState()
-        .then(state => {
-            if (!state) {
-            console.error('User is not playing music through the Web Playback SDK');
-            return;
-            };
-        
-            var current_track = state.track_window.current_track;
-            var next_track = state.track_window.next_tracks[0];
-    
-            console.log('Currently Playing', current_track);
-            console.log('Playing Next', next_track);
-        });
+function updatePlayer(current_track) {
+    console.log('Currently Playing', current_track);
+    const id = current_track["id"];
+    if (id != current_id) {
+        localStorage.setItem('current_id', id);
+        document.getElementById('track-details').innerHTML(trackDetailsTemplate(current_track))
+    };
 };
 
 function initSpotifyPlayer() {
@@ -58,13 +51,9 @@ function initSpotifyPlayer() {
       console.error(message);
         });
     player.addListener('player_state_changed', ({
-        position,
-        duration,
         track_window: { current_track }
             }) => {
-        console.log('Currently Playing', current_track);
-        console.log('Position in Song', position);
-        console.log('Duration of Song', duration);
+            updatePlayer(current_track);
         });
     
     player.connect().then(success => {
