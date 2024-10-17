@@ -34,7 +34,7 @@ if (code) {
   });
 
   getUserData();
-  initPlayer();
+  //initPlayer();
 } else {
   // we are not logged in so show the login button
   document.getElementById('login').style.display = 'unset';
