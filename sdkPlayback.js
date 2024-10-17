@@ -9,6 +9,8 @@ function transferPlayback(id) {
     })
       .then(async (response) => {
         console.log(response);
+        startMix(playlistId);
+
         //return response.json();
       })
       .catch((error) => {
@@ -78,7 +80,6 @@ function initSpotifyPlayer() {
     player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
         transferPlayback(device_id);
-        startMix(playlistId);
         });
     player.addListener('not_ready', ({ device_id }) => {
         console.log('Device ID has gone offline', device_id);
