@@ -79,8 +79,9 @@
       .catch(handleError);
   }
 
-// TODO - fix bug with this and also work out automatic refresh
+// TODO - work out automatic refresh
  function refreshToken() {
+    window.player.disconnect();
     fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
