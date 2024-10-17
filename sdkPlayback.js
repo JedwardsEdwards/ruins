@@ -50,7 +50,6 @@ function getMixDetails(id) {
 
 function setMix(id) {
     log("setMix", "kicking off playlist");
-    const details = getMixDetails(id);
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
@@ -60,7 +59,7 @@ function setMix(id) {
     })
       .then(async (response) => {
         console.log(response);
-        document.getElementById('mix-details').innerHTML = details.name;
+        document.getElementById('mix-details').innerHTML = getMixDetails(id).name;
         //return response.json();
       })
       .catch((error) => {
