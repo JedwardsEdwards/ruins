@@ -53,5 +53,6 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     document.getElementById('play-pause').onclick = function() {
     player.togglePlay();
     };
+    window.PLAYER = player;
     console.log("done with OnSpotifyWebPlaybackSDKReady");
     };
