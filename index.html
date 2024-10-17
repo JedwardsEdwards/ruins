@@ -5,15 +5,11 @@
     RUINS
   </title>
   <style type="text/css">
-      #login,
-      #loggedin {
+      #login-page,
+      #home-page, 
+      #mix-page {
           display: none;
       }
-
-      #playback-container {
-        display: none;
-      }
-
       td {
           border: grey solid 1px;
           overflow-wrap: anywhere;
@@ -27,37 +23,33 @@
 
 <body>
 <div>
-  <div id="login">
-    <h1>
-      LOGIN PAGE
-    </h1>
+  <div id="login-page">
+    <h1>LOGIN PAGE</h1>
     <button id="login-button">
       Log in with Spotify
     </button>
   </div>
-  <div id="loggedin">
-    
+  <div id="home-page">
     <div id="banner">
         <div id="mix-details"></div>
         <button id="logout-button">Logout</button>
     </div>
-    <h1>
-      HOME PAGE
-    </h1>
+    <h1>HOME PAGE</h1>
     <div id="mix-selector">
        <input id="mix-one-button" type="button" value="mix-one" />
     </div>
+  </div>
+  <div id="mix-page">
+    <h1>MIX PAGE</h1>
     <div id="track-details"></div>
-    <div id="oauth"></div>
-
     <div id="playback-container">
       <input id="previous-track" type="button" value="previous-track" />
       <input id="play-pause" type="button" value="play-pause" />
       <input id="next-track" type="button" value="next-track" />
     </div>
-    <div id="debug-tools">
-      <button id="refresh-button">Refresh access token</button>
-    </div>
+  </div>
+  <div id="debug-tools">
+    <button id="refresh-button">Refresh access token</button>
   </div>
 </div>
 <script src="https://sdk.scdn.co/spotify-player.js"></script>
