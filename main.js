@@ -34,7 +34,7 @@ document
 
 function log(sig, msg) {
   console.log(sig + "|" msg);
-};
+  };
 
 function init(code) {
   if (code) {
@@ -61,4 +61,3 @@ function init(code) {
   };
 
 init(code);
-
