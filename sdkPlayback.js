@@ -69,5 +69,5 @@ function initSpotifyPlayer() {
         player.togglePlay();
         };
 
-    return player;
+    window.player = player;
     };
