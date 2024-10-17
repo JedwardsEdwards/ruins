@@ -126,26 +126,11 @@
     localStorage.setItem('refresh_token', refresh_token);
     localStorage.setItem('expires_at', expires_at);
 
-    getUserData();
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    if (typeof Spotify !== 'undefined'){
+        initSpotifyPlayer();
+    };
     displayHomePage();
-  }
-
-function getUserData() {
-    fetch('https://api.spotify.com/v1/me', {
-      headers: {
-        Authorization: 'Bearer ' + access_token,
-      },
-    })
-      .then(async (response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw await response.json();
-        }
-      })
-      .then((data) => {
-        console.log(data);
-      })
   }
 
 function trackDetailsTemplate(data) {
