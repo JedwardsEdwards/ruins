@@ -66,11 +66,6 @@ function startMix(id) {
       })
 };
 
-function setMix(id) {
-    setMixDetails(id);
-    startMix(id);
-};
-
 function initSpotifyPlayer() {
     log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
