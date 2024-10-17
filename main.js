@@ -34,6 +34,7 @@ if (code) {
   });
 
   getUserData();
+  window.onSpotifyWebPlaybackSDKReady = onSpotifyWebPlaybackSDKReady
 } else {
   // we are not logged in so show the login button
   document.getElementById('login').style.display = 'unset';
