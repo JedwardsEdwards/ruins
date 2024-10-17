@@ -49,7 +49,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
             console.log('The Web Playback SDK successfully connected to Spotify!');
         } else {
             console.log("FAIL");
-        });
+        }});
     
     document.getElementById('play-pause').onclick = function() {
         player.togglePlay();
