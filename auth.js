@@ -73,10 +73,7 @@
       .then(addThrowErrorToFetch)
       .then((data) => {
         processTokenResponse(data);
-
-        // clear search query params in the url
-        console.log(document.title)
-        console.log(redirect_uri)
+        // TODO - this should be updated when custom domain is used
         window.history.replaceState({},"","/ruins/");
       })
       .catch(handleError);
@@ -101,10 +98,6 @@
 
   function handleError(error) {
     console.error(error);
-    mainPlaceholder.innerHTML = errorTemplate({
-      status: error.response.status,
-      message: error.error.error_description,
-    });
   }
 
   async function addThrowErrorToFetch(response) {
@@ -121,8 +114,6 @@
   }
 
   function processTokenResponse(data) {
-    console.log(data);
-
     access_token = data.access_token;
     refresh_token = data.refresh_token;
 
@@ -133,7 +124,6 @@
     localStorage.setItem('refresh_token', refresh_token);
     localStorage.setItem('expires_at', expires_at);
 
-    // load data of logged in user
     getUserData();
     displayLoggedIn();
     initSpotifyPlayer();
@@ -157,12 +147,12 @@ function getUserData() {
       })
   }
 
-
 function displayLoggedIn() {
   document.getElementById('login').style.display = 'none';
   document.getElementById('loggedin').style.display = 'unset';
 };
 
+// TODO - delete these
 function userProfileTemplate(data) {
     return `<h1>Logged in as ${data.display_name}</h1>
       <table>
