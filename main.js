@@ -92,9 +92,9 @@ function init(code) {
     log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-  } else if (current_page = "home") {
+  } else if (current_page == "home") {
     displayHomePage();
-  } else if (current_page = "mix") {
+  } else if (current_page == "mix") {
     displayMixPage();
   } else {
     // we are not logged in so show the login button
