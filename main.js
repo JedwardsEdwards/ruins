@@ -16,7 +16,6 @@ const mainPlaceholder = document.getElementById('main');
 const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
-let checkState = true;
 let playlistId = localStorage.getItem("playlistId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 
