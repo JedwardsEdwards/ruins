@@ -37,6 +37,19 @@ function mixToHome() {
   displayHomePage();
 };
 
+function homeToMix(id) {
+  window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+  if (typeof Spotify !== 'undefined'){
+      initSpotifyPlayer();
+  };
+  displayMixPage();
+  setMix(id);
+};
+
+function homeToMixOne() {
+  homeToMix("73p0zWLYMp2Rs2Kh3PM5Le");
+};
+
 document
   .getElementById('login-button')
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
@@ -74,11 +87,7 @@ function init(code) {
     // we are already authorized and reload our tokens from localStorage
     log("init", "current token: " + access_token);  
     getUserData();
-    displayLoggedIn();
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-      initSpotifyPlayer();
-    };
+    displayHome();
   } else {
     // we are not logged in so show the login button
     document.getElementById('login-page').style.display = 'unset';
