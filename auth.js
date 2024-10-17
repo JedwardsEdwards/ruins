@@ -54,7 +54,7 @@
     });
   }
 
-  async exchangeToken(code) {
+  async function exchangeToken(code) {
     const code_verifier = localStorage.getItem('code_verifier');
 
     fetch('https://accounts.spotify.com/api/token', {
@@ -82,7 +82,7 @@
       .catch(handleError);
   }
 
-  async refreshToken() {
+  async function refreshToken() {
     fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {
@@ -137,7 +137,7 @@
     await getUserData();
   }
 
-  async getUserData() {
+  async function getUserData() {
     fetch('https://api.spotify.com/v1/me', {
       headers: {
         Authorization: 'Bearer ' + access_token,
