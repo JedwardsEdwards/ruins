@@ -113,6 +113,7 @@ function init(code) {
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
   } else if (["home", "loading"].includes(current_page)) {
+    displayPage(current_page);
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
