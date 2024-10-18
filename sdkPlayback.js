@@ -96,7 +96,9 @@ function initSpotifyPlayer() {
         track_window: { current_track }
             }) => {
             if (! player_loaded) {
-                player_loaded = true
+                player_loaded = true;
+                displayMixPage();
+                startMix(id);
             }
             updatePlayer(current_track);
         });
