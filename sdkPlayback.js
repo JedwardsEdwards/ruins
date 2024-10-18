@@ -1,8 +1,9 @@
 function transferPlayback(id) {
+    info("transferPlayback";"transferring playback to browser");
     fetch("https://api.spotify.com/v1/me/player", {
        method: "PUT",
        headers: {
-         Authorization: 'Bearer ' + access_token,
+         Authorization: 'Bearer ' + window.access_token,
        },
        body: JSON.stringify({"device_ids": [id]})
     })
@@ -10,20 +11,19 @@ function transferPlayback(id) {
         //return response.json();
       })
       .catch((error) => {
-        console.error(error);
+        error(error);
       })
 };
 
 function updatePlayer(track) {
     const id = track["id"];
-    if (track["id"] != current_track["id"]) {
-        if (expires_at < Date.now()) {
+    if (track["id"] != window.current_track["id"]) {
+        if (window.expires_at < Date.now()) {
             refreshToken();
             return;
         }
-        localStorage.setItem('current_track', track);
-        current_track = track;
-        document.getElementById('track-details').innerHTML = trackDetailsTemplate(current_track);
+        setGlobal("current_track", track);
+        document.getElementById('track-details').innerHTML = trackDetailsTemplate(track);
     };
 };
 
@@ -34,7 +34,7 @@ function resetPlayer() {
 function setMixDetails(id) {
     fetch("https://api.spotify.com/v1/playlists/" + id + "?fields=name", {
         headers: {
-        Authorization: 'Bearer ' + access_token,
+        Authorization: 'Bearer ' + window.access_token,
         },
     })
       .then(async (response) => {
@@ -54,23 +54,23 @@ function startMix() {
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
-         Authorization: 'Bearer ' + access_token,
+         Authorization: 'Bearer ' + window.access_token,
        },
-       body: JSON.stringify({"context_uri": "spotify:playlist:" + target_mix})
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix})
     })
       .then(async (response) => {
-        setGlobal("current_mix", target_mix);
+        setGlobal("current_mix", window.target_mix);
         //return response.json();
       })
       .catch((error) => {
-        console.error(error);
+        error(error);
       })
 };
 
 function playPause() {
-    console.log("playPause " + current_page + current_mix + target_mix + window.target_mix);
-    if (current_page == "play") {
-        player.togglePlay();
+    info("playPause","play/pause button hit, current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
+    if (window.current_page == "play") {
+        window.player.togglePlay();
     } else {
         if ( window.target_mix != window.current_mix) {
             resetPlayer();
@@ -79,25 +79,25 @@ function playPause() {
         if ( window.target_mix != window.current_mix) {
             startMix();
         } else {
-            player.togglePlay();
+            window.player.togglePlay();
         };
     };
 };
 
 function nextTrack() {
-    if (current_page == "play") {
-        player.nextTrack();
+    if (window.current_page == "play") {
+        window.player.nextTrack();
     }
 };
 
 function previousTrack() {
-    if (current_page == "play") {
-        player.previousTrack();
+    if (window.current_page == "play") {
+        window.player.previousTrack();
     }
 };
     
 function initSpotifyPlayer() {
-    const token = access_token;
+    const token = window.access_token;
     const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
         getOAuthToken: cb => { cb(token); },
@@ -105,38 +105,38 @@ function initSpotifyPlayer() {
         });
     
     player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
+        info("player ready listener",'Ready with Device ID', device_id);
         transferPlayback(device_id);
         });
     player.addListener('not_ready', ({ device_id }) => {
-        console.log('Device ID has gone offline', device_id);
+        info("player not ready listener",'Device ID has gone offline', device_id);
         });
     player.addListener('initialization_error', ({ message }) => {
-        console.error(message);
+        error(message);
         });
     player.addListener('authentication_error', ({ message }) => {
-      console.error(message);
+        error(message);
         });
     player.addListener('account_error', ({ message }) => {
-      console.error(message);
+        error(message);
         });
     player.addListener('player_state_changed', ({
         track_window: { current_track }
             }) => {
-            if (! player_loaded) {
-                player_loaded = true;
+            if (! window.player_loaded) {
+                window.player_loaded = true;
             };
-            if (current_page == "loading") {
+            if (window.current_page == "loading") {
                 transitionToPage(window.target_page);
             };
-            updatePlayer(current_track);
+            updatePlayer(window.current_track);
         });
     
     player.connect().then(success => {
         if (success) {
-            log("player.connect", "The Web Playback SDK successfully connected to Spotify!");
+            info("player.connect", "The Web Playback SDK successfully connected to Spotify!");
         } else {
-            log("player.connect", "FAIL");
+            error("player.connect", "FAIL");
         }});
     
     document.getElementById('play-pause').onclick = function() {
