@@ -133,19 +133,19 @@ function init(code) {
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
-  } else if (["mix", "play"].includes(current_page)) {
+  } else if (current_page == "mix") {
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
     setMix(mixId);
     toMix();
-  } else if (current_page = "play") {
+  } else if (current_page == "play") {
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
-    
+    toPlay();
   } else {
     // we are not logged in so show the login button
     transitionToPage("login");
