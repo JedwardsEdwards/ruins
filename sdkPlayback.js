@@ -54,13 +54,13 @@ function setMixDetails(id) {
       })
   }
 
-function startMix(id) {
+function startMix() {
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
          Authorization: 'Bearer ' + access_token,
        },
-       body: JSON.stringify({"context_uri": "spotify:playlist:" + id})
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + mixId})
     })
       .then(async (response) => {
         console.log(response);
@@ -75,8 +75,11 @@ function playPause() {
     if (current_page == "play") {
         player.togglePlay();
     } else {
-        toPlay(mixId);
-    }
+        toPlay();
+        if (current_track["id"] == null) {
+            startMix();
+        };
+    };
 };
 
 function nextTrack() {
