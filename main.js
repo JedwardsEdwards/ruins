@@ -36,6 +36,7 @@ function displayHomePage() {
   document.getElementById('home-button').style.display = 'none';
   document.getElementById('mix-page').style.display = 'none';
   document.getElementById('mix-details').style.display = 'none';
+  document.getElementById('loading-page').style.display = "none";
 };
 
 function displayMixPage() {
@@ -44,7 +45,18 @@ function displayMixPage() {
   document.getElementById('home-page').style.display = 'none';
   document.getElementById('home-button').style.display = 'unset';
   document.getElementById('mix-page').style.display = 'unset';
-  document.getElementById('mix-page').style.display = 'unset';
+  document.getElementById('mix-details').style.display = 'unset';
+  document.getElementById('loading-page').style.display = "none";
+};
+
+function displayLoadingPage() {
+  document.getElementById('login-page').style.display = 'none';
+  document.getElementById('logout-button').style.display = 'none';
+  document.getElementById('home-page').style.display = 'none';
+  document.getElementById('home-button').style.display = 'none';
+  document.getElementById('mix-page').style.display = 'none';
+  document.getElementById('mix-details').style.display = 'none';
+  document.getElementById('loading-page').style.display = "unset";
 };
 
 function loginToHome() {
@@ -66,10 +78,7 @@ function homeToMix(id) {
   playlistId = id;
   localStorage.setItem("playlistId", id);
   setMixDetails(id);
-  // TODO displayLoading();
-  // move displayMixPage to sdkP..
-  displayMixPage();
-  startMix(id);
+  displayLoading();
 };
 
 function homeToMixOne() {
