@@ -127,6 +127,7 @@ function initSpotifyPlayer() {
                 player_loaded = true;
             };
             if (current_page == "loading") {
+                console.log("player state changed, target page: " + target_page);
                 transitionToPage(target_page);
             };
             updatePlayer(current_track);
