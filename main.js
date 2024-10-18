@@ -32,14 +32,13 @@ let player_loaded = false;
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element"];
 
 function updateClassDisplay(c, d){
-  elements = document.getElementsByClassName(c);
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].style.display = d
+  for (e of document.getElementsByClassName(c)) {
+    e.style.display = d
   };
 };
 
 function hideAll() {
-  for (c in display_classes){
+  for (c of display_classes){
     updateClassDisplay(c, "none");
   };
 };
@@ -65,12 +64,10 @@ function mixToHome() {
 };
 
 function homeToMix(id) {
-  current_page = "mix";
-  localStorage.setItem("current_page", "mix");
+  transitionToPage("mix");
   playlistId = id;
   localStorage.setItem("playlistId", id);
   setMixDetails(id);
-  displayPage("loading");
 };
 
 function homeToMixOne() {
