@@ -26,6 +26,9 @@ const code = args.get('code');
 let current_page = localStorage.getItem("current_page") || "login";
 let target_page = localStorage.getItem("target_page") || null;
 
+console.log("current page: " + current_page);
+console.log("target page: " + target_page);
+
 let current_mix = localStorage.getItem("current_mix") || "";
 let target_mix = localStorage.getItem("target_mix") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
