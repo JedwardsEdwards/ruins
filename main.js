@@ -46,6 +46,12 @@ function displayMixPage() {
   document.getElementById('mix-page').style.display = 'unset';
 };
 
+function loginToHome() {
+  current_page = "home";
+  localStorage.setItem("current_page", "home");
+  displayHomePage();
+};
+
 function mixToHome() {
   player.pause();
   current_page = "home";
