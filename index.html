@@ -20,6 +20,10 @@
       td:first-child {
           min-width: 150px;
       }
+      #banner, #playback-container{
+        border: grey solid 0.5px;
+      }
+    
   </style>
 </head>
 
@@ -29,34 +33,37 @@
         <button id="home-button" class="mix-element play-element">Home</button>
         <button id="logout-button" class="home-element mix-element play-element">Logout</button>
   </div>
-  <div id="login-page" class="login-element">
-    <h1>LOGIN PAGE</h1>
-    <button id="login-button">
-      Log in with Spotify
-    </button>
-  </div>
-  <div id="home-page" class="home-element">
-    <h1>HOME PAGE</h1>
-    <div id="mix-selector">
-       <input id="mix-one-button" type="button" value="mix-one" />
+  <div id="page-container">
+    <div id="login-page" class="login-element">
+      <h1>LOGIN PAGE</h1>
+      <button id="login-button">
+        Log in with Spotify
+      </button>
     </div>
-  </div>
-  <div id="mix-page" class="mix-element">
-    <h1>MIX PAGE</h1>
-    <div id="mix-name"></div>
-  </div>
-  <div id="play-page" class="play-element">
-      <div id="mix-details"></div>
-      <div id="track-details"></div>
+    <div id="home-page" class="home-element">
+      <h1>HOME PAGE</h1>
+      <div id="mix-selector">
+         <input id="mix-one-button" type="button" value="mix-one" />
+      </div>
+    </div>
+    <div id="mix-page" class="mix-element">
+      <h1>MIX PAGE</h1>
+      <div id="mix-name"></div>
+    </div>
+    <div id="play-page" class="play-element">
+        <div id="mix-details"></div>
+        <div id="track-details"></div>
+    </div>
+    <div id = "loading-page" class="loading-element">
+      <h1>LOADING</h1>
+    </div>
   </div>
   <div id="playback-container" class="mix-element play-element">
     <input id="previous-track" type="button" value="previous-track" />
     <input id="play-pause" type="button" value="play-pause" />
     <input id="next-track" type="button" value="next-track" />
   </div>
-  <div id = "loading-page" class="loading-element">
-    <h1>LOADING</h1>
-  </div>
+
   <div id="debug-tools">
     <button id="refresh-button">Refresh access token</button>
   </div>
