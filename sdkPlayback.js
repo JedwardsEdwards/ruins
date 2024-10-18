@@ -123,7 +123,7 @@ function initSpotifyPlayer() {
                 player_loaded = true;
             };
             if (current_page == "loading") {
-                toMix(mixId);
+                toMix();
             };
             updatePlayer(current_track);
         });
