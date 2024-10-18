@@ -60,11 +60,11 @@ function startMix() {
        headers: {
          Authorization: 'Bearer ' + access_token,
        },
-       body: JSON.stringify({"context_uri": "spotify:playlist:" + mixId})
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + target_mix})
     })
       .then(async (response) => {
         console.log(response);
-        mix_started = true;
+        current_mix = true;
         //return response.json();
       })
       .catch((error) => {
@@ -77,7 +77,7 @@ function playPause() {
         player.togglePlay();
     } else {
         toPlay();
-        if (! mix_started) {
+        if ( target_mix != current_mix) {
             startMix();
         };
     };
