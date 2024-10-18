@@ -67,11 +67,15 @@ function transitionToPage(page) {
 };
 
 function toHome() {
-  if (current_page == "play") {
-    player.pause();
-  };
-  transitionToPage("home");
   setGlobal("target_page", "mix");
+  if (player_loaded) {
+    if (current_page == "play") {
+    player.pause();
+    };
+    transitionToPage("home");
+  } else {
+    transitionToPage("loading");
+  };
 };
 
 function toMix() {
@@ -133,8 +137,8 @@ function init(code) {
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
   } else if (["home", "loading"].includes(current_page)) {
-    displayPage(current_page);
     initSpotifyPlayerProtected();
+    toHome();
   } else if (current_page == "mix") {
     initSpotifyPlayerProtected();
     setMix(target_mix);
