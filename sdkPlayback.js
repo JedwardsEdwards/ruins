@@ -64,7 +64,7 @@ function startMix() {
     })
       .then(async (response) => {
         console.log(response);
-        current_mix = target_mix;
+        setGlobal("current_mix", target_mix);
         //return response.json();
       })
       .catch((error) => {
