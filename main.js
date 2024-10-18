@@ -100,6 +100,7 @@ function setMix(id) {
 function toMixOne() {
   setMix("73p0zWLYMp2Rs2Kh3PM5Le");
   toMix();
+  initSpotifyPlayerProtected();
 };
 
 document
@@ -133,7 +134,6 @@ function init(code) {
     exchangeToken(code);
   } else if (["home", "loading"].includes(current_page)) {
     displayPage(current_page);
-    initSpotifyPlayerProtected();
   } else if (current_page == "mix") {
     initSpotifyPlayerProtected();
     setMix(target_mix);
