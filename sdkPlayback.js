@@ -55,8 +55,6 @@ function setMixDetails(id) {
   }
 
 function startMix(id) {
-    console.log("starting mix");
-    console.log(player);
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
@@ -121,9 +119,9 @@ function initSpotifyPlayer() {
     player.addListener('player_state_changed', ({
         track_window: { current_track }
             }) => {
-            if (! player_loaded) {
-                player_loaded = true;
-            }
+            if (current_page = "loading") {
+                toMix(playlistId);
+            };
             updatePlayer(current_track);
         });
     
