@@ -27,8 +27,8 @@ window.current_track = localStorage.getItem('current_track') || {id: null};
 window.player_loaded = false;
 
 function log(sig, msg, level) {
-  if (lvl <= window.logLevel) {
-    if (lvl == 1) {
+  if (level <= window.logLevel) {
+    if (level == 1) {
       console.err(sig + "|" + msg);
     } else {
       console.log(sig + "|" + msg);
