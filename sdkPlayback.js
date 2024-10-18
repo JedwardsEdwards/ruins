@@ -78,6 +78,9 @@ function playPause() {
     if (current_page == "play") {
         player.togglePlay();
     } else {
+        if ( target_mix != current_mix) {
+            resetPlayer();
+        };
         toPlay();
         if ( target_mix != current_mix) {
             startMix();
