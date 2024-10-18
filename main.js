@@ -69,10 +69,9 @@ function toMix(id) {
 };
 
 function toPlay() {
+  resetPlayer();
   transitionToPage("play");
-  console.log("transitioned to play");
   startMix(playlistId);
-  console.log("tried to start mix");
 };
 
 function toMixOne() {
