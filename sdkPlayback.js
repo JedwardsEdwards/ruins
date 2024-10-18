@@ -61,6 +61,7 @@ function startMix(id) {
       .then(async (response) => {
         console.log(response);
         mix_loaded = true;
+        document.getElementById("track-details").style.display = "unset";
         //return response.json();
       })
       .catch((error) => {
