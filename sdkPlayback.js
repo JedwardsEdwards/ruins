@@ -97,7 +97,7 @@ function initSpotifyPlayer() {
             }) => {
             if (! player_loaded) {
                 player_loaded = true;
-                displayMixPage();
+                displayPage("mix");
                 startMix(id);
             }
             updatePlayer(current_track);
@@ -119,7 +119,6 @@ function initSpotifyPlayer() {
      document.getElementById('previous-track').onclick = function() {
         player.previousTrack();
         };
-    document.getElementById('playback-container').style.display = 'unset';
     
     window.player = player;
     log("initSpotifyPlayer", "done");
