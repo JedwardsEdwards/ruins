@@ -91,11 +91,11 @@ document
 
 document
   .getElementById('home-button')
-  .addEventListener('click', mixToHome, false);
+  .addEventListener('click', toHome, false);
 
 document
   .getElementById('mix-one-button')
-  .addEventListener('click', homeToMixOne, false);
+  .addEventListener('click', toMixOne, false);
 
 function log(sig, msg) {
   console.log(sig + "|" + msg);
@@ -118,7 +118,7 @@ function init(code) {
     };
   } else {
     // we are not logged in so show the login button
-    document.getElementById('login-page').style.display = 'unset';
+    transitionToPage("login");
   }
 };
 
