@@ -104,10 +104,6 @@ document
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
 
 document
-  .getElementById('refresh-button')
-  .addEventListener('click', refreshToken, false);
-
-document
   .getElementById('logout-button')
   .addEventListener('click', logout, false);
 
