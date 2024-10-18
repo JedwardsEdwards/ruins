@@ -33,6 +33,15 @@ let player_loaded = false;
 
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
+function setGlobal(name, value) {
+  localStorage.setItem(name, value);
+  window[name] = value;
+};
+
+function log(sig, msg) {
+  console.log(sig + "|" + msg);
+};
+
 function updateClassDisplay(c, d){
   for (e of document.getElementsByClassName(c)) {
     e.style.display = d
@@ -114,10 +123,6 @@ document
 document
   .getElementById('mix-one-button')
   .addEventListener('click', toMixOne, false);
-
-function log(sig, msg) {
-  console.log(sig + "|" + msg);
-};
 
 // just set this to empty, we set up the player when we've sure log in is successful
 window.onSpotifyWebPlaybackSDKReady = () => {};
