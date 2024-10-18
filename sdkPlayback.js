@@ -16,7 +16,6 @@ function transferPlayback(id) {
 };
 
 function updatePlayer(track) {
-    const id = track["id"];
     if (track["id"] != window.current_track["id"]) {
         if (window.expires_at < Date.now()) {
             refreshToken();
@@ -129,6 +128,7 @@ function initSpotifyPlayer() {
             if (window.current_page == "loading") {
                 info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
                 if (window.target_page == "mix") {
+                  // don't love doing this here tbh
                   setMix(window.target_mix);
                 };
                 setAndDisplayPage(window.target_page);
