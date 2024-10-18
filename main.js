@@ -63,36 +63,30 @@ function displayPage(page) {
   updateClassDisplay(page + "-element","unset");
 };
 
-function transitionToPage(page) {
+function setAndDisplayPage(page) {
   info("transitionToPage", "transitioning to page: " + page);
   setGlobal("current_page", page);
   displayPage(page);
+};
+
+function loadPage(page) {
+  if (window.player_loaded) {
+    setAndDisplayPage(page);
+  } else {
+    setAndDisplayPage("loading");
+  };
+};
+
+function transitionToPage(page) {
+  setGlobal("target_page", page);
+  loadPage(page);
 };
 
 function toHome() {
   if (window.current_page == "play") {
   window.player.pause();
   };
-  transitionToPage("home");
-};
-
-function toMix() {
-  setGlobal("target_page", "mix");
-  if (window.player_loaded) {
-    transitionToPage("mix");
-  } else {
-    transitionToPage("loading");
-  };
-};
-
-function toPlay() {
-  //resetPlayer();
-  setGlobal("target_page", "play");
-  if (window.player_loaded) {
-    transitionToPage("play");
-  } else {
-    transitionToPage("loading");
-  };
+  setAndDisplayPage("home");
 };
 
 function setMix(id) {
@@ -141,13 +135,13 @@ function init() {
   } else if (window.current_page == "mix") {
     initSpotifyPlayerProtected();
     setMix(window.target_mix);
-    toMix();
+    loadPage("mix");
   } else if (window.current_page == "play") {
     initSpotifyPlayerProtected();
-    toPlay();
+    loadPage("play");
   } else {
     // we are not logged in so show the login button
-    transitionToPage("login");
+    setAndDisplayPage("login");
   }
 };
 
