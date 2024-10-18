@@ -84,6 +84,8 @@ function playPause() {
         toPlay();
         if ( target_mix != current_mix) {
             startMix();
+        } else {
+            player.togglePlay();
         };
     };
 };
