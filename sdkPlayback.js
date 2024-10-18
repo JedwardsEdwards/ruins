@@ -75,7 +75,7 @@ function playPause() {
     if (current_page == "play") {
         player.togglePlay();
     } else {
-        toPlay(playlistId);
+        toPlay(mixId);
     }
 };
 
@@ -120,7 +120,7 @@ function initSpotifyPlayer() {
         track_window: { current_track }
             }) => {
             if (current_page == "loading") {
-                toMix(playlistId);
+                toMix(mixId);
             };
             updatePlayer(current_track);
         });
