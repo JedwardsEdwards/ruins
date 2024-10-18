@@ -61,9 +61,12 @@ function toHome() {
   transitionToPage("home");
 };
 
-function toMix(id) {
-  transitionToPage("mix");
-  setMixDetails(id);
+function toMix() {
+  if (player_loaded) {
+    transitionToPage("mix");
+  } else {
+    transitionToPage("loading");
+  };
 };
 
 function toPlay() {
@@ -75,11 +78,12 @@ function toPlay() {
 function setMix(id) {
   mixId = id;
   localStorage.setItem("mixId", id);
+  setMixDetails(id);
 };
 
 function toMixOne() {
-  transitionToPage("loading");
   setMix("73p0zWLYMp2Rs2Kh3PM5Le");
+  toMix();
 };
 
 document
