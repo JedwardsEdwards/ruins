@@ -34,7 +34,6 @@ let player_loaded = false;
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
 function setGlobal(name, value) {
-  console.log("setting: " + name + " to " + value);
   localStorage.setItem(name, value);
   window[name] = value;
 };
@@ -133,7 +132,7 @@ function init(code) {
     exchangeToken(code);
   } else if (["home", "loading"].includes(current_page)) {
     initSpotifyPlayerProtected();
-    toHome();
+    displayPage("home");
   } else if (current_page == "mix") {
     initSpotifyPlayerProtected();
     setMix(target_mix);
