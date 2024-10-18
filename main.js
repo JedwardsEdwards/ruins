@@ -25,7 +25,7 @@ const code = args.get('code');
 
 let current_page = localStorage.getItem("current_page") || "login";
 
-let playlistId = localStorage.getItem("playlistId") || "";
+let mixId = localStorage.getItem("mixId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 let player_loaded = false;
 
@@ -63,20 +63,23 @@ function toHome() {
 
 function toMix(id) {
   transitionToPage("mix");
-  playlistId = id;
-  localStorage.setItem("playlistId", id);
   setMixDetails(id);
 };
 
 function toPlay() {
   resetPlayer();
   transitionToPage("play");
-  startMix(playlistId);
+  startMix(mixId);
+};
+
+function setMix(id) {
+  mixId = id;
+  localStorage.setItem("mixId", id);
 };
 
 function toMixOne() {
   transitionToPage("loading");
-  toMix("73p0zWLYMp2Rs2Kh3PM5Le");
+  setMix("73p0zWLYMp2Rs2Kh3PM5Le");
 };
 
 document
