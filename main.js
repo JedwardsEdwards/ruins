@@ -24,6 +24,7 @@ const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
 let current_page = localStorage.getItem("current_page") || "login";
+let target_page = localStorage.getItem("target_page") || current_page;
 
 let mixId = localStorage.getItem("mixId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
@@ -65,14 +66,21 @@ function toMix() {
   if (player_loaded) {
     transitionToPage("mix");
   } else {
+    target_page = "mix";
+    localStorage.setItem("target_page", "mix");
     transitionToPage("loading");
   };
 };
 
 function toPlay() {
-  resetPlayer();
-  transitionToPage("play");
-  startMix(mixId);
+  //resetPlayer();
+  if (player_loaded) {
+    transitionToPage("play");
+  } else {
+    target_page = "play"
+    localStorage.setItem("target_page", "play");
+    transitionToPage("loading");
+  };
 };
 
 function setMix(id) {
@@ -132,6 +140,12 @@ function init(code) {
     };
     setMix(mixId);
     toMix();
+  } else if (current_page = "play") {
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    if (typeof Spotify !== 'undefined'){
+        initSpotifyPlayer();
+    };
+    
   } else {
     // we are not logged in so show the login button
     transitionToPage("login");
