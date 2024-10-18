@@ -51,6 +51,7 @@ function setMixDetails(id) {
   }
 
 function startMix(id) {
+    console.log("starting mix");
     console.log(player);
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
