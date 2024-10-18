@@ -72,7 +72,7 @@ function playPause() {
     if (current_page = "play") {
         player.togglePlay();
     } else {
-        startMix(playlistId);
+        toPlay(playlistId);
     }
 };
 
