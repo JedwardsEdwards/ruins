@@ -76,7 +76,7 @@ function toMix() {
   if (player_loaded) {
     transitionToPage("mix");
   } else {
-    setGlobal("target_page";"mix");
+    setGlobal("target_page", "mix");
     transitionToPage("loading");
   };
 };
@@ -86,13 +86,13 @@ function toPlay() {
   if (player_loaded) {
     transitionToPage("play");
   } else {
-    setGlobal("target_page";"play");
+    setGlobal("target_page", "play");
     transitionToPage("loading");
   };
 };
 
 function setMix(id) {
-  setGlobal("target_mix";id);
+  setGlobal("target_mix", id);
   setMixDetails(id);
 };
 
