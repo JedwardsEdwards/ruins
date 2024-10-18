@@ -5,14 +5,11 @@
     RUINS
   </title>
   <style type="text/css">
-      #login-page,
-      #home-page, 
-      #mix-page,
-      #loading-page,
-      #mix-details,
-      #home-button,
-      #logout-button {
-          display: none;
+      .login,
+      .home,
+      .mix,
+      .loading {
+        display: none;
       }
       td {
           border: grey solid 1px;
@@ -28,22 +25,22 @@
 <body>
 <div>
   <div id="banner">
-        <div id="mix-details"></div>
-        <button id="home-button">Home</button>
-        <button id="logout-button">Logout</button>
-  <div id="login-page">
+        <div id="mix-details" class="mix-element"></div>
+        <button id="home-button" class="mix-element">Home</button>
+        <button id="logout-button" class="home-element mix-element">Logout</button>
+  <div id="login-page" class="login-element">
     <h1>LOGIN PAGE</h1>
     <button id="login-button">
       Log in with Spotify
     </button>
   </div>
-  <div id="home-page">
+  <div id="home-page" class="home-element">
     <h1>HOME PAGE</h1>
     <div id="mix-selector">
        <input id="mix-one-button" type="button" value="mix-one" />
     </div>
   </div>
-  <div id="mix-page">
+  <div id="mix-page" class="mix-element">
     <h1>MIX PAGE</h1>
     <div id="track-details"></div>
     <div id="playback-container">
@@ -52,7 +49,7 @@
       <input id="next-track" type="button" value="next-track" />
     </div>
   </div>
-  <div id = "loading page">
+  <div id = "loading-page" class="loading-element">
     <h1>LOADING</h1>
   </div>
   <div id="debug-tools">
