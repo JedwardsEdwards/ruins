@@ -45,6 +45,7 @@ function setMixDetails(id) {
       })
       .then((data) => {
         console.log(data);
+        document.getElementById('mix-name').innerHTML = data.name;
         document.getElementById('mix-details').innerHTML = data.name;
       })
   }
