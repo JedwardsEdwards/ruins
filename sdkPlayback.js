@@ -105,11 +105,11 @@ function initSpotifyPlayer() {
         });
     
     player.addListener('ready', ({ device_id }) => {
-        info("player ready listener",'Ready with Device ID', device_id);
+        info("player_ready",'Ready with Device ID', device_id);
         transferPlayback(device_id);
         });
     player.addListener('not_ready', ({ device_id }) => {
-        info("player not ready listener",'Device ID has gone offline', device_id);
+        info("player_not_ready",'Device ID has gone offline', device_id);
         });
     player.addListener('initialization_error', ({ message }) => {
         error(message);
@@ -127,6 +127,7 @@ function initSpotifyPlayer() {
                 window.player_loaded = true;
             };
             if (window.current_page == "loading") {
+                info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
                 transitionToPage(window.target_page);
             };
             updatePlayer(current_track);
