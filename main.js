@@ -73,20 +73,20 @@ function toHome() {
 };
 
 function toMix() {
+  setGlobal("target_page", "mix");
   if (player_loaded) {
     transitionToPage("mix");
   } else {
-    setGlobal("target_page", "mix");
     transitionToPage("loading");
   };
 };
 
 function toPlay() {
   //resetPlayer();
+  setGlobal("target_page", "play");
   if (player_loaded) {
     transitionToPage("play");
   } else {
-    setGlobal("target_page", "play");
     transitionToPage("loading");
   };
 };
