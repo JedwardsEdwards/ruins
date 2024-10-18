@@ -64,7 +64,7 @@ function displayPage(page) {
 };
 
 function transitionToPage(page) {
-  info("transitionToPage";"transitioning to page: " + page);
+  info("transitionToPage", "transitioning to page: " + page);
   setGlobal("current_page", page);
   displayPage(page);
 };
