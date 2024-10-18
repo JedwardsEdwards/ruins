@@ -61,8 +61,6 @@ function startMix(id) {
     })
       .then(async (response) => {
         console.log(response);
-        mix_loaded = true;
-        document.getElementById("track-details").style.display = "unset";
         //return response.json();
       })
       .catch((error) => {
@@ -71,7 +69,7 @@ function startMix(id) {
 };
 
 function playPause() {
-    if (mix_loaded) {
+    if (current_page = "play") {
         player.togglePlay();
     } else {
         startMix(playlistId);
@@ -79,13 +77,13 @@ function playPause() {
 };
 
 function nextTrack() {
-    if (mix_loaded) {
+    if (current_page = "play") {
         player.nextTrack();
     }
 };
 
 function previousTrack() {
-    if (mix_loaded) {
+    if (current_page = "play") {
         player.previousTrack();
     }
 };
