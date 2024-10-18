@@ -5,45 +5,41 @@
 // load the mix page after the mix has been set
 // don't auto play the mix page
 
-// Your client id from your app in the spotify dashboard:
-// https://developer.spotify.com/dashboard/applications
 const client_id = '5b705282459d426f99205ec01cbc31fa';
 const redirect_uri = 'https://jedwardsedwards.github.io/ruins/'; // Your redirect uri
 
+const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
+
+// 1 - errors, 2 - info, 3 - debug
+const log_level = 3;
+
 // Restore tokens from localStorage
-let access_token = localStorage.getItem('access_token') || null;
-let refresh_token = localStorage.getItem('refresh_token') || null;
-let expires_at = localStorage.getItem('expires_at') || null;
+window.access_token = localStorage.getItem('access_token') || null;
+window.refresh_token = localStorage.getItem('refresh_token') || null;
+window.expires_at = localStorage.getItem('expires_at') || null;
 
-// References for HTML rendering
-const mainPlaceholder = document.getElementById('main');
-
-// If the user has accepted the authorize request spotify will come back to your application with the code in the response query string
-// Example: http://127.0.0.1:8080/?code=NApCCg..BkWtQ&state=profile%2Factivity
-const args = new URLSearchParams(window.location.search);
-const code = args.get('code');
-
-let current_page = localStorage.getItem("current_page") || "login";
-let target_page = localStorage.getItem("target_page") || null;
-
-console.log("current page: " + current_page);
-console.log("target page: " + target_page);
+window.current_page = localStorage.getItem("current_page") || "login";
+window.target_page = localStorage.getItem("target_page") || null;
 
 window.current_mix = localStorage.getItem("current_mix") || "";
 window.target_mix = localStorage.getItem("target_mix") || "";
-let current_track = localStorage.getItem('current_track') || {id: null};
-let player_loaded = false;
+window.current_track = localStorage.getItem('current_track') || {id: null};
+window.player_loaded = false;
 
-const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
-
-function setGlobal(name, value) {
-  console.log(name + " is set to " + value);
-  localStorage.setItem(name, value);
-  window[name] = value;
+function log(sig, msg, level) {
+  if (lvl <= window.logLevel) {
+    console.log(sig + "|" + msg);
+  };
 };
 
-function log(sig, msg) {
-  console.log(sig + "|" + msg);
+function debug(sig, msg) {log(sig, msg, 3)};
+function info(sig, msg) {log(sig, msg, 2)};
+function error(sig, msg) {log(sig, msg, 1)};
+
+function setGlobal(name, value) {
+  debug("setGlobal", name + " is set to " + value);
+  localStorage.setItem(name, value);
+  window[name] = value;
 };
 
 function updateClassDisplay(c, d){
@@ -64,21 +60,21 @@ function displayPage(page) {
 };
 
 function transitionToPage(page) {
-  current_page = page;
-  localStorage.setItem("current_page", page);
+  debug("transitionToPage";"transitioning to page: " + page);
+  setGlobal("current_page";page);
   displayPage(page);
 };
 
 function toHome() {
-  if (current_page == "play") {
-  player.pause();
+  if (window.current_page == "play") {
+  window.player.pause();
   };
   transitionToPage("home");
 };
 
 function toMix() {
   setGlobal("target_page", "mix");
-  if (player_loaded) {
+  if (window.player_loaded) {
     transitionToPage("mix");
   } else {
     transitionToPage("loading");
@@ -88,7 +84,7 @@ function toMix() {
 function toPlay() {
   //resetPlayer();
   setGlobal("target_page", "play");
-  if (player_loaded) {
+  if (window.player_loaded) {
     transitionToPage("play");
   } else {
     transitionToPage("loading");
@@ -128,20 +124,20 @@ document
 // just set this to empty, we set up the player when we've sure log in is successful
 window.onSpotifyWebPlaybackSDKReady = () => {};
 
-function init(code) {
-  log("init", "current code: " + code);
+function init() {
+  args = new URLSearchParams(window.location.search);
+  code = args.get('code');
   if (code) {
-    log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-  } else if (["home", "loading"].includes(current_page)) {
+  } else if (["home", "loading"].includes(window.current_page)) {
     initSpotifyPlayerProtected();
     displayPage("home");
-  } else if (current_page == "mix") {
+  } else if (window.current_page == "mix") {
     initSpotifyPlayerProtected();
-    setMix(target_mix);
+    setMix(window.target_mix);
     toMix();
-  } else if (current_page == "play") {
+  } else if (window.current_page == "play") {
     initSpotifyPlayerProtected();
     toPlay();
   } else {
@@ -150,4 +146,4 @@ function init(code) {
   }
 };
 
-init(code);
+init();
