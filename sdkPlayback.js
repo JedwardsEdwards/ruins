@@ -60,6 +60,7 @@ function startMix(id) {
     })
       .then(async (response) => {
         console.log(response);
+        mix_loaded = true;
         //return response.json();
       })
       .catch((error) => {
