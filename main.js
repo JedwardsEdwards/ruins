@@ -55,24 +55,26 @@ function transitionToPage(page) {
   displayPage(page);
 };
 
-function loginToHome() {
+function toHome() {
+  if (current_page == "play") {
+    player.pause();
+  };
   transitionToPage("home");
 };
 
-function mixToHome() {
-  player.pause();
-  document.getElementById("track-details").style.display = "none";
-  transitionToPage("home");
-};
-
-function homeToMix(id) {
+function toMix(id) {
   transitionToPage("mix");
   playlistId = id;
   localStorage.setItem("playlistId", id);
   setMixDetails(id);
 };
 
-function homeToMixOne() {
+function toPlay() {
+  transitionToPage("play");
+  startMix(playlistId);
+};
+
+function toMixOne() {
   homeToMix("73p0zWLYMp2Rs2Kh3PM5Le");
 };
 
