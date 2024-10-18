@@ -131,7 +131,7 @@
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
-    loginToHome();
+    //loginToHome();
   }
 
 function trackDetailsTemplate(data) {
