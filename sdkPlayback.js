@@ -123,7 +123,7 @@ function initSpotifyPlayer() {
                 player_loaded = true;
             };
             if (current_page == "loading") {
-                transitionToPage(current_target);
+                transitionToPage(target_page);
             };
             updatePlayer(current_track);
         });
