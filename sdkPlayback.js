@@ -1,5 +1,5 @@
 function transferPlayback(id) {
-    info("transferPlayback";"transferring playback to browser");
+    info("transferPlayback", "transferring playback to browser");
     fetch("https://api.spotify.com/v1/me/player", {
        method: "PUT",
        headers: {
