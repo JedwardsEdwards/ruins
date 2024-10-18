@@ -29,7 +29,7 @@ let playlistId = localStorage.getItem("playlistId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 let player_loaded = false;
 
-const display_classes = ["login-element", "home-element", "mix-element", "loading-element"];
+const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
 function updateClassDisplay(c, d){
   for (e of document.getElementsByClassName(c)) {
