@@ -9,6 +9,8 @@ function transferPlayback(id) {
     })
       .then(async (response) => {
         console.log(response);
+        console.log("3 - target page: " + target_page);
+
         //return response.json();
       })
       .catch((error) => {
@@ -96,6 +98,7 @@ function previousTrack() {
 };
     
 function initSpotifyPlayer() {
+    console.log("1 - target page: " + target_page);
     log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
     const player = new Spotify.Player({
@@ -106,6 +109,7 @@ function initSpotifyPlayer() {
     
     player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
+        console.log("2 - target page: " + target_page);
         transferPlayback(device_id);
         });
     player.addListener('not_ready', ({ device_id }) => {
