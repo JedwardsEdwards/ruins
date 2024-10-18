@@ -30,6 +30,10 @@ function updatePlayer(track) {
     };
 };
 
+function resetPlayer() {
+    updatePlayer({"id":"","artists":[""],"name":""});
+};
+
 function setMixDetails(id) {
     fetch("https://api.spotify.com/v1/playlists/" + id + "?fields=name", {
         headers: {
