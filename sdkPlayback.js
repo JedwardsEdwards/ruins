@@ -7,9 +7,6 @@ function transferPlayback(id) {
        body: JSON.stringify({"device_ids": [id]})
     })
       .then(async (response) => {
-        console.log(response);
-        console.log("3 - target page: " + target_page);
-
         //return response.json();
       })
       .catch((error) => {
