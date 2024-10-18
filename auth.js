@@ -117,20 +117,13 @@
   }
 
   function processTokenResponse(data) {
-    access_token = data.access_token;
-    refresh_token = data.refresh_token;
-
+    setGlobal("access_token", data.access_token);
+    setGlobal("refresh_token", data.refresh_token);
+    
     const t = new Date();
-    expires_at = t.setSeconds(t.getSeconds() + data.expires_in);
+    setGlobal("expires_at", t.setSeconds(t.getSeconds() + data.expires_in);
 
-    localStorage.setItem('access_token', access_token);
-    localStorage.setItem('refresh_token', refresh_token);
-    localStorage.setItem('expires_at', expires_at);
-
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-        initSpotifyPlayer();
-    };
+    initSpotifyPlayerProtected();
     toHome();
   }
 
