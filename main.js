@@ -75,6 +75,7 @@ function toPlay() {
 };
 
 function toMixOne() {
+  transitionToPage("loading");
   toMix("73p0zWLYMp2Rs2Kh3PM5Le");
 };
 
@@ -111,12 +112,17 @@ function init(code) {
     log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-  } else if (["home", "mix"].includes(current_page)) {
-    displayPage(current_page);
+  } else if (["home", "loading"].includes(current_page)) {
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
+  } else if (["mix", "play"].includes(current_page)) {
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    if (typeof Spotify !== 'undefined'){
+        initSpotifyPlayer();
+    };
+    transitionToPage("loading");
   } else {
     // we are not logged in so show the login button
     transitionToPage("login");
