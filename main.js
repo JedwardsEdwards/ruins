@@ -29,47 +29,39 @@ let playlistId = localStorage.getItem("playlistId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 let player_loaded = false;
 
-function displayHomePage() {
-  document.getElementById('login-page').style.display = 'none';
-  document.getElementById('logout-button').style.display = 'unset';
-  document.getElementById('home-page').style.display = 'unset';
-  document.getElementById('home-button').style.display = 'none';
-  document.getElementById('mix-page').style.display = 'none';
-  document.getElementById('mix-details').style.display = 'none';
-  document.getElementById('loading-page').style.display = "none";
+const display_classes = ["login-element", "home-element", "mix-element", "loading-element"];
+
+function updateClassDisplay(c, d){
+  elements = document.getElementsByClassName(c);
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.display = d
+  };
 };
 
-function displayMixPage() {
-  document.getElementById('login-page').style.display = 'none';
-  document.getElementById('logout-button').style.display = 'unset';
-  document.getElementById('home-page').style.display = 'none';
-  document.getElementById('home-button').style.display = 'unset';
-  document.getElementById('mix-page').style.display = 'unset';
-  document.getElementById('mix-details').style.display = 'unset';
-  document.getElementById('loading-page').style.display = "none";
+function hideAll() {
+  for (c in display_classes){
+    updateClassDisplay(c, "none");
+  };
 };
 
-function displayLoadingPage() {
-  document.getElementById('login-page').style.display = 'none';
-  document.getElementById('logout-button').style.display = 'none';
-  document.getElementById('home-page').style.display = 'none';
-  document.getElementById('home-button').style.display = 'none';
-  document.getElementById('mix-page').style.display = 'none';
-  document.getElementById('mix-details').style.display = 'none';
-  document.getElementById('loading-page').style.display = "unset";
+function displayPage(page) {
+  hideAll();
+  updateClassDisplay(page + "-element","unset");
+};
+
+function transitionToPage(page) {
+  current_page = page;
+  localStorage.setItem("current_page", page);
+  displayPage(page);
 };
 
 function loginToHome() {
-  current_page = "home";
-  localStorage.setItem("current_page", "home");
-  displayHomePage();
+  transitionToPage("home");
 };
 
 function mixToHome() {
   player.pause();
-  current_page = "home";
-  localStorage.setItem("current_page", "home");
-  displayHomePage();
+  transitionToPage("home");
 };
 
 function homeToMix(id) {
@@ -78,7 +70,7 @@ function homeToMix(id) {
   playlistId = id;
   localStorage.setItem("playlistId", id);
   setMixDetails(id);
-  displayLoading();
+  displayPage("loading");
 };
 
 function homeToMixOne() {
@@ -118,14 +110,8 @@ function init(code) {
     log("init", "exchanging token");
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-  } else if (current_page == "home") {
-    displayHomePage();
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-        initSpotifyPlayer();
-    };
-  } else if (current_page == "mix") {
-    displayMixPage();
+  } else if (["home", "mix"].includes(current_page)) {
+    displayPage(current_page);
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
