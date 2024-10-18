@@ -68,7 +68,7 @@ function startMix() {
 };
 
 function playPause() {
-    console.log("playPause " + current_page + current_mix + target_mix);
+    console.log("playPause " + current_page + current_mix + target_mix + window.target_mix);
     if (current_page == "play") {
         player.togglePlay();
     } else {
