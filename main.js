@@ -74,7 +74,7 @@ function toPlay() {
 };
 
 function toMixOne() {
-  homeToMix("73p0zWLYMp2Rs2Kh3PM5Le");
+  toMix("73p0zWLYMp2Rs2Kh3PM5Le");
 };
 
 document
