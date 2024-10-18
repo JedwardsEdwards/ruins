@@ -60,7 +60,7 @@ function hideAll() {
 
 function displayPage(page) {
   hideAll();
-  updateClassDisplay(page + "-element","unset");
+  updateClassDisplay(page + "-element","flex");
 };
 
 function setAndDisplayPage(page) {
