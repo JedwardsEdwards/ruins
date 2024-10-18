@@ -61,6 +61,7 @@ function loginToHome() {
 
 function mixToHome() {
   player.pause();
+  document.getElementById("track-details").style.display = "none";
   transitionToPage("home");
 };
 
