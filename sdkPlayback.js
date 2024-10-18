@@ -67,6 +67,25 @@ function startMix(id) {
       })
 };
 
+function playPause() {
+    if (mix_loaded) {
+        player.togglePlay();
+    } else {
+        startMix(playlistId);
+    }
+
+function nextTrack() {
+    if (mix_loaded) {
+        player.nextTrack();
+    }
+};
+
+function previousTrack() {
+    if (mix_loaded) {
+        player.previousTrack();
+    }
+};
+    
 function initSpotifyPlayer() {
     log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
@@ -97,8 +116,6 @@ function initSpotifyPlayer() {
             }) => {
             if (! player_loaded) {
                 player_loaded = true;
-                displayPage("mix");
-                startMix(id);
             }
             updatePlayer(current_track);
         });
@@ -111,13 +128,13 @@ function initSpotifyPlayer() {
         }});
     
     document.getElementById('play-pause').onclick = function() {
-        player.togglePlay();
+        playPause();
         };
      document.getElementById('next-track').onclick = function() {
-        player.nextTrack();
+        nextTrack();
         };
      document.getElementById('previous-track').onclick = function() {
-        player.previousTrack();
+        previousTrack();
         };
     
     window.player = player;
