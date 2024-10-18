@@ -38,7 +38,7 @@
         border: grey solid 0.5px;
       }
       
-      #playback-container {
+      #footer {
         grid-row-start: 3;
         display:flex;
       }
@@ -49,8 +49,8 @@
 <body>
   <script>0</script>
   <div id="banner">
-        <button id="home-button" class="mix-element play-element">Home</button>
-        <button id="logout-button" class="home-element mix-element play-element">Logout</button>
+      <button id="home-button" class="mix-element play-element">Home</button>
+      <button id="logout-button" class="home-element mix-element play-element">Logout</button>
   </div>
   <div id="page-container">
     <div id="login-page" class="page login-element">
@@ -76,11 +76,12 @@
       <h1>LOADING</h1>
     </div>
   </div>
-  <div id="playback-container" class="mix-element play-element">
-    <input id="previous-track" type="button" value="previous-track" />
-    <input id="play-pause" type="button" value="play-pause" />
-    <input id="next-track" type="button" value="next-track" />
+  <div id="footer>
+    <div id="playback-container" class="mix-element play-element">
+      <input id="previous-track" type="button" value="previous-track" />
+      <input id="play-pause" type="button" value="play-pause" />
+      <input id="next-track" type="button" value="next-track" />
+    </div>
   </div>
-
 </body>
 </html>
