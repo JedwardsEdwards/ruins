@@ -28,7 +28,11 @@ window.player_loaded = false;
 
 function log(sig, msg, level) {
   if (lvl <= window.logLevel) {
-    console.log(sig + "|" + msg);
+    if (lvl == 1) {
+      console.err(sig + "|" + msg);
+    } else {
+      console.log(sig + "|" + msg);
+    };
   };
 };
 
