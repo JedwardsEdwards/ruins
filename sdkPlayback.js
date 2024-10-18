@@ -121,7 +121,7 @@ function initSpotifyPlayer() {
         error(message);
         });
     player.addListener('player_state_changed', ({
-        track_window: { track }
+        track_window: { current_track }
             }) => {
             if (! window.player_loaded) {
                 window.player_loaded = true;
@@ -129,7 +129,7 @@ function initSpotifyPlayer() {
             if (window.current_page == "loading") {
                 transitionToPage(window.target_page);
             };
-            updatePlayer(track);
+            updatePlayer(current_track);
         });
     
     player.connect().then(success => {
