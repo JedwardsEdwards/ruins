@@ -1,5 +1,4 @@
 function transferPlayback(id) {
-    log("transferPlayback", "transferring to device: " + id);
     fetch("https://api.spotify.com/v1/me/player", {
        method: "PUT",
        headers: {
@@ -25,7 +24,6 @@ function updatePlayer(track) {
             refreshToken();
             return;
         }
-        log("updatePlayer", "updating the current track details, current id:" + current_track["id"] + ", and new id: " + track["id"]);
         localStorage.setItem('current_track', track);
         current_track = track;
         document.getElementById('track-details').innerHTML = trackDetailsTemplate(current_track);
@@ -50,7 +48,6 @@ function setMixDetails(id) {
         }
       })
       .then((data) => {
-        console.log(data);
         document.getElementById('mix-name').innerHTML = data.name;
         document.getElementById('mix-details').innerHTML = data.name;
       })
@@ -65,7 +62,6 @@ function startMix() {
        body: JSON.stringify({"context_uri": "spotify:playlist:" + target_mix})
     })
       .then(async (response) => {
-        console.log(response);
         setGlobal("current_mix", target_mix);
         //return response.json();
       })
@@ -103,8 +99,6 @@ function previousTrack() {
 };
     
 function initSpotifyPlayer() {
-    console.log("1 - target page: " + target_page);
-    log("initSpotifyPlayer", "called, current access token: " + access_token);
     const token = access_token;
     const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
@@ -114,7 +108,6 @@ function initSpotifyPlayer() {
     
     player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
-        console.log("2 - target page: " + target_page);
         transferPlayback(device_id);
         });
     player.addListener('not_ready', ({ device_id }) => {
@@ -136,7 +129,6 @@ function initSpotifyPlayer() {
                 player_loaded = true;
             };
             if (current_page == "loading") {
-                console.log("player state changed, target page: " + target_page + window.target_page);
                 transitionToPage(window.target_page);
             };
             updatePlayer(current_track);
@@ -160,7 +152,6 @@ function initSpotifyPlayer() {
         };
     
     window.player = player;
-    log("initSpotifyPlayer", "done");
     };
 
 function initSpotifyPlayerProtected() {
