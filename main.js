@@ -28,6 +28,7 @@ let current_page = localStorage.getItem("current_page") || "login";
 let playlistId = localStorage.getItem("playlistId") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 let player_loaded = false;
+let mix_loaded = false;
 
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element"];
 
