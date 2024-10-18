@@ -64,6 +64,7 @@ function startMix() {
     })
       .then(async (response) => {
         console.log(response);
+        mix_started = true;
         //return response.json();
       })
       .catch((error) => {
@@ -76,7 +77,7 @@ function playPause() {
         player.togglePlay();
     } else {
         toPlay();
-        if (current_track["id"] == null) {
+        if (! mix_started) {
             startMix();
         };
     };
