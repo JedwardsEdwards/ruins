@@ -24,17 +24,23 @@
       .loading-element {
         display: none;
       }
+      .page {
+        margin:auto;
+      }
       #banner {
         grid-row-start:1;
+        display:flex;
       }
         
       #page-container {
         grid-row-start:2;
+        display:flex;
         border: grey solid 0.5px;
       }
       
       #playback-container {
         grid-row-start: 3;
+        display:flex;
       }
     
   </style>
@@ -46,27 +52,26 @@
         <button id="logout-button" class="home-element mix-element play-element">Logout</button>
   </div>
   <div id="page-container">
-    <div id="login-page" class="login-element">
-      <h1>LOGIN PAGE</h1>
+    <div id="login-page" class="page login-element">
       <button id="login-button">
         Log in with Spotify
       </button>
     </div>
-    <div id="home-page" class="home-element">
+    <div id="home-page" class="page home-element">
       <h1>HOME PAGE</h1>
       <div id="mix-selector">
          <input id="mix-one-button" type="button" value="mix-one" />
       </div>
     </div>
-    <div id="mix-page" class="mix-element">
+    <div id="mix-page" class="page mix-element">
       <h1>MIX PAGE</h1>
       <div id="mix-name"></div>
     </div>
-    <div id="play-page" class="play-element">
+    <div id="play-page" class="page play-element">
         <div id="mix-details"></div>
         <div id="track-details"></div>
     </div>
-    <div id = "loading-page" class="loading-element">
+    <div id = "loading-page" class="page loading-element">
       <h1>LOADING</h1>
     </div>
   </div>
