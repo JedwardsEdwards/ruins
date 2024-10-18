@@ -26,7 +26,8 @@ const code = args.get('code');
 let current_page = localStorage.getItem("current_page") || "login";
 let target_page = localStorage.getItem("target_page") || current_page;
 
-let mixId = localStorage.getItem("mixId") || "";
+let current_mix = localStorage.getItem("current_mix") || "";
+let target_mix = localStorage.getItem("target_mix") || "";
 let current_track = localStorage.getItem('current_track') || {id: null};
 let player_loaded = false;
 
@@ -84,8 +85,8 @@ function toPlay() {
 };
 
 function setMix(id) {
-  mixId = id;
-  localStorage.setItem("mixId", id);
+  target_mix = id;
+  localStorage.setItem("target_mix", id);
   setMixDetails(id);
 };
 
@@ -138,7 +139,7 @@ function init(code) {
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
-    setMix(mixId);
+    setMix(target_mix);
     toMix();
   } else if (current_page == "play") {
     window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
