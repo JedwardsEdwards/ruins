@@ -133,6 +133,7 @@ function initSpotifyPlayer() {
                 };
                 setAndDisplayPage(window.target_page);
             };
+            window.debug_track = current_track;
             updatePlayer(current_track);
         });
     
