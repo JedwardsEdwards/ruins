@@ -70,7 +70,7 @@ function startMix(id) {
 };
 
 function playPause() {
-    if (current_page = "play") {
+    if (current_page == "play") {
         player.togglePlay();
     } else {
         toPlay(playlistId);
@@ -78,13 +78,13 @@ function playPause() {
 };
 
 function nextTrack() {
-    if (current_page = "play") {
+    if (current_page == "play") {
         player.nextTrack();
     }
 };
 
 function previousTrack() {
-    if (current_page = "play") {
+    if (current_page == "play") {
         player.previousTrack();
     }
 };
