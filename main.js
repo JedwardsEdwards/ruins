@@ -24,7 +24,7 @@ const args = new URLSearchParams(window.location.search);
 const code = args.get('code');
 
 let current_page = localStorage.getItem("current_page") || "login";
-let target_page = localStorage.getItem("target_page") || current_page;
+let target_page = localStorage.getItem("target_page") || null;
 
 let current_mix = localStorage.getItem("current_mix") || "";
 let target_mix = localStorage.getItem("target_mix") || "";
