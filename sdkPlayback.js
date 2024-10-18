@@ -9,8 +9,6 @@ function transferPlayback(id) {
     })
       .then(async (response) => {
         console.log(response);
-            displayHomePage();
-
         //return response.json();
       })
       .catch((error) => {
