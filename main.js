@@ -129,6 +129,7 @@ document
 window.onSpotifyWebPlaybackSDKReady = () => {};
 
 function init() {
+  info("init", "current_page: " + window.current_page + ", target_page: " + window.target_page);
   args = new URLSearchParams(window.location.search);
   code = args.get('code');
   if (code) {
