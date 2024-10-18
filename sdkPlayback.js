@@ -152,3 +152,10 @@ function initSpotifyPlayer() {
     window.player = player;
     log("initSpotifyPlayer", "done");
     };
+
+function initSpotifyPlayerProtected() {
+    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
+    if (typeof Spotify !== 'undefined'){
+        initSpotifyPlayer();
+    }
+};
