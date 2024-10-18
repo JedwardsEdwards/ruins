@@ -73,6 +73,7 @@ function playPause() {
     } else {
         startMix(playlistId);
     }
+};
 
 function nextTrack() {
     if (mix_loaded) {
