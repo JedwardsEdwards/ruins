@@ -75,7 +75,7 @@ function playPause() {
         if ( window.target_mix != window.current_mix) {
             resetPlayer();
         };
-        toPlay();
+        transitionToPage("play");
         if ( window.target_mix != window.current_mix) {
             startMix();
         } else {
@@ -128,7 +128,10 @@ function initSpotifyPlayer() {
             };
             if (window.current_page == "loading") {
                 info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
-                transitionToPage(window.target_page);
+                if (window.target_page == "mix") {
+                  setMix(window.target_mix);
+                };
+                setAndDisplayPage(window.target_page);
             };
             updatePlayer(current_track);
         });
