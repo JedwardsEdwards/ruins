@@ -119,7 +119,7 @@ function initSpotifyPlayer() {
     player.addListener('player_state_changed', ({
         track_window: { current_track }
             }) => {
-            if (current_page = "loading") {
+            if (current_page == "loading") {
                 toMix(playlistId);
             };
             updatePlayer(current_track);
