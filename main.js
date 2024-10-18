@@ -34,6 +34,7 @@ let player_loaded = false;
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
 function setGlobal(name, value) {
+  console.log("setting: " + name + " to " + value);
   localStorage.setItem(name, value);
   window[name] = value;
 };
