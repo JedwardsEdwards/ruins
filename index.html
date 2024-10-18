@@ -9,7 +9,8 @@
       .home-element,
       .mix-element,
       .loading-element,
-      #track-details {
+      #mix-pane,
+      #track-pane {
         display: none;
       }
       td {
@@ -26,7 +27,6 @@
 <body>
 <div>
   <div id="banner">
-        <div id="mix-details" class="mix-element"></div>
         <button id="home-button" class="mix-element">Home</button>
         <button id="logout-button" class="home-element mix-element">Logout</button>
   </div>
@@ -44,7 +44,11 @@
   </div>
   <div id="mix-page" class="mix-element">
     <h1>MIX PAGE</h1>
-    <div id="track-details"></div>
+    <div id="mix-pane"></div>
+    <div id="track-pane">
+          <div id="mix-details"></div>
+          <div id="track-details"></div>
+    </div>
     <div id="playback-container">
       <input id="previous-track" type="button" value="previous-track" />
       <input id="play-pause" type="button" value="play-pause" />
