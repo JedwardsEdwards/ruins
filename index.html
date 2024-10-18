@@ -8,9 +8,8 @@
       .login-element,
       .home-element,
       .mix-element,
-      .loading-element,
-      #mix-pane,
-      #track-pane {
+      .play-element,
+      .loading-element {
         display: none;
       }
       td {
@@ -27,8 +26,8 @@
 <body>
 <div>
   <div id="banner">
-        <button id="home-button" class="mix-element">Home</button>
-        <button id="logout-button" class="home-element mix-element">Logout</button>
+        <button id="home-button" class="mix-element play-element">Home</button>
+        <button id="logout-button" class="home-element mix-element play-element">Logout</button>
   </div>
   <div id="login-page" class="login-element">
     <h1>LOGIN PAGE</h1>
@@ -44,18 +43,16 @@
   </div>
   <div id="mix-page" class="mix-element">
     <h1>MIX PAGE</h1>
-    <div id="mix-pane">
-      <div id="mix-name"></div>
-    </div>
-    <div id="track-pane">
-          <div id="mix-details"></div>
-          <div id="track-details"></div>
-    </div>
-    <div id="playback-container">
-      <input id="previous-track" type="button" value="previous-track" />
-      <input id="play-pause" type="button" value="play-pause" />
-      <input id="next-track" type="button" value="next-track" />
-    </div>
+    <div id="mix-name"></div>
+  </div>
+  <div id="play-page" class="play-element">
+      <div id="mix-details"></div>
+      <div id="track-details"></div>
+  </div>
+  <div id="playback-container" class="mix-element play-element">
+    <input id="previous-track" type="button" value="previous-track" />
+    <input id="play-pause" type="button" value="play-pause" />
+    <input id="next-track" type="button" value="next-track" />
   </div>
   <div id = "loading-page" class="loading-element">
     <h1>LOADING</h1>
