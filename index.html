@@ -5,6 +5,15 @@
     RUINS
   </title>
   <style type="text/css">
+      * {
+        box-sizing:border-box;
+        margin:0;
+      }
+      body {
+          height:100%;
+          display: grid;
+          grid-template-rows: 20% 60% 20%;
+      }
       .login-element,
       .home-element,
       .mix-element,
@@ -12,15 +21,20 @@
       .loading-element {
         display: none;
       }
-      td {
-          border: grey solid 1px;
-          overflow-wrap: anywhere;
+      #banner {
+        grid-row-start:1;
+        border: grey solid 0.5px;
       }
-
-      td:first-child {
-          min-width: 150px;
+        
+      #page-container {
+        grid-row-start:2;
+        display:unset;
+        border: grey solid 0.5px;
       }
-      #banner, #playback-container{
+      
+      #playback-container {
+        grid-row-start: 3;
+        display:unset;
         border: grey solid 0.5px;
       }
     
@@ -28,7 +42,6 @@
 </head>
 
 <body>
-<div>
   <div id="banner">
         <button id="home-button" class="mix-element play-element">Home</button>
         <button id="logout-button" class="home-element mix-element play-element">Logout</button>
@@ -63,16 +76,9 @@
     <input id="play-pause" type="button" value="play-pause" />
     <input id="next-track" type="button" value="next-track" />
   </div>
-
-  <div id="debug-tools">
-    <button id="refresh-button">Refresh access token</button>
-  </div>
-</div>
 <script src="https://sdk.scdn.co/spotify-player.js"></script>
 <script src="auth.js"></script>
 <script src="sdkPlayback.js"></script>
 <script src="main.js"></script>
-<!-- <script src="https://open.spotify.com/embed/iframe-api/v1" async></script> -->
-
 </body>
 </html>
