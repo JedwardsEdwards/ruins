@@ -121,7 +121,7 @@
     setGlobal("refresh_token", data.refresh_token);
     
     const t = new Date();
-    setGlobal("expires_at", t.setSeconds(t.getSeconds() + data.expires_in);
+    setGlobal("expires_at", t.setSeconds(t.getSeconds() + data.expires_in));
 
     initSpotifyPlayerProtected();
     toHome();
