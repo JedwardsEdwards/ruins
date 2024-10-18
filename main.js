@@ -136,7 +136,7 @@ function init() {
     exchangeToken(code);
   } else if (["home", "loading"].includes(window.current_page)) {
     initSpotifyPlayerProtected();
-    displayPage("home");
+    displayPage(window.current_page);
   } else if (window.current_page == "mix") {
     initSpotifyPlayerProtected();
     setMix(window.target_mix);
