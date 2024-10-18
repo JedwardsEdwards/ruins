@@ -37,7 +37,7 @@ function info(sig, msg) {log(sig, msg, 2)};
 function error(sig, msg) {log(sig, msg, 1)};
 
 function setGlobal(name, value) {
-  debug("setGlobal", name + " is set to " + value);
+  info("setGlobal", name + " is set to " + value);
   localStorage.setItem(name, value);
   window[name] = value;
 };
@@ -60,7 +60,7 @@ function displayPage(page) {
 };
 
 function transitionToPage(page) {
-  debug("transitionToPage";"transitioning to page: " + page);
+  info("transitionToPage";"transitioning to page: " + page);
   setGlobal("current_page";page);
   displayPage(page);
 };
