@@ -67,15 +67,10 @@ function transitionToPage(page) {
 };
 
 function toHome() {
-  setGlobal("target_page", "mix");
-  if (player_loaded) {
-    if (current_page == "play") {
-    player.pause();
-    };
-    transitionToPage("home");
-  } else {
-    transitionToPage("loading");
+  if (current_page == "play") {
+  player.pause();
   };
+  transitionToPage("home");
 };
 
 function toMix() {
