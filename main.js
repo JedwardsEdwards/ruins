@@ -70,7 +70,9 @@ function toMix(id) {
 
 function toPlay() {
   transitionToPage("play");
+  console.log("transitioned to play");
   startMix(playlistId);
+  console.log("tried to start mix");
 };
 
 function toMixOne() {
