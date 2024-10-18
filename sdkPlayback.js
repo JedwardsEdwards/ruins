@@ -95,8 +95,8 @@ function initSpotifyPlayer() {
     player.addListener('player_state_changed', ({
         track_window: { current_track }
             }) => {
-            if (! playerLoaded) {
-                playerLoaded = true
+            if (! player_loaded) {
+                player_loaded = true
             }
             updatePlayer(current_track);
         });
