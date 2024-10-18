@@ -76,8 +76,7 @@ function toMix() {
   if (player_loaded) {
     transitionToPage("mix");
   } else {
-    target_page = "mix";
-    localStorage.setItem("target_page", "mix");
+    setGlobal("target_page";"mix");
     transitionToPage("loading");
   };
 };
@@ -87,15 +86,13 @@ function toPlay() {
   if (player_loaded) {
     transitionToPage("play");
   } else {
-    target_page = "play"
-    localStorage.setItem("target_page", "play");
+    setGlobal("target_page";"play");
     transitionToPage("loading");
   };
 };
 
 function setMix(id) {
-  target_mix = id;
-  localStorage.setItem("target_mix", id);
+  setGlobal("target_mix";id);
   setMixDetails(id);
 };
 
@@ -135,22 +132,13 @@ function init(code) {
     exchangeToken(code);
   } else if (["home", "loading"].includes(current_page)) {
     displayPage(current_page);
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-        initSpotifyPlayer();
-    };
+    initSpotifyPlayerProtected();
   } else if (current_page == "mix") {
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-        initSpotifyPlayer();
-    };
+    initSpotifyPlayerProtected();
     setMix(target_mix);
     toMix();
   } else if (current_page == "play") {
-    window.onSpotifyWebPlaybackSDKReady = initSpotifyPlayer;
-    if (typeof Spotify !== 'undefined'){
-        initSpotifyPlayer();
-    };
+    initSpotifyPlayerProtected();
     toPlay();
   } else {
     // we are not logged in so show the login button
