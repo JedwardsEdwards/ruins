@@ -130,7 +130,8 @@ function init(code) {
     if (typeof Spotify !== 'undefined'){
         initSpotifyPlayer();
     };
-    transitionToPage("loading");
+    setMix(mixId);
+    toMix();
   } else {
     // we are not logged in so show the login button
     transitionToPage("login");
