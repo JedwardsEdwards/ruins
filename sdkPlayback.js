@@ -142,9 +142,13 @@ function initSpotifyPlayer() {
     player.addListener('account_error', ({ message }) => {
         error(message);
         });
-    player.addListener('player_state_changed', ({
-        track_window: { current_track }
-            }) => {
+    player.addListener('player_state_changed', (
+            //{
+        //track_window: { current_track }
+          //  }) => {
+            obj) => {
+            info("player_state_changed", obj);
+            const current_track = obj["track_window"]["current_track"];
             if (!window.player_loaded) {
                 window.player_loaded = true;
             };
