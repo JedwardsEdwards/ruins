@@ -35,3 +35,14 @@ body {
   grid-row-start: 3;
   display:flex;
 }
+
+.button {
+  background-color: white; /* Green */
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
