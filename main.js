@@ -1,9 +1,10 @@
 // TODO
-// test reload from each page
-// test navigate between pages
-// see if we can display loading until the player is actually ready > use first update and a loaded boolean perhaps
-// load the mix page after the mix has been set
-// don't auto play the mix page
+// auto log out after a period of timee
+// reset playlist after logout
+
+// testing
+// reload from each page
+// navigate between pages
 
 const client_id = '5b705282459d426f99205ec01cbc31fa';
 const redirect_uri = 'https://jedwardsedwards.github.io/ruins/'; // Your redirect uri
@@ -25,6 +26,7 @@ window.current_mix = localStorage.getItem("current_mix") || "";
 window.target_mix = localStorage.getItem("target_mix") || "";
 window.current_track = localStorage.getItem('current_track') || {id: null};
 window.player_loaded = false;
+window.shuffle_set = false;
 
 function log(sig, msg, level) {
   if (level <= log_level) {
