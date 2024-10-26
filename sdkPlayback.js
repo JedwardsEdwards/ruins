@@ -22,7 +22,7 @@ function toggleShuffle(on) {
        headers: {
          Authorization: 'Bearer ' + window.access_token,
        },
-       body: JSON.stringify({"state": on})
+       body: JSON.stringify({"state": [on]})
     })
       .then(async (response) => {
         //return response.json();
