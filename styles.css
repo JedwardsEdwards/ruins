@@ -1,0 +1,37 @@
+ * {
+        box-sizing:border-box;
+        margin:0;
+      }
+      html {
+        height:100%;
+      }
+      body {
+          height:100%;
+          display: grid;
+          grid-template-rows: 20% 60% 20%;
+      }
+      .login-element,
+      .home-element,
+      .mix-element,
+      .play-element,
+      .loading-element {
+        display: none;
+      }
+      .page {
+        margin:auto;
+      }
+      #banner {
+        grid-row-start:1;
+        display:flex;
+      }
+        
+      #page-container {
+        grid-row-start:2;
+        display:flex;
+        border: grey solid 0.5px;
+      }
+      
+      #footer {
+        grid-row-start: 3;
+        display:flex;
+      }
