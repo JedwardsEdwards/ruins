@@ -21,6 +21,9 @@ body {
 #banner {
   grid-row-start:1;
   display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px;
 }
 #page-container {
   grid-row-start:2;
