@@ -11,6 +11,19 @@ body {
   display: grid;
   grid-template-rows: 20% 60% 20%;
 }
+#banner {
+  grid-row-start:1;
+  display:flex;
+}
+#page-container {
+  grid-row-start:2;
+  display:flex;
+  border: grey solid 0.5px;
+}
+#footer {
+  grid-row-start: 3;
+  display:flex;
+}
 .login-element,
 .home-element,
 .mix-element,
@@ -21,22 +34,6 @@ body {
 .page {
   margin:auto;
 }
-#banner {
-  grid-row-start:1;
-  display:flex;
-}
-  
-#page-container {
-  grid-row-start:2;
-  display:flex;
-  border: grey solid 0.5px;
-}
-
-#footer {
-  grid-row-start: 3;
-  display:flex;
-}
-
 .button {
   background-color: white; /* Green */
   border: 1px solid black;
