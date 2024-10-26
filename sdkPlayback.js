@@ -53,6 +53,7 @@ function resetPlayer() {
 };
 
 function setMixDetails(id) {
+    info("setMixDetails", "updating mix info for play/mix page");
     fetch("https://api.spotify.com/v1/playlists/" + id + "?fields=name", {
         headers: {
         Authorization: 'Bearer ' + window.access_token,
@@ -152,7 +153,7 @@ function initSpotifyPlayer() {
                 };
                 if (window.current_page == "loading") {
                     info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
-                    if (window.target_page == "mix") {
+                    if (["mix", "play"].includes(window.target_page)) {
                       // don't love doing this here tbh
                       setMix(window.target_mix);
                     };
