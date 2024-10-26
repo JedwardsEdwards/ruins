@@ -8,7 +8,7 @@ function transferPlayback(id) {
        body: JSON.stringify({"device_ids": [id]})
     })
       .then(async (response) => {
-        //return response.json();
+        toggleShuffle(false);
       })
       .catch((error) => {
         error(error);
@@ -122,7 +122,6 @@ function initSpotifyPlayer() {
     player.addListener('ready', ({ device_id }) => {
         info("player_ready",'Ready with Device ID', device_id);
         transferPlayback(device_id);
-        toggleShuffle(false);
         });
     player.addListener('not_ready', ({ device_id }) => {
         info("player_not_ready",'Device ID has gone offline', device_id);
