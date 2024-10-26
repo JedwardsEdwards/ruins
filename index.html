@@ -10,19 +10,19 @@
 <body>
   <script>0</script>
   <div id="banner">
-      <button id="home-button" class="mix-element play-element">Home</button>
-      <button id="logout-button" class="home-element mix-element play-element">Logout</button>
+      <button id="home-button" class="button mix-element play-element">Home</button>
+      <button id="logout-button" class="button home-element mix-element play-element">Logout</button>
   </div>
   <div id="page-container">
     <div id="login-page" class="page login-element">
-      <button id="login-button">
+      <button id="login-button" class="button">
         Log in with Spotify
       </button>
     </div>
     <div id="home-page" class="page home-element">
       <h1>HOME PAGE</h1>
       <div id="mix-selector">
-         <input id="mix-one-button" type="button" value="mix-one" />
+         <input id="mix-one-button" class="button" type="button" value="mix-one" />
       </div>
     </div>
     <div id="mix-page" class="page mix-element">
@@ -39,9 +39,9 @@
   </div>
   <div id="footer>
     <div id="playback-container" class="mix-element play-element">
-      <input id="previous-track" type="button" value="previous-track" />
-      <input id="play-pause" type="button" value="play-pause" />
-      <input id="next-track" type="button" value="next-track" />
+      <input id="previous-track" class="button" type="button" value="previous-track" />
+      <input id="play-pause" class="button" type="button" value="play-pause" />
+      <input id="next-track" class="button" type="button" value="next-track" />
     </div>
   </div>
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
