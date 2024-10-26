@@ -162,7 +162,7 @@ function initSpotifyPlayer() {
                 if (stateObj["shuffle"]) {
                     toggleShuffle(false)
                 };
-                updatePlayer(current_track);
+                updatePlayer(stateObj["track_window"]["current_track"]);
             };
         });
     
