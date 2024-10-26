@@ -36,7 +36,7 @@ body {
   display:flex;
 }
 
-.button {
+.input {
   background-color: white; /* Green */
   border: 1px solid black;
   color: black;
