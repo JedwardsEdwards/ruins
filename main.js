@@ -1,6 +1,6 @@
 // TODO
 // auto log out after a period of timee
-// reset playlist after logout
+// refresh on play page removes the playlist name
 
 // testing
 // reload from each page
