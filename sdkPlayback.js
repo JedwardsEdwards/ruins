@@ -11,7 +11,7 @@ function transferPlayback(id) {
         
       })
       .catch((error) => {
-        error(error);
+        error("transferPlayback", error);
       })
 };
 
@@ -25,9 +25,11 @@ function toggleShuffle(on) {
     })
       .then(async (response) => {
         //return response.json();
+        info("toggleShuffle", "shuffle state set");
+        window.shuffle_set = true;
       })
       .catch((error) => {
-        error(error);
+        info("toggleShuffle", "shuffle state not set");
       })
 };
 
@@ -138,7 +140,7 @@ function initSpotifyPlayer() {
     player.addListener('player_state_changed', ({
         track_window: { current_track }
             }) => {
-            if (! window.player_loaded) {
+            if (!window.player_loaded) {
                 window.player_loaded = true;
             };
             if (window.current_page == "loading") {
@@ -148,9 +150,10 @@ function initSpotifyPlayer() {
                   setMix(window.target_mix);
                 };
                 setAndDisplayPage(window.target_page);
-                toggleShuffle(false);
             };
-            window.debug_track = current_track;
+            if (!window.shuffle_set) {
+                toggleShuffle(false)
+            };
             updatePlayer(current_track);
         });
     
