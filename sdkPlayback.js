@@ -8,7 +8,7 @@ function transferPlayback(id) {
        body: JSON.stringify({"device_ids": [id]})
     })
       .then(async (response) => {
-        toggleShuffle(false);
+        
       })
       .catch((error) => {
         error(error);
@@ -143,6 +143,7 @@ function initSpotifyPlayer() {
             };
             if (window.current_page == "loading") {
                 info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
+                toggleShuffle(false);
                 if (window.target_page == "mix") {
                   // don't love doing this here tbh
                   setMix(window.target_mix);
