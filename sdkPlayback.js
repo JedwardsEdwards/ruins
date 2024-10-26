@@ -21,7 +21,7 @@ function updatePlayer(track) {
             refreshToken();
             return;
         }
-        setGlobal("current_track", track);
+        setGlobal("current_track", track["id"]);
         document.getElementById('track-details').innerHTML = trackDetailsTemplate(track);
     };
 };
