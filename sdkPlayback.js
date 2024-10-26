@@ -25,11 +25,16 @@ function toggleShuffle(on) {
     })
       .then(async (response) => {
         //return response.json();
-        info("toggleShuffle", "shuffle state set");
-        window.shuffle_set = true;
+      
+        if (response.ok) {
+            info("toggleShuffle", "shuffle state set");
+            window.shuffle_set = true;
+        } else {
+            info("toggleShuffle", "shuffle state not set");
+        }
       })
       .catch((error) => {
-        info("toggleShuffle", "shuffle state not set");
+          error("toggleShuffle", error);
       })
 };
 
