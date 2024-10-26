@@ -147,8 +147,8 @@ function initSpotifyPlayer() {
                   // don't love doing this here tbh
                   setMix(window.target_mix);
                 };
-                toggleShuffle(false);
                 setAndDisplayPage(window.target_page);
+                toggleShuffle(false);
             };
             window.debug_track = current_track;
             updatePlayer(current_track);
