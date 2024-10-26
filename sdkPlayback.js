@@ -17,7 +17,7 @@ function transferPlayback(id) {
 
 function toggleShuffle(on) {
     info("toggleShuffle", "updating shuffle state to on = " + on);
-    fetch("https://api.spotify.com/v1/me/player/shuffle?state="+on {
+    fetch("https://api.spotify.com/v1/me/player/shuffle?state="+on, {
        method: "PUT",
        headers: {
          Authorization: 'Bearer ' + window.access_token,
