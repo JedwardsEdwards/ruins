@@ -15,14 +15,14 @@ function transferPlayback(id) {
       })
 };
 
-function toggleShuffle(on) {
+function toggleShuffle(id, on) {
     info("toggleShuffle", "updating shuffle state to on = " + on);
     fetch("https://api.spotify.com/v1/me/player/shuffle", {
        method: "PUT",
        headers: {
          Authorization: 'Bearer ' + window.access_token,
        },
-       body: JSON.stringify({"state": [on]})
+       body: JSON.stringify({"state": on, "device_id": id})
     })
       .then(async (response) => {
         //return response.json();
@@ -123,7 +123,7 @@ function initSpotifyPlayer() {
     player.addListener('ready', ({ device_id }) => {
         info("player_ready",'Ready with Device ID', device_id);
         transferPlayback(device_id);
-        toggleShuffle(false);
+        toggleShuffle(device_id, false);
         });
     player.addListener('not_ready', ({ device_id }) => {
         info("player_not_ready",'Device ID has gone offline', device_id);
