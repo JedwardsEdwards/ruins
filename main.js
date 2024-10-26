@@ -29,7 +29,7 @@ window.player_loaded = false;
 function log(sig, msg, level) {
   if (level <= log_level) {
     if (level == 1) {
-      console.err(sig + "|" + msg);
+      console.error(sig + "|" + msg);
     } else {
       console.log(sig + "|" + msg);
     };
