@@ -26,7 +26,6 @@ window.current_mix = localStorage.getItem("current_mix") || "";
 window.target_mix = localStorage.getItem("target_mix") || "";
 window.current_track = localStorage.getItem('current_track') || {id: null};
 window.player_loaded = false;
-window.shuffle_set = false;
 
 function log(sig, msg, level) {
   if (level <= log_level) {
