@@ -148,6 +148,7 @@ function initSpotifyPlayer() {
           //  }) => {
             obj) => {
             info("player_state_changed", obj);
+            console.log(obj);
             const current_track = obj["track_window"]["current_track"];
             if (!window.player_loaded) {
                 window.player_loaded = true;
