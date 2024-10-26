@@ -28,7 +28,6 @@ function toggleShuffle(on) {
       
         if (response.ok) {
             info("toggleShuffle", "shuffle state set");
-            window.shuffle_set = true;
         } else {
             info("toggleShuffle", "shuffle state not set");
         }
@@ -146,25 +145,25 @@ function initSpotifyPlayer() {
             //{
         //track_window: { current_track }
           //  }) => {
-            obj) => {
-            info("player_state_changed", obj);
-            console.log(obj);
-            const current_track = obj["track_window"]["current_track"];
-            if (!window.player_loaded) {
-                window.player_loaded = true;
-            };
-            if (window.current_page == "loading") {
-                info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
-                if (window.target_page == "mix") {
-                  // don't love doing this here tbh
-                  setMix(window.target_mix);
+            stateObj) => {
+            console.log(stateObj);
+            if (stateObj["loaded"]) {
+                if (!window.player_loaded) {
+                    window.player_loaded = true;
                 };
-                setAndDisplayPage(window.target_page);
+                if (window.current_page == "loading") {
+                    info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
+                    if (window.target_page == "mix") {
+                      // don't love doing this here tbh
+                      setMix(window.target_mix);
+                    };
+                    setAndDisplayPage(window.target_page);
+                };
+                if (stateObj["shuffle"]) {
+                    toggleShuffle(false)
+                };
+                updatePlayer(current_track);
             };
-            if (!window.shuffle_set) {
-                toggleShuffle(false)
-            };
-            updatePlayer(current_track);
         });
     
     player.connect().then(success => {
