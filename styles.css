@@ -1,3 +1,10 @@
+.login-element,
+.home-element,
+.mix-element,
+.play-element,
+.loading-element {
+  display: none;
+}
 * {
   box-sizing:border-box;
   margin:0;
@@ -10,13 +17,6 @@ body {
   height:100%;
   display: grid;
   grid-template-rows: 20% 60% 20%;
-}
-.login-element,
-.home-element,
-.mix-element,
-.play-element,
-.loading-element {
-  display: none;
 }
 #banner {
   grid-row-start:1;
