@@ -21,7 +21,7 @@ function toggleShuffle(on) {
        method: "PUT",
        headers: {
          Authorization: 'Bearer ' + window.access_token,
-       }
+       },
     })
       .then(async (response) => {
         //return response.json();
