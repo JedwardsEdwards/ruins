@@ -11,6 +11,13 @@ body {
   display: grid;
   grid-template-rows: 20% 60% 20%;
 }
+.login-element,
+.home-element,
+.mix-element,
+.play-element,
+.loading-element {
+  display: none;
+}
 #banner {
   grid-row-start:1;
   display:flex;
@@ -23,13 +30,6 @@ body {
 #footer {
   grid-row-start: 3;
   display:flex;
-}
-.login-element,
-.home-element,
-.mix-element,
-.play-element,
-.loading-element {
-  display: none;
 }
 .page {
   margin:auto;
