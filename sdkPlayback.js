@@ -46,9 +46,11 @@ function updatePlayer(track) {
         setGlobal("current_track", track["id"]);
         //document.getElementById('track-details').innerHTML = trackDetailsTemplate(track);
         document.getElementById('track-name').innerHTML= track.name.toUpperCase();
-        textFit(document.getElementById('track-name'));
+        
         document.getElementById('track-artist').innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
-        textFit(document.getElementById('track-artist'));
+        if (window.current_page == "play") {
+          textFit(document.getElementById('track-artist'));
+        }
     };
 };
 
