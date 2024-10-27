@@ -7,7 +7,6 @@
 
 // styles
 // test out fonts
-// full screen mix text
 // mix color palettes
 // welcome page
 // dedicated start mix button
