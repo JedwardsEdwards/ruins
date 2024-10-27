@@ -24,6 +24,12 @@ body {
   grid-template-columns: 20% 60% 20%;
   align-items: center;
   padding:20px;
+  justify-items: center;
+}
+#banner-logo-container {
+  text-align: center;
+  overflow: hidden;
+  height:100%;
 }
 #page-container {
   grid-row-start:2;
@@ -60,7 +66,6 @@ body {
 }
 
 #banner-logo {
+  max-width:100%;
   height:100%;
-  width:100%;
-  object-fit: contain;
 }
