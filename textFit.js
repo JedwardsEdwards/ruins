@@ -38,7 +38,7 @@
     detectMultiLine: true, // disable to turn off automatic multi-line sensing
     minFontSize: 6,
     maxFontSize: 300,
-    reProcess: false, // if true, textFit will re-process already-fit nodes. Set to 'false' for better performance
+    reProcess: true, // if true, textFit will re-process already-fit nodes. Set to 'false' for better performance
     widthOnly: false, // if true, textFit will fit text to element width, regardless of text height
     alignVertWithFlexbox: false, // if true, textFit will use flexbox for vertical alignment
   };
