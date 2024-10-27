@@ -76,7 +76,7 @@ function setMixDetails(id) {
         document.getElementById('mix-name').innerHTML = data.name.toUpperCase();
         if (window.current_page == "mix") {
           textFit(document.getElementById('mix-name'));
-        }
+        };
         document.getElementById("mix-name").style.color = "black";
         document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
       })
