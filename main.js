@@ -1,6 +1,16 @@
 // TODO
+
+// functions
 // auto log out after a period of timee
 // stop play after transfer
+
+// styles
+// add name to banner center
+// add logo as loading
+// test out fonts
+// full screen mix text
+// mix color palettes
+// welcome page
 
 // testing
 // reload from each page
