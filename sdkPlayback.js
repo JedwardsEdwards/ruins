@@ -45,8 +45,8 @@ function updatePlayer(track) {
         }
         setGlobal("current_track", track["id"]);
         //document.getElementById('track-details').innerHTML = trackDetailsTemplate(track);
-        document.getElementById('track-name').innerHTML= track.name;
-        document.getElementById('track-artist').innerHTML= track.artists.map(a => a.name).join(", ");
+        document.getElementById('track-name').innerHTML= track.name.toUpperCase();
+        document.getElementById('track-artist').innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
     };
 };
 
@@ -69,8 +69,8 @@ function setMixDetails(id) {
         }
       })
       .then((data) => {
-        document.getElementById('mix-name').innerHTML = data.name;
-        document.getElementById('mix-details').innerHTML = data.name;
+        document.getElementById('mix-name').innerHTML = data.name.toUpperCase();
+        document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
       })
   }
 
