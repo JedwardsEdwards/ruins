@@ -20,8 +20,8 @@ body {
 }
 #banner {
   grid-row-start:1;
-  display:flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
   align-items: center;
   padding:20px;
 }
@@ -57,4 +57,10 @@ body {
 
 .button:active {
   background-color: lightgrey;
+}
+
+#banner-logo {
+  height:100%;
+  width:100%;
+  object-fit: contain;
 }
