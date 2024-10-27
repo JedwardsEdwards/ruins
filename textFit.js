@@ -32,15 +32,15 @@
   "use strict";
 
   var defaultSettings = {
-    alignVert: false, // if true, textFit will align vertically using css tables
+    alignVert: true, // if true, textFit will align vertically using css tables
     alignHoriz: false, // if true, textFit will set text-align: center
-    multiLine: false, // if true, textFit will not set white-space: no-wrap
+    multiLine: true, // if true, textFit will not set white-space: no-wrap
     detectMultiLine: true, // disable to turn off automatic multi-line sensing
     minFontSize: 6,
     maxFontSize: 300,
     reProcess: true, // if true, textFit will re-process already-fit nodes. Set to 'false' for better performance
     widthOnly: false, // if true, textFit will fit text to element width, regardless of text height
-    alignVertWithFlexbox: false, // if true, textFit will use flexbox for vertical alignment
+    alignVertWithFlexbox: true, // if true, textFit will use flexbox for vertical alignment
   };
 
   return function textFit(els, options) {
