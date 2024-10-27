@@ -1,6 +1,6 @@
 function renderMixName() {
   const page = document.getElementById("mix-page");
-  page.style.grid-template-rows: 20% 50% 30%;
+  page.style.grid-template-rows = 20% 50% 30%;
 
   const firstRow = document.createElement("div");
   firstRow.id = "first-row";
