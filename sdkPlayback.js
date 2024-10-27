@@ -72,14 +72,14 @@ function setMixDetails(id) {
         }
       })
       .then((data) => {
-        /*document.getElementById("mix-name").style.color = "white";
+        document.getElementById("mix-name").style.color = "white";
         document.getElementById('mix-name').innerHTML = data.name.toUpperCase();
         if (window.current_page == "mix") {
           textFit(document.getElementById('mix-name'));
         };
         document.getElementById("mix-name").style.color = "black";
-        */
-        renderMixName();
+        
+        //renderMixName();
         document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
       })
   }
