@@ -3,10 +3,10 @@
 // functions
 // auto log out after a period of timee
 // stop play after transfer
+// refresh token on player load
 
 // styles
-// add name to banner center
-// add logo as loading
+// all caps for mix/track details
 // test out fonts
 // full screen mix text
 // mix color palettes
@@ -137,10 +137,10 @@ function init() {
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
   } else if (["home", "loading"].includes(window.current_page)) {
-    initSpotifyPlayerProtected();
+    //initSpotifyPlayerProtected();
     displayPage(window.current_page);
   } else if (window.current_page == "mix") {
-    initSpotifyPlayerProtected();
+    //initSpotifyPlayerProtected();
     setMix(window.target_mix);
     loadPage("mix");
   } else if (window.current_page == "play") {
