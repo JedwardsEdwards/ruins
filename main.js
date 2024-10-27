@@ -107,7 +107,7 @@ function setMix(id) {
 
 function toMixOne() {
   setMix("73p0zWLYMp2Rs2Kh3PM5Le");
-  transitionToPage("mix");
+  setAndDisplayPage("mix");
 };
 
 document
