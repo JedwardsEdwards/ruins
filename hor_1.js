@@ -1,6 +1,6 @@
 function renderMixName() {
   const page = document.getElementById("mix-page");
-  page.style.grid-template-rows = 20% 50% 30%;
+  page.style["grid-template-rows"] = "20% 50% 30%";
 
   const firstRow = document.createElement("div");
   firstRow.id = "first-row";
@@ -15,7 +15,7 @@ function renderMixName() {
   thirdRow.id = "first-row";
   thirdRow.innerHTML = "third row text";
   
-  page.appendChild(firstRow);
-  page.appendChild(secondRow);
-  page.appendChild(thirdRow);
+  setTimeout(page.appendChild(firstRow), 1000);
+  setTimeout(page.appendChild(secondRow), 2000);
+  setTimeout(page.appendChild(thirdRow), 3000);
 };
