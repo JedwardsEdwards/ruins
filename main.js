@@ -6,11 +6,12 @@
 // refresh token on player load
 
 // styles
-// all caps for mix/track details
 // test out fonts
 // full screen mix text
 // mix color palettes
 // welcome page
+// dedicated start mix button
+// animated text loading
 
 // testing
 // reload from each page
