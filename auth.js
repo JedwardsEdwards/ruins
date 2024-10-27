@@ -123,6 +123,6 @@
     const t = new Date();
     setGlobal("expires_at", t.setSeconds(t.getSeconds() + data.expires_in));
 
-    //initSpotifyPlayerProtected();
+    initSpotifyPlayerProtected();
     toHome();
   }
