@@ -7,15 +7,15 @@ function renderMixName() {
   firstRow.innerHTML = "first row text";
 
   const secondRow = document.createElement("div");
-  secondRow.id = "first-row";  
+  secondRow.id = "second-row";  
   secondRow.innerHTML = "second row text";
 
   
   const thirdRow = document.createElement("div");
-  thirdRow.id = "first-row";
+  thirdRow.id = "third-row";
   thirdRow.innerHTML = "third row text";
   
-  setTimeout(page.appendChild(firstRow), 1000);
-  setTimeout(page.appendChild(secondRow), 2000);
-  setTimeout(page.appendChild(thirdRow), 3000);
+  setTimeout(() => {page.appendChild(firstRow)}, 1000);
+  //setTimeout(page.appendChild(secondRow), 2000);
+  //setTimeout(page.appendChild(thirdRow), 3000);
 };
