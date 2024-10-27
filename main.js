@@ -4,12 +4,13 @@
 // auto log out after a period of timee
 // stop play after transfer
 // refresh token on player load
+// dedicated start mix button
+// reset mix button
 
 // styles
 // test out fonts
 // mix color palettes
 // welcome page
-// dedicated start mix button
 // animated text loading
 
 // testing
