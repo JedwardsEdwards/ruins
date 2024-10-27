@@ -1,0 +1,3 @@
+function renderMixName() {
+  const page = document.getElementById("mix-page");
+};
