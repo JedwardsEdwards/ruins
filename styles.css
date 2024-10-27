@@ -34,7 +34,7 @@ body {
 #page-container {
   grid-row-start:2;
   display:flex;
-  border: grey solid 0.5px;
+  border: black solid 0.5px;
 }
 #footer {
   grid-row-start: 3;
@@ -71,7 +71,6 @@ body {
 }
 
 #play-page {
-  /*! margin:auto; */
   width:100%;
   height:100%;
 }
@@ -79,6 +78,16 @@ body {
 #track-details {
   display:grid;
   grid-template-rows: 80% 20%;
+  height:100%;
+  width:100%;
+}
+
+#mix-page {
+  width:100%;
+  height:100%;
+}
+
+#mix-name {
   height:100%;
   width:100%;
 }
