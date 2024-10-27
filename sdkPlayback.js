@@ -44,11 +44,10 @@ function updatePlayer(track) {
             return;
         }
         setGlobal("current_track", track["id"]);
-        //document.getElementById('track-details').innerHTML = trackDetailsTemplate(track);
         document.getElementById('track-name').innerHTML= track.name.toUpperCase();
-        
         document.getElementById('track-artist').innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
         if (window.current_page == "play") {
+          textFit(document.getElementById('track-name'));
           textFit(document.getElementById('track-artist'));
         }
     };
