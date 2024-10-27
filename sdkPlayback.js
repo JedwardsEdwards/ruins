@@ -155,7 +155,8 @@ function initSpotifyPlayer() {
         //track_window: { current_track }
           //  }) => {
             stateObj) => {
-            if (!stateObj["loading"]) {
+            console.log(stateObj);
+            if (stateObj["loading"]) {
                 if (!window.player_loaded) {
                     window.player_loaded = true;
                 };
