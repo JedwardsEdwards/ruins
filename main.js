@@ -1,6 +1,6 @@
 // TODO
 // auto log out after a period of timee
-// on log in home button displays
+// stop play after transfer
 
 // testing
 // reload from each page
