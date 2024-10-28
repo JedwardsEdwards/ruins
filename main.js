@@ -3,7 +3,6 @@
 // functions
 // auto log out after a period of timee
 // stop play after transfer
-// refresh token on player load
 // dedicated start mix button
 // reset mix button
 
@@ -112,6 +111,19 @@ function toMixOne() {
   transitionToPage("mix");
 };
 
+function toPlay() {
+    info("toPlay","current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
+    if ( window.target_mix != window.current_mix) {
+        resetPlayer();
+    };
+    transitionToPage("play");
+    if ( window.target_mix != window.current_mix) {
+        startMix();
+    } else {
+        window.player.togglePlay();
+    };
+};
+
 function initPlayerPage() {
   if (["home", "loading"].includes(window.current_page)) {
     initSpotifyPlayerProtected();
@@ -141,6 +153,10 @@ document
 document
   .getElementById('mix-one-button')
   .addEventListener('click', toMixOne, false);
+
+document
+  .getElementById('start-mix-button')
+  .addEventListener('click', toPlay, false);
 
 // just set this to empty, we set up the player when we've sure log in is successful
 window.onSpotifyWebPlaybackSDKReady = () => {};
