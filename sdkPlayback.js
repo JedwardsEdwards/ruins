@@ -193,7 +193,7 @@ function initSpotifyPlayer() {
         resetMix();
         };
 
-    document.get    window.player = player;
+    window.player = player;
     };
 
 function initSpotifyPlayerProtected() {
