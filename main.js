@@ -3,8 +3,6 @@
 // functions
 // auto log out after a period of timee
 // stop play after transfer
-// dedicated start mix button
-// reset mix button
 
 // styles
 // test out fonts
