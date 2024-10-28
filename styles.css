@@ -38,10 +38,17 @@ body {
 }
 #footer {
   grid-row-start: 3;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
   padding:20px;
+}
+.footer-box {
+  display:flex;
+  align-items: center;
+}
+#mix-page-footer {
+  justify-content: center;
+}
+#play-page-footer {
+  justify-content: space-between;
 }
 .page {
   margin:auto;
