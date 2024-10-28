@@ -2,7 +2,6 @@
 
 // functions
 // auto log out after a period of timee
-// stop play after transfer
 
 // styles
 // test out fonts
