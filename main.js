@@ -112,6 +112,20 @@ function toMixOne() {
   transitionToPage("mix");
 };
 
+function initPlayerPage() {
+  if (["home", "loading"].includes(window.current_page)) {
+    initSpotifyPlayerProtected();
+    displayPage(window.current_page);
+  } else if (window.current_page == "mix") {
+    initSpotifyPlayerProtected();
+    setMix(window.target_mix);
+    displayPage("mix");
+  } else if (window.current_page == "play") {
+    initSpotifyPlayerProtected();
+    loadPage("play");
+  };
+};
+  
 document
   .getElementById('login-button')
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
@@ -135,19 +149,16 @@ function init() {
   info("init", "current_page: " + window.current_page + ", target_page: " + window.target_page);
   args = new URLSearchParams(window.location.search);
   code = args.get('code');
+
   if (code) {
     // we have received the code from spotify and will exchange it for a access_token
     exchangeToken(code);
-  } else if (["home", "loading"].includes(window.current_page)) {
-    initSpotifyPlayerProtected();
-    displayPage(window.current_page);
-  } else if (window.current_page == "mix") {
-    initSpotifyPlayerProtected();
-    setMix(window.target_mix);
-    displayPage("mix");
-  } else if (window.current_page == "play") {
-    initSpotifyPlayerProtected();
-    loadPage("play");
+  } else if (["home", "loading", "mix", "play"].includes(window.current_page)) {
+     if (window.expires_at < Date.now()) {
+      refreshToken();
+      } else {
+       initPlayerPage()
+     };
   } else {
     // we are not logged in so show the login button
     setAndDisplayPage("login");
