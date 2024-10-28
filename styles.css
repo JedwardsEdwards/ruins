@@ -39,6 +39,7 @@ body {
 #footer {
   grid-row-start: 3;
   padding:20px;
+  margin:auto;
 }
 .footer-box {
   display:flex;
