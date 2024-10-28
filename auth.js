@@ -96,7 +96,10 @@
       }),
     })
       .then(addThrowErrorToFetch)
-      .then(processTokenResponse)
+      .then((data) => {
+        processTokenResponse(data);
+        initPlayerPage();
+      })
       .catch(handleError);
   }
 
