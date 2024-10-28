@@ -129,7 +129,12 @@ function previousTrack() {
         window.player.previousTrack();
     }
 };
-    
+
+function resetMix() {
+    startMix();
+    window.player.togglePlay();
+};
+
 function initSpotifyPlayer() {
     const token = window.access_token;
     const player = new Spotify.Player({
@@ -189,14 +194,18 @@ function initSpotifyPlayer() {
     document.getElementById('play-pause').onclick = function() {
         playPause();
         };
-     document.getElementById('next-track').onclick = function() {
+    document.getElementById('next-track').onclick = function() {
         nextTrack();
         };
-     document.getElementById('previous-track').onclick = function() {
+    document.getElementById('previous-track').onclick = function() {
         previousTrack();
         };
-    
-    window.player = player;
+
+    document.getElementById('reset-mix').onclick = function() {
+        resetMix();
+        };
+
+    document.get    window.player = player;
     };
 
 function initSpotifyPlayerProtected() {
