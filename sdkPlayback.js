@@ -120,7 +120,6 @@ function previousTrack() {
 
 function resetMix() {
     startMix();
-    window.player.pause();
 };
 
 function initSpotifyPlayer() {
