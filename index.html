@@ -51,14 +51,18 @@
     </div>
   </div>
   <div id="footer">
-    <input id="start-mix-button" class="button mix-element" type="button" value="BEGIN"/>
-    <div id="playback-container" class="play-element">
-      <input id="previous-track" class="button" type="button" value="PREV" />
-      <input id="play-pause" class="button" type="button" value="PLAY // PAUSE" />
-      <input id="next-track" class="button" type="button" value="NEXT" />
-      <input id="reset-mix" class="button" type="button" value="RESET" />
+    <div id="mix-page-footer" class="footer-box mix-element">
+      <input id="start-mix-button" class="button mix-element" type="button" value="BEGIN"/>
     </div>
-    <div id="mix-details" class="play-element"></div>
+    <div id="play-page-footer" class="footer-box play-element">
+      <div id="playback-container">
+        <input id="previous-track" class="button" type="button" value="PREV" />
+        <input id="play-pause" class="button" type="button" value="PLAY // PAUSE" />
+        <input id="next-track" class="button" type="button" value="NEXT" />
+        <input id="reset-mix" class="button" type="button" value="RESET" />
+      </div>
+      <div id="mix-details" class="play-element"></div>
+    </div>
   </div>
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
   <script src="auth.js"></script>
