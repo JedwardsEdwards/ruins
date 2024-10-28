@@ -11,6 +11,7 @@
 // mix color palettes
 // welcome page
 // animated text loading
+// update begin button text based on mix
 
 // testing
 // reload from each page
