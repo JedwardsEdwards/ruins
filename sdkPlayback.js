@@ -103,19 +103,7 @@ function startMix() {
 
 function playPause() {
     info("playPause","play/pause button hit, current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
-    if (window.current_page == "play") {
-        window.player.togglePlay();
-    } else {
-        if ( window.target_mix != window.current_mix) {
-            resetPlayer();
-        };
-        transitionToPage("play");
-        if ( window.target_mix != window.current_mix) {
-            startMix();
-        } else {
-            window.player.togglePlay();
-        };
-    };
+    window.player.togglePlay();
 };
 
 function nextTrack() {
