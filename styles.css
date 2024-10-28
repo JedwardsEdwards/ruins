@@ -39,18 +39,14 @@ body {
 #footer {
   grid-row-start: 3;
   padding:20px;
-  display:flex;
-  align-items: center;
 }
 .footer-box {
   display:flex;
   align-items: center;
-}
-#mix-page-footer {
   justify-content: center;
 }
 #play-page-footer {
-  justify-content: space-between;
+  gap:80px;
 }
 .page {
   margin:auto;
