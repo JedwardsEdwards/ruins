@@ -74,6 +74,7 @@
       .then(addThrowErrorToFetch)
       .then((data) => {
         processTokenResponse(data);
+        toHome();
         // TODO - this should be updated when custom domain is used
         window.history.replaceState({},"","/ruins/");
       })
@@ -124,5 +125,4 @@
     setGlobal("expires_at", t.setSeconds(t.getSeconds() + data.expires_in));
 
     initSpotifyPlayerProtected();
-    toHome();
   }
