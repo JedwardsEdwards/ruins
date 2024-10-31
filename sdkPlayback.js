@@ -90,7 +90,7 @@ function startMix() {
        headers: {
          Authorization: 'Bearer ' + window.access_token,
        },
-       body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix})
+       body: JSON.stringify({"context_uri": window.target_mix})
     })
       .then(async (response) => {
         setGlobal("current_mix", window.target_mix);
@@ -157,6 +157,7 @@ function initSpotifyPlayer() {
                 if (!window.player_loaded) {
                     window.player_loaded = true;
                 };
+                if (Object.values(allowed_playlists).map(m => "spotify:playlist:"+m)stateObj.context.uri
                 if (window.current_page == "loading") {
                     info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
                     if (["mix", "play"].includes(window.target_page)) {
