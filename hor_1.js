@@ -31,7 +31,7 @@ function renderMixName() {
   container.innerHTML = "";
   container.style = "";
   
-  container.style["grid-template-rows"] = "20% 50% 30%";
+  container.style["grid-template-rows"] = "30% 60% 5% 5%";
 
   const firstRow = createRow("first-row", "90% 10%");
   container.appendChild(firstRow);
@@ -49,7 +49,6 @@ function renderMixName() {
   const sss_sizer_div = createHiddenElement("mix-name-text-sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]");
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = sss_sizer_div.children["0"].style["font-size"];
-  console.log(secondRowFontSize);
   secondRow.innerHTML = "";
   secondRow.style.display = "grid";
   secondRow.style["grid-template-columns"] = "5% 32% 5% 26% 5% 22% 5%";
@@ -79,8 +78,15 @@ function renderMixName() {
 
   const thirdRow = document.createElement("div");
   thirdRow.id = "third-row";
-  thirdRow.innerHTML = "third row text";
   container.appendChild(thirdRow);
+  const slimeParty = createHiddenElement("mix-name-text-sp", "welcome 💚 to the slime party");
+
+  const fourthRow = document.createElement("div");
+  fourthRow.id = "fourth-row";
+  container.appendChild(fourthRow);
+  const puke1 = createHiddenElement("mix-name-puke1", "🤮");
+  const puke2 = createHiddenElement("mix-name-puke2", "🤮");
+  const puke3 = createHiddenElement("mix-name-puke3", "🤮");
 
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
@@ -93,5 +99,8 @@ function renderMixName() {
   setTimeout(() => {sticky.style.color = "black"}, 5000);
   setTimeout(() => {secondHeart.style.color = "black"}, 5500);
   setTimeout(() => {slimy.style.color = "black"}, 6000);
-
+  setTimeout(() => {thirdRow.append(slimeParty), 7000);
+  setTimeout(() => {fourthRow.append(puke1), 8000);
+  setTimeout(() => {fourthRow.append(puke2), 8500);
+  setTimeout(() => {fourthRow.append(puke3), 9000);
 };
