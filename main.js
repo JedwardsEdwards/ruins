@@ -126,7 +126,7 @@ function toPlay() {
     //    startMix();
     //} else {
     //    window.player.togglePlay();
-    };
+    //};
 };
 
 function initPlayerPage() {
