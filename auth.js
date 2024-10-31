@@ -83,7 +83,7 @@
 
 // TODO - work out automatic refresh
  function refreshToken() {
-    if ("player" in keys(window)) {
+    if ("player" in Object.keys(window)) {
       window.player.disconnect();
     };
     fetch('https://accounts.spotify.com/api/token', {
