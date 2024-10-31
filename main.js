@@ -19,6 +19,10 @@ const redirect_uri = 'https://jedwardsedwards.github.io/ruins/'; // Your redirec
 
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
+const allowed_playlists = {
+  "test" : "73p0zWLYMp2Rs2Kh3PM5Le"
+};
+
 // 1 - errors, 2 - info, 3 - debug
 const log_level = 3;
 
@@ -103,8 +107,8 @@ function setMix(id) {
   setMixDetails(id);
 };
 
-function toMixOne() {
-  setMix("73p0zWLYMp2Rs2Kh3PM5Le");
+function toTestMix() {
+  setMix(allowed_mixes["test"]);
   //setAndDisplayPage("mix");
   transitionToPage("mix");
 };
