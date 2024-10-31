@@ -19,6 +19,6 @@ function renderMixName() {
 
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {page.appendChild(firstRow)}, 1000);
-  //setTimeout(page.appendChild(secondRow), 2000);
-  //setTimeout(page.appendChild(thirdRow), 3000);
+  setTimeout(page.appendChild(secondRow), 2000);
+  setTimeout(page.appendChild(thirdRow), 3000);
 };
