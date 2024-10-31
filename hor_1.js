@@ -47,7 +47,8 @@ function renderMixName() {
   const sss_sizer_div = createHiddenElement("mix-name-text-sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]");
   appendAndFit(secondRow,sss_sizer_div);
   const secondRowFontSize = sss_sizer_div.children["0"].style["font-size"];
-  secondRow.innerHTML = "";
+  console.log(secondRowFontSize);
+  //secondRow.innerHTML = "";
   const firstBracket = createHiddenElement("mix-name-text-fb", "[");
   firstBracket.style["font-size"] = secondRowFontSize;
   secondRow.append(firstBracket);
