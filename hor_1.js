@@ -87,11 +87,11 @@ function renderMixName() {
   setTimeout(() => {presents_div.style.color = "black"}, 2000);
 
   setTimeout(() => {firstBracket.style.color = "black"}, 3000);
-  setTimeout(() => {firstHeart.style.color = "black"}, 3000);
-  setTimeout(() => {secondHeart.style.color = "black"}, 3000);
   setTimeout(() => {secondBracket.style.color = "black"}, 3000);
   setTimeout(() => {sweaty.style.color = "black"}, 4000);
+  setTimeout(() => {firstHeart.style.color = "black"}, 4500);
   setTimeout(() => {sticky.style.color = "black"}, 5000);
+  setTimeout(() => {secondHeart.style.color = "black"}, 5500);
   setTimeout(() => {slimy.style.color = "black"}, 6000);
 
 };
