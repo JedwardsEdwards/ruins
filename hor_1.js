@@ -16,9 +16,9 @@ function appendAndFit(parent, child) {
 function createRow(id, cols) {
    const row = document.createElement("div");
    row.id = id;
-   firstRow.style.display = "grid";
-   firstRow.style["grid-template-columns"] = cols;
-   firstRow.style["align-items"] = "end";
+   row.style.display = "grid";
+   row.style["grid-template-columns"] = cols;
+   row.style["align-items"] = "end";
    return row;
 };
 
@@ -78,11 +78,11 @@ function renderMixName() {
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
   setTimeout(() => {presents_div.style.color = "black"}, 2000);
-  setTimeout(() => {firstBracket.style.color = "black"}, 2000);
-  setTimeout(() => {sweaty.style.color = "black"}, 2000);
-  setTimeout(() => {firstHeart.style.color = "black"}, 2000);
-  setTimeout(() => {sticky.style.color = "black"}, 2000);
-  setTimeout(() => {secondHeart.style.color = "black"}, 2000);
-  setTimeout(() => {slimy.style.color = "black"}, 2000);
-  setTimeout(() => {secondBracket.style.color = "black"}, 2000);
+  setTimeout(() => {firstBracket.style.color = "black"}, 3000);
+  setTimeout(() => {firstHeart.style.color = "black"}, 3000);
+  setTimeout(() => {secondHeart.style.color = "black"}, 3000);
+  setTimeout(() => {secondBracket.style.color = "black"}, 3000);
+  setTimeout(() => {sweaty.style.color = "black"}, 4000);
+  setTimeout(() => {sticky.style.color = "black"}, 5000);
+  setTimeout(() => {slimy.style.color = "black"}, 6000);
 };
