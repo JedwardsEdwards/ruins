@@ -18,7 +18,7 @@ function renderMixName() {
   dj_div.style.height = "100%";
   dj_div.style.width = "100%"
   firstRow.appendChild(dj_div);
-  textFit(dj_div);
+  //textFit(dj_div);
 
   const presents_div = document.createElement("div");
   presents_div.id = "mix-name-text-presents";
