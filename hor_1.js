@@ -10,7 +10,9 @@ function renderMixName() {
 
   const firstRow = document.createElement("div");
   firstRow.id = "first-row";
+  firstRow.style.display = "grid";
   firstRow.style["grid-template-columns"] = "70% 30%";
+  container.appendChild(firstRow);
 
   const dj_div = document.createElement("div");
   dj_div.id = "mix-name-text-dj";
@@ -18,7 +20,7 @@ function renderMixName() {
   dj_div.style.height = "100%";
   dj_div.style.width = "100%"
   firstRow.appendChild(dj_div);
-  //textFit(dj_div);
+  textFit(dj_div);
 
   const presents_div = document.createElement("div");
   presents_div.id = "mix-name-text-presents";
