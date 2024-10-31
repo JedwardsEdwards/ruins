@@ -51,7 +51,7 @@ function renderMixName() {
   console.log(secondRowFontSize);
   secondRow.innerHTML = "";
   secondRow.style.display = "grid";
-  secondRow.style["grid-template-columns"] = "5% 25% 7.5% 25% 7.5% 25% 5%";
+  secondRow.style["grid-template-columns"] = "5% 30% 5% 25% 5% 25% 5%";
   secondRow.style["align-items"] = "end";
   const firstBracket = createHiddenElement("mix-name-text-fb", "[");
   firstBracket.style["font-size"] = secondRowFontSize;
