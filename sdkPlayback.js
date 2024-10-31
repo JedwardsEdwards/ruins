@@ -90,7 +90,7 @@ function startMix() {
        headers: {
          Authorization: 'Bearer ' + window.access_token,
        },
-       body: JSON.stringify({"context_uri": window.target_mix})
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix})
     })
       .then(async (response) => {
         setGlobal("current_mix", window.target_mix);
