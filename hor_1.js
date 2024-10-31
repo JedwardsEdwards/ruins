@@ -5,6 +5,7 @@ function createHiddenElement(id, text) {
    element.style.height = "100%";
    element.style.width = "100%"
    element.style.color = "white";
+   element.style["text-align"] = "center";
    return element;
 };
 
@@ -51,7 +52,7 @@ function renderMixName() {
   console.log(secondRowFontSize);
   secondRow.innerHTML = "";
   secondRow.style.display = "grid";
-  secondRow.style["grid-template-columns"] = "5% 30% 5% 25% 5% 25% 5%";
+  secondRow.style["grid-template-columns"] = "5% 32% 5% 26% 5% 22% 5%";
   secondRow.style["align-items"] = "end";
   const firstBracket = createHiddenElement("mix-name-text-fb", "[");
   firstBracket.style["font-size"] = secondRowFontSize;
