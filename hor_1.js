@@ -27,19 +27,15 @@ function renderMixName() {
   firstRow.id = "first-row";
   firstRow.style.display = "grid";
   firstRow.style["grid-template-columns"] = "90% 10%";
+  firstRow.style["align-items"] = "end";
   container.appendChild(firstRow);
 
   const dj_div = createHiddenElement("mix-name-text-dj", "DJ Incredibly Annoying");
   appendAndFit(firstRow,dj_div);
-
-  const presents_div = document.createElement("div");
-  presents_div.id = "mix-name-text-presents";
-  presents_div.innerHTML = "presents";
-  presents_div.style.height = "100%";
-  presents_div.style.width = "100%"
-  presents_div.style.color = "white";
-  firstRow.appendChild(presents_div);
-  textFit(presents_div);
+  
+  const presents_div = createHiddenElement("mix-name-text-presents", "presents");
+  presents_div.style.height = "50%"
+  appendAndFit(firstRow,presents_div);
   
   const secondRow = document.createElement("div");
   secondRow.id = "second-row";  
