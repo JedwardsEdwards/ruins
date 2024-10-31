@@ -15,6 +15,8 @@ function renderMixName() {
   const dj_div = document.createElement("div");
   dj_div.id = "mix-name-text-dj";
   dj_div.innerHTML = "DJ Incredibly Annoying";
+  dj_div.style.height = "100%";
+  dj_div.style.width = "100%"
   firstRow.appendChild(dj_div);
   textFit(dj_div);
 
@@ -22,7 +24,7 @@ function renderMixName() {
   presents_div.id = "mix-name-text-presents";
   presents_div.innerHTML = "presents";
   firstRow.appendChild(presents_div);
-  textFit(presents_div);
+  //textFit(presents_div);
   
   const secondRow = document.createElement("div");
   secondRow.id = "second-row";  
