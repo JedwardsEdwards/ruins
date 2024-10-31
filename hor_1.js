@@ -10,7 +10,7 @@ function createHiddenElement(id, text) {
 
 function appendAndFit(parent, child) {
   parent.appendChild(child);
-  textFit(child);
+  textFit(child,  {multiLine : false});
 };
 
 function createRow(id, cols) {
