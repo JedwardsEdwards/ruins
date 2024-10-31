@@ -79,14 +79,18 @@ function renderMixName() {
   const thirdRow = document.createElement("div");
   thirdRow.id = "third-row";
   container.appendChild(thirdRow);
-  const slimeParty = createHiddenElement("mix-name-text-sp", "welcome 💚 to the slime party");
+  const slimeParty = document.createElement("div");
+  slimeParty.innerHTML = "welcome 💚 to the slime party";
 
   const fourthRow = document.createElement("div");
   fourthRow.id = "fourth-row";
   container.appendChild(fourthRow);
-  const puke1 = createHiddenElement("mix-name-puke1", "🤮");
-  const puke2 = createHiddenElement("mix-name-puke2", "🤮");
-  const puke3 = createHiddenElement("mix-name-puke3", "🤮");
+  const puke1 = document.createElement("div");
+  puke1.innerHTML = "🤮";
+  const puke2 = document.createElement("div");
+  puke1.innerHTML = "🤮";
+  const puke3 = document.createElement("div");
+  puke1.innerHTML = "🤮";
 
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
