@@ -34,7 +34,7 @@ function renderMixName() {
 
   // could try css animations, don't know how they play when appending but might be easier??
   container.appendChild(firstRow);
-  setTimeout(() => {firstRow.appendChild(}, 1000);
+  //setTimeout(() => {firstRow.appendChild(}, 1000);
   setTimeout(() => {container.appendChild(secondRow)}, 2000);
   setTimeout(() => {container.appendChild(thirdRow)}, 3000);
 };
