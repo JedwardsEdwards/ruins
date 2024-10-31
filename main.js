@@ -115,14 +115,17 @@ function toMixOne() {
 
 function toPlay() {
     info("toPlay","current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
-    if ( window.target_mix != window.current_mix) {
-        resetPlayer();
-    };
+    // all the stuff commented out here was for persisting the mix between moving to home and back, but bugs with already playing stuff, so this is cleaner for now
+    // can always hack it from the phone
+    //if ( window.target_mix != window.current_mix) {
+    //    resetPlayer();
+    //};
     transitionToPage("play");
-    if ( window.target_mix != window.current_mix) {
-        startMix();
-    } else {
-        window.player.togglePlay();
+    startMix();
+    //if ( window.target_mix != window.current_mix) {
+    //    startMix();
+    //} else {
+    //    window.player.togglePlay();
     };
 };
 
