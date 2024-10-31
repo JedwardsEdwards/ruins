@@ -1,3 +1,18 @@
+function createHiddenElement(id, text) {
+   const element = document.createElement("div");
+   element.id = id;
+   element.innerHTML = text;
+   element.style.height = "100%";
+   element.style.width = "100%"
+   element.style.color = "white";
+   return element;
+};
+
+function appendAndFit(parent, child) {
+  parent.appendChild(child);
+  textFit(child);
+};
+
 function renderMixName() {
   const container = document.getElementById("mix-name");
 
@@ -11,17 +26,11 @@ function renderMixName() {
   const firstRow = document.createElement("div");
   firstRow.id = "first-row";
   firstRow.style.display = "grid";
-  firstRow.style["grid-template-columns"] = "70% 30%";
+  firstRow.style["grid-template-columns"] = "90% 10%";
   container.appendChild(firstRow);
 
-  const dj_div = document.createElement("div");
-  dj_div.id = "mix-name-text-dj";
-  dj_div.innerHTML = "DJ Incredibly Annoying";
-  dj_div.style.height = "100%";
-  dj_div.style.width = "100%"
-  dj_div.style.color = "white";
-  firstRow.appendChild(dj_div);
-  textFit(dj_div);
+  const dj_div = createHiddenElement("mix-name-text-dj", "DJ Incredibly Annoying");
+  appendAndFit(firstRow,dj_div);
 
   const presents_div = document.createElement("div");
   presents_div.id = "mix-name-text-presents";
@@ -44,7 +53,6 @@ function renderMixName() {
   container.appendChild(thirdRow);
 
   // could try css animations, don't know how they play when appending but might be easier??
-  container.appendChild(firstRow);
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
   setTimeout(() => {presents_div.style.color = "black"}, 2000);
 };
