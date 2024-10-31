@@ -103,8 +103,8 @@ function renderMixName() {
   setTimeout(() => {sticky.style.color = "black"}, 5000);
   setTimeout(() => {secondHeart.style.color = "black"}, 5500);
   setTimeout(() => {slimy.style.color = "black"}, 6000);
-  setTimeout(() => {thirdRow.append(slimeParty), 7000);
-  setTimeout(() => {fourthRow.append(puke1), 8000);
-  setTimeout(() => {fourthRow.append(puke2), 8500);
-  setTimeout(() => {fourthRow.append(puke3), 9000);
+  setTimeout(() => {thirdRow.append(slimeParty)}, 7000);
+  setTimeout(() => {fourthRow.append(puke1)}, 8000);
+  setTimeout(() => {fourthRow.append(puke2)}, 8500);
+  setTimeout(() => {fourthRow.append(puke3)}, 9000);
 };
