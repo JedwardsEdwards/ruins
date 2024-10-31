@@ -47,6 +47,33 @@ function renderMixName() {
   container.appendChild(secondRow);
   const sss_sizer_div = createHiddenElement("mix-name-text-sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]");
   appendAndFit(secondRow,sss_sizer_div);
+  secondRowFontSize = sss_sizer_div.children["0"].style["font-size"];
+  console.log(secondRowFontSize);
+  secondRow.innerHTML = "";
+  secondRow.style.display = "grid";
+  secondRow.style["grid-template-columns"] = "5% 25% 7.5% 25% 7.5% 25% 5%";
+  secondRow.style["align-items"] = "end";
+  const firstBracket = createHiddenElement("mix-name-text-fb", "[");
+  firstBracket.style["font-size"] = secondRowFontSize;
+  secondRow.append(firstBracket);
+  const sweaty = createHiddenElement("mix-name-text-sweaty", "Sweaty");
+  sweaty.style["font-size"] = secondRowFontSize;
+  secondRow.append(sweaty);
+  const firstHeart = createHiddenElement("mix-name-text-fh", "♡");
+  firstHeart.style["font-size"] = secondRowFontSize;
+  secondRow.append(firstHeart);
+  const sticky = createHiddenElement("mix-name-text-sticky", "Sticky");
+  sticky.style["font-size"] = secondRowFontSize;
+  secondRow.append(sticky);
+  const secondHeart = createHiddenElement("mix-name-text-sh", "♡");
+  secondHeart.style["font-size"] = secondRowFontSize;
+  secondRow.append(secondHeart);
+  const slimy = createHiddenElement("mix-name-text-slimy", "Slimy");
+  slimy.style["font-size"] = secondRowFontSize;
+  secondRow.append(slimy);
+  const secondBracket = createHiddenElement("mix-name-text-fb", "]");
+  secondBracket.style["font-size"] = secondRowFontSize;
+  secondRow.append(secondBracket);
 
 
   const thirdRow = document.createElement("div");
@@ -57,6 +84,13 @@ function renderMixName() {
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
   setTimeout(() => {presents_div.style.color = "black"}, 2000);
-  setTimeout(() => {sss_sizer_div.style.color = "black"}, 3000);
+
+  setTimeout(() => {firstBracket.style.color = "black"}, 3000);
+  setTimeout(() => {firstHeart.style.color = "black"}, 3000);
+  setTimeout(() => {secondHeart.style.color = "black"}, 3000);
+  setTimeout(() => {secondBracket.style.color = "black"}, 3000);
+  setTimeout(() => {sweaty.style.color = "black"}, 4000);
+  setTimeout(() => {sticky.style.color = "black"}, 5000);
+  setTimeout(() => {slimy.style.color = "black"}, 6000);
 
 };
