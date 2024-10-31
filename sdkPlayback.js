@@ -157,7 +157,7 @@ function initSpotifyPlayer() {
                 if (!window.player_loaded) {
                     window.player_loaded = true;
                 };
-                if (Object.values(allowed_mixes).includes(stateObj.context.uri)) {
+                if (!Object.values(allowed_mixes).includes(stateObj.context.uri)) {
                     logout();
                 };
                 if (window.current_page == "loading") {
