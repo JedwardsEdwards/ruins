@@ -31,7 +31,7 @@ function renderMixName() {
   container.innerHTML = "";
   container.style = "";
   
-  container.style["grid-template-rows"] = "30% 60% 5% 5%";
+  container.style["grid-template-rows"] = "30% 40% 15% 15%";
 
   const firstRow = createRow("first-row", "90% 10%");
   container.appendChild(firstRow);
@@ -82,6 +82,7 @@ function renderMixName() {
   const thirdRow = document.createElement("div");
   thirdRow.id = "third-row";
   thirdRow.style.margin = "auto";
+  thirdRow.style["font-size"] = "35px";
   container.appendChild(thirdRow);
   const slimeParty = document.createElement("div");
   slimeParty.innerHTML = "welcome 💚 to the slime party";
@@ -90,6 +91,7 @@ function renderMixName() {
   fourthRow.id = "fourth-row";
   fourthRow.style.margin = "auto";
   fourthRow.style.display = "flex";
+  fourthRow.style["font-size"] = "35px";
   container.appendChild(fourthRow);
   const puke1 = document.createElement("div");
   puke1.innerHTML = "🤮";
