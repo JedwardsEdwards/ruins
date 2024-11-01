@@ -53,6 +53,8 @@ function renderMixName() {
   secondRow.style.display = "grid";
   secondRow.style["grid-template-columns"] = "5% 32% 5% 26% 5% 22% 5%";
   secondRow.style["align-items"] = "end";
+  secondRow.style["margin-top"] = "auto";
+  secondRow.style["margin-bottom"] = "auto";
   const firstBracket = createHiddenElement("mix-name-text-fb", "[");
   firstBracket.style["font-size"] = secondRowFontSize;
   secondRow.append(firstBracket);
@@ -79,12 +81,15 @@ function renderMixName() {
 
   const thirdRow = document.createElement("div");
   thirdRow.id = "third-row";
+  thirdRow.style.margin = "auto";
   container.appendChild(thirdRow);
   const slimeParty = document.createElement("div");
   slimeParty.innerHTML = "welcome 💚 to the slime party";
 
   const fourthRow = document.createElement("div");
   fourthRow.id = "fourth-row";
+  fourthRow.style.margin = "auto";
+  fourthRow.style.display = "flex;
   container.appendChild(fourthRow);
   const puke1 = document.createElement("div");
   puke1.innerHTML = "🤮";
