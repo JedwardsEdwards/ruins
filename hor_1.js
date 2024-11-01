@@ -89,7 +89,7 @@ function renderMixName() {
   const fourthRow = document.createElement("div");
   fourthRow.id = "fourth-row";
   fourthRow.style.margin = "auto";
-  fourthRow.style.display = "flex;
+  fourthRow.style.display = "flex";
   container.appendChild(fourthRow);
   const puke1 = document.createElement("div");
   puke1.innerHTML = "🤮";
