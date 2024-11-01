@@ -58,6 +58,7 @@ function renderMixName() {
   secondRow.append(firstBracket);
   const sweaty = createHiddenElement("mix-name-text-sweaty", "Sweaty");
   sweaty.style["font-size"] = secondRowFontSize;
+  sweaty.style["font-stretch"] = "ultra-condensed";
   secondRow.append(sweaty);
   const firstHeart = createHiddenElement("mix-name-text-fh", "♡");
   firstHeart.style["font-size"] = secondRowFontSize;
@@ -88,9 +89,9 @@ function renderMixName() {
   const puke1 = document.createElement("div");
   puke1.innerHTML = "🤮";
   const puke2 = document.createElement("div");
-  puke1.innerHTML = "🤮";
+  puke2.innerHTML = "🤮";
   const puke3 = document.createElement("div");
-  puke1.innerHTML = "🤮";
+  puke3.innerHTML = "🤮";
 
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
