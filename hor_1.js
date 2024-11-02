@@ -76,7 +76,7 @@ function renderMixName() {
   container.appendChild(fourthRow);
   const puke1 = createElement("puke1", "🤮", "");
   const puke2 = createElement("puke2", "🤮", "");
-  const puke2 = createElement("puke3", "🤮", "");
+  const puke3 = createElement("puke3", "🤮", "");
 
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
