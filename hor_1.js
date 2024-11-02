@@ -1,27 +1,26 @@
-function createHiddenElement(id, text) {
+function createElement(id, text, styles) {
    const element = document.createElement("div");
-   element.id = id;
+   element.id = "hor-1-" + id;
    element.innerHTML = text;
-   element.style.height = "100%";
-   element.style.width = "100%"
-   element.style.color = "white";
-   element.style["text-align"] = "center";
+   element.style = styles;
    return element;
 };
+
+const hidden_styles = "height:100%; width:100%; color:white; text-align:center";
 
 function appendAndFit(parent, child) {
   parent.appendChild(child);
   textFit(child,  {multiLine : false});
 };
 
-function createRow(id, cols) {
+function createRow(id, styles) {
    const row = document.createElement("div");
    row.id = id;
-   row.style.display = "grid";
-   row.style["grid-template-columns"] = cols;
-   row.style["align-items"] = "end";
+   row.style = styles;
    return row;
 };
+
+const row_styles = "display: grid; align-items: end";
 
 function renderMixName() {
   const container = document.getElementById("mix-name");
@@ -33,72 +32,51 @@ function renderMixName() {
   
   container.style["grid-template-rows"] = "30% 40% 15% 15%";
 
-  const firstRow = createRow("first-row", "90% 10%");
+  const firstRow = createRow("first-row", row_styles);
+  firstRow.style["grid-template-columns"] = "90% 10%";
   container.appendChild(firstRow);
 
-  const dj_div = createHiddenElement("mix-name-text-dj", "DJ Incredibly Annoying");
+  const dj_div = createElement("dj", "DJ Incredibly Annoying", hidden_styles);
   appendAndFit(firstRow,dj_div);
   
-  const presents_div = createHiddenElement("mix-name-text-presents", "presents");
-  presents_div.style.height = "50%"
+  const presents_div = createElement("presents", "presents", "height:50%; width:100%; color:white; text-align:center");
   appendAndFit(firstRow,presents_div);
 
-  const secondRow = createRow("second-row", "5% 25% 7.5% 25% 7.5% 25% 5%");
-  secondRow.style = "";
+  const secondRow = createRow("second-row", "");
   container.appendChild(secondRow);
-  const sss_sizer_div = createHiddenElement("mix-name-text-sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]");
+  const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = sss_sizer_div.children["0"].style["font-size"];
   secondRow.innerHTML = "";
-  secondRow.style.display = "grid";
+  secondRow.style = row_styles;
   secondRow.style["grid-template-columns"] = "5% 32% 5% 26% 5% 22% 5%";
-  secondRow.style["align-items"] = "end";
   secondRow.style["margin-top"] = "auto";
   secondRow.style["margin-bottom"] = "auto";
-  const firstBracket = createHiddenElement("mix-name-text-fb", "[");
-  firstBracket.style["font-size"] = secondRowFontSize;
+   
+  const firstBracket = createElement("fb", "[", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(firstBracket);
-  const sweaty = createHiddenElement("mix-name-text-sweaty", "Sweaty");
-  sweaty.style["font-size"] = secondRowFontSize;
-  sweaty.style["font-stretch"] = "ultra-condensed";
+  const sweaty = createElement("sweaty", "Sweaty", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(sweaty);
-  const firstHeart = createHiddenElement("mix-name-text-fh", "♡");
-  firstHeart.style["font-size"] = secondRowFontSize;
+  const firstHeart = createElement("fh", "♡", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(firstHeart);
-  const sticky = createHiddenElement("mix-name-text-sticky", "Sticky");
-  sticky.style["font-size"] = secondRowFontSize;
+  const sticky = createElement("sticky", "Sticky", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(sticky);
-  const secondHeart = createHiddenElement("mix-name-text-sh", "♡");
-  secondHeart.style["font-size"] = secondRowFontSize;
+  const secondHeart = createElement("sh", "♡", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(secondHeart);
-  const slimy = createHiddenElement("mix-name-text-slimy", "Slimy");
-  slimy.style["font-size"] = secondRowFontSize;
+  const slimy = createElement("slimy", "Slimy", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(slimy);
-  const secondBracket = createHiddenElement("mix-name-text-fb", "]");
-  secondBracket.style["font-size"] = secondRowFontSize;
+  const secondBracket = createElement("fb", "]", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(secondBracket);
 
-
-  const thirdRow = document.createElement("div");
-  thirdRow.id = "third-row";
-  thirdRow.style.margin = "auto";
-  thirdRow.style["font-size"] = "35px";
+  const thirdRow = createRow("thirdRow", "margin: auto; font-size: 35px");
   container.appendChild(thirdRow);
-  const slimeParty = document.createElement("div");
-  slimeParty.innerHTML = "welcome 💚 to the slime party";
+  const slimeParty = createElement("slime-party", "welcome 💚 to the slime party", "");
 
-  const fourthRow = document.createElement("div");
-  fourthRow.id = "fourth-row";
-  fourthRow.style.margin = "auto";
-  fourthRow.style.display = "flex";
-  fourthRow.style["font-size"] = "35px";
+  const fourthRow = createRow("fourth-row", "margin: auto; display: flex; font-size: 35px");
   container.appendChild(fourthRow);
-  const puke1 = document.createElement("div");
-  puke1.innerHTML = "🤮";
-  const puke2 = document.createElement("div");
-  puke2.innerHTML = "🤮";
-  const puke3 = document.createElement("div");
-  puke3.innerHTML = "🤮";
+  const puke1 = createElement("puke1", "🤮", "");
+  const puke2 = createElement("puke2", "🤮", "");
+  const puke2 = createElement("puke3", "🤮", "");
 
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "black"}, 1000);
