@@ -34,7 +34,10 @@ body {
 #page-container {
   grid-row-start:2;
   display:flex;
-  border: black solid 0.5px;
+  border-top: black solid 0.5px;
+  border-bottom: black solid 0.5px;
+  margin-left: 20px;
+  margin-right:20px;
 }
 #footer {
   grid-row-start: 3;
