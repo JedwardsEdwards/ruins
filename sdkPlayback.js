@@ -79,8 +79,10 @@ function setMixDetails(id) {
         //};
         //document.getElementById("mix-name").style.color = "black";
         
-        //renderMixName();
-        document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
+        if (!document.getElementById('mix-details').innerHTML == data.name.toUpperCase()) {
+          renderMixName();
+          document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
+        };
       })
   }
 
