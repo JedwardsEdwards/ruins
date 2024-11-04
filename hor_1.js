@@ -49,10 +49,10 @@ function renderMixName() {
 
   const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
-  secondRowFontSize = (0.90 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
+  secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
   secondRow.innerHTML = "";
   secondRow.style = row_styles;
-  secondRow.style["grid-template-columns"] = "47% 6% 47%";
+  secondRow.style["grid-template-columns"] = "45% 10% 45%";
   secondRow.style["margin-top"] = "auto";
   secondRow.style["margin-bottom"] = "auto";
 
@@ -107,10 +107,10 @@ function renderMixName() {
   setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
   setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
-  setTimeout(() => {sweaty.style.color = "inherit"}, 3000);
-  setTimeout(() => {firstHeart.style.color = "inherit"}, 3500);
-  setTimeout(() => {sticky.style.color = "inherit"}, 4000);
-  setTimeout(() => {slimy.style.color = "inherit"}, 5500);
+  setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
+  setTimeout(() => {firstHeart.style.color = "inherit"}, 5000);
+  setTimeout(() => {sticky.style.color = "inherit"}, 6000);
+  setTimeout(() => {slimy.style.color = "inherit"}, 8000);
 
   /*
   setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
