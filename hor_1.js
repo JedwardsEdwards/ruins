@@ -46,10 +46,10 @@ function renderMixName() {
   container.appendChild(secondRow);
   const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
-  secondRowFontSize = sss_sizer_div.children["0"].style["font-size"];
+  secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
   secondRow.innerHTML = "";
   secondRow.style = row_styles;
-  secondRow.style["grid-template-columns"] = "5% 32% 5% 26% 5% 22% 5%";
+  secondRow.style["grid-template-columns"] = "4% 28% 4% 28% 4% 28% 4%";
   secondRow.style["margin-top"] = "auto";
   secondRow.style["margin-bottom"] = "auto";
    
