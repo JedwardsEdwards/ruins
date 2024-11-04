@@ -30,7 +30,8 @@ function renderMixName() {
   container.innerHTML = "";
   container.style = "";
   
-  container.style["grid-template-rows"] = "30% 40% 15% 15%";
+  //container.style["grid-template-rows"] = "30% 40% 15% 15%";
+  container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
   firstRow.style["grid-template-columns"] = "90% 10%";
@@ -42,8 +43,30 @@ function renderMixName() {
   const presents_div = createElement("presents", "presents", "height:50%; width:100%; color:white; text-align:center");
   appendAndFit(firstRow,presents_div);
 
+  
   const secondRow = createRow("second-row", "");
   container.appendChild(secondRow);
+
+  const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", hidden_styles);
+  appendAndFit(secondRow,sss_sizer_div);
+  secondRowFontSize = (0.90 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
+  secondRow.innerHTML = "";
+  secondRow.style = row_styles;
+  secondRow.style["grid-template-columns"] = "47% 6% 47%";
+  secondRow.style["margin-top"] = "auto";
+  secondRow.style["margin-bottom"] = "auto";
+
+  const sweaty = createElement("sweaty", "SWEATY", hidden_styles + "; font-size: " + secondRowFontSize);
+  secondRow.append(sweaty);
+  const firstHeart = createElement("fh", "♡", hidden_styles + "; font-size: " + secondRowFontSize);
+  secondRow.append(firstHeart);
+  const sticky = createElement("sticky", "STICKY", hidden_styles + "; font-size: " + secondRowFontSize);
+  secondRow.append(sticky);
+
+  const thirdRow = createRow("first-row", "");
+  const slimy = createElement("slimy", "SLIMY", hidden_styles);
+  appendAndFit(thirdRow,slimy);
+  /*
   const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
@@ -77,11 +100,18 @@ function renderMixName() {
   const puke1 = createElement("puke1", "🤮", "");
   const puke2 = createElement("puke2", "🤮", "");
   const puke3 = createElement("puke3", "🤮", "");
-
+  */
+   
   // could try css animations, don't know how they play when appending but might be easier??
   setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
   setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
+  setTimeout(() => {sweaty.style.color = "inherit"}, 3000);
+  setTimeout(() => {firstHeart.style.color = "inherit"}, 3500);
+  setTimeout(() => {sticky.style.color = "inherit"}, 4000);
+  setTimeout(() => {slimy.style.color = "inherit"}, 5500);
+
+  /*
   setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
   setTimeout(() => {secondBracket.style.color = "inherit"}, 3000);
   setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
@@ -93,4 +123,5 @@ function renderMixName() {
   setTimeout(() => {fourthRow.append(puke1)}, 8000);
   setTimeout(() => {fourthRow.append(puke2)}, 8500);
   setTimeout(() => {fourthRow.append(puke3)}, 9000);
+  */
 };
