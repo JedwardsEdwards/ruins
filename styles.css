@@ -12,6 +12,9 @@
 html {
   height:100%;
   font-family:Michroma;
+  border-color: black;
+  color: black;
+  background-color: white;
 }
 body {
   height:100%;
@@ -34,8 +37,8 @@ body {
 #page-container {
   grid-row-start:2;
   display:flex;
-  border-top: black solid 0.5px;
-  border-bottom: black solid 0.5px;
+  border-top: solid 0.5px;
+  border-bottom: solid 0.5px;
   margin-left: 20px;
   margin-right:20px;
 }
@@ -56,14 +59,15 @@ body {
   margin:auto;
 }
 .button {
-  background-color: white; /* Green */
-  border: 1px solid black;
-  color: black;
+  background-color: inherit;
+  border: 1px solid;
+  border-color:inherit;
+  color: inherit;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  font-family:Michroma;
+  font-size: inherit;
+  font-family:inherit;
 }
 
 .button:hover {
