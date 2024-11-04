@@ -65,7 +65,7 @@ function renderMixName() {
 
   const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
-  const slimy = createElement("slimy", "SLIMY", hidden_styles);
+  const slimy = createElement("slimy", "♡ SLIMY ♡", hidden_styles);
   appendAndFit(thirdRow,slimy);
   /*
   const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
