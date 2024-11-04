@@ -63,7 +63,8 @@ function renderMixName() {
   const sticky = createElement("sticky", "STICKY", hidden_styles + "; font-size: " + secondRowFontSize);
   secondRow.append(sticky);
 
-  const thirdRow = createRow("third-row", row_styles);
+  const thirdRow = createRow("third-row", "");
+  container.appendChild(thirdRow);
   const slimy = createElement("slimy", "SLIMY", hidden_styles);
   appendAndFit(thirdRow,slimy);
   /*
