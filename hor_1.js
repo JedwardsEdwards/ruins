@@ -49,7 +49,7 @@ function renderMixName() {
 
   const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
-  secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
+  secondRowFontSize = (0.82 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
   secondRow.innerHTML = "";
   secondRow.style = row_styles;
   secondRow.style["grid-template-columns"] = "45% 10% 45%";
@@ -65,7 +65,7 @@ function renderMixName() {
 
   const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
-  const slimy = createElement("slimy", "♡ SLIMY ♡", hidden_styles);
+  const slimy = createElement("slimy", "SLIMY", hidden_styles);
   appendAndFit(thirdRow,slimy);
   /*
   const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
