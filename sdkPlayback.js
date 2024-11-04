@@ -78,12 +78,7 @@ function setMixDetails(id) {
         //  textFit(document.getElementById('mix-name'));
         //};
         //document.getElementById("mix-name").style.color = "black";
-
-        console.log(document.getElementById('mix-details').innerHTML);
-        console.log(data.name.toUpperCase());
-        console.log(document.getElementById('mix-details').innerHTML == data.name.toUpperCase());
-        console.log(!document.getElementById('mix-details').innerHTML == data.name.toUpperCase());
-        if (!document.getElementById('mix-details').innerHTML == data.name.toUpperCase()) {
+        if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
           renderMixName();
           document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         };
