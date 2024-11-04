@@ -19,7 +19,11 @@ html {
 body {
   height:100%;
   display: grid;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-columns: 20% 60% 20%;
+}
+#screen {
+  display:grid;
+  grid-template-rows:20% 60% 20%;
 }
 #banner {
   grid-row-start:1;
