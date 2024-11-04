@@ -44,11 +44,17 @@ function updatePlayer(track) {
             return;
         }
         setGlobal("current_track", track["id"]);
-        document.getElementById('track-name').innerHTML= track.name.toUpperCase();
-        document.getElementById('track-artist').innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
+        let name = document.getElementById('track-name');
+        let artist = document.getElementById('track-artist');
+        name.style.color = "white";
+        artist.style.color = "white";
+        name.innerHTML= track.name.toUpperCase();
+        artist.innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
         if (window.current_page == "play") {
-          textFit(document.getElementById('track-name'));
-          textFit(document.getElementById('track-artist'));
+          textFit(name);
+          textFit(artist);
+          name.style.color = "black";
+          artist.style.color = "black";
         }
     };
 };
