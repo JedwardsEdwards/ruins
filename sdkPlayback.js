@@ -81,6 +81,8 @@ function setMixDetails(id) {
 
         console.log(document.getElementById('mix-details').innerHTML);
         console.log(data.name.toUpperCase());
+        console.log(document.getElementById('mix-details').innerHTML == data.name.toUpperCase());
+        console.log(!document.getElementById('mix-details').innerHTML == data.name.toUpperCase());
         if (!document.getElementById('mix-details').innerHTML == data.name.toUpperCase()) {
           renderMixName();
           document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
