@@ -20,7 +20,8 @@ const redirect_uri = 'https://jedwardsedwards.github.io/ruins/'; // Your redirec
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
 const allowed_mixes = {
-  "test" : "73p0zWLYMp2Rs2Kh3PM5Le"
+  "test" : "73p0zWLYMp2Rs2Kh3PM5Le",
+  "slimy" : "5MrDj4GwlY8WBRNzVHtE6Y"
 };
 
 // 1 - errors, 2 - info, 3 - debug
@@ -108,7 +109,7 @@ function setMix(id) {
 };
 
 function toMixOne() {
-  setMix(allowed_mixes["test"]);
+  setMix(allowed_mixes["slimy"]);
   //setAndDisplayPage("mix");
   transitionToPage("mix");
 };
