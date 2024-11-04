@@ -79,16 +79,16 @@ function renderMixName() {
   const puke3 = createElement("puke3", "🤮", "");
 
   // could try css animations, don't know how they play when appending but might be easier??
-  setTimeout(() => {dj_div.style.color = "black"}, 1000);
-  setTimeout(() => {presents_div.style.color = "black"}, 2000);
+  setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
+  setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
-  setTimeout(() => {firstBracket.style.color = "black"}, 3000);
-  setTimeout(() => {secondBracket.style.color = "black"}, 3000);
-  setTimeout(() => {sweaty.style.color = "black"}, 4000);
-  setTimeout(() => {firstHeart.style.color = "black"}, 4500);
-  setTimeout(() => {sticky.style.color = "black"}, 5000);
-  setTimeout(() => {secondHeart.style.color = "black"}, 5500);
-  setTimeout(() => {slimy.style.color = "black"}, 6000);
+  setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
+  setTimeout(() => {secondBracket.style.color = "inherit"}, 3000);
+  setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
+  setTimeout(() => {firstHeart.style.color = "inherit"}, 4500);
+  setTimeout(() => {sticky.style.color = "inherit"}, 5000);
+  setTimeout(() => {secondHeart.style.color = "inherit"}, 5500);
+  setTimeout(() => {slimy.style.color = "inherit"}, 6000);
   setTimeout(() => {thirdRow.append(slimeParty)}, 7000);
   setTimeout(() => {fourthRow.append(puke1)}, 8000);
   setTimeout(() => {fourthRow.append(puke2)}, 8500);
