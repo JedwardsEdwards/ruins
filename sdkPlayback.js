@@ -53,8 +53,8 @@ function updatePlayer(track) {
         if (window.current_page == "play") {
           textFit(name);
           textFit(artist);
-          name.style.color = "black";
-          artist.style.color = "black";
+          name.style.color = "inherit";
+          artist.style.color = "inherit";
         }
     };
 };
