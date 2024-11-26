@@ -24,10 +24,8 @@ function renderRancid() {
   const thirdRow = createRow("third-row", "display: grid; align-items: start");
   thirdRow.style["grid-template-columns"] = "50% 50%";
   container.appendChild(thirdRow);
-  const courtesy_div = createElement("courtesy", "COURTESY OF", "height:50%; width:100%; color:white; text-align:center");
+  const courtesy_div = createElement("courtesy", "COURTESY OF SYD.", hidden_styles);
   appendAndFit(thirdRow,courtesy_div);
-  const syd_div = createElement("syd", "SYD", hidden_styles);
-  appendAndFit(thirdRow,syd_div);
 
   setTimeout(() => {hour_div.style.color = "inherit"}, 1000);
   setTimeout(() => {and_div.style.color = "inherit"}, 2000);
@@ -35,7 +33,6 @@ function renderRancid() {
   setTimeout(() => {of_div.style.color = "inherit"}, 4000);
   setTimeout(() => {rancid_div.style.color = "inherit"}, 5000);
   setTimeout(() => {courtesy_div.style.color = "inherit"}, 6000);
-  setTimeout(() => {syd_div.style.color = "inherit"}, 7000);
 };
 
 mixRenderFunction["rancid"] = renderRancid;
