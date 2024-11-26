@@ -11,10 +11,10 @@ function renderSlimy() {
   firstRow.style["grid-template-columns"] = "90% 10%";
   container.appendChild(firstRow);
 
-  const dj_div = createElement("dj", "DJ Incredibly Annoying", getHiddenStyles());
+  const dj_div = createElement("dj", "DJ INCREDIBLY ANNOYING", getHiddenStyles());
   appendAndFit(firstRow,dj_div);
   
-  const presents_div = createElement("presents", "presents", "height:50%; width:100%; text-align:center");
+  const presents_div = createElement("presents", "PRESENTS", "height:50%; width:100%; text-align:center");
   appendAndFit(firstRow,presents_div);
 
   
@@ -42,7 +42,7 @@ function renderSlimy() {
   const slimy = createElement("slimy", "SLIMY", hidden_styles);
   appendAndFit(thirdRow,slimy);
   */
-  const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", getHiddenStyles());
+  const sss_sizer_div = createElement("sizer", "[ SWEATY ♡ STICKY ♡ SLIMY ]", getHiddenStyles());
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
   secondRow.innerHTML = "";
@@ -68,7 +68,7 @@ function renderSlimy() {
 
   const thirdRow = createRow("thirdRow", "margin: auto; font-size: 35px");
   container.appendChild(thirdRow);
-  const slimeParty = createElement("slime-party", "welcome 💚 to the slime party", "color: " + display_palettes["slimy"]["highlight-color"]);
+  const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", "color: " + display_palettes["slimy"]["highlight-color"]);
 
   const fourthRow = createRow("fourth-row", "margin: auto; display: flex; font-size: 35px");
   container.appendChild(fourthRow);
