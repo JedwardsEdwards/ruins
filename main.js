@@ -101,7 +101,7 @@ function setPalette(name) {
   
 function displayPage(page) {
   hideAll();
-  setPalette(getMixFromIdwindow.target_mix) || "default");
+  setPalette(getMixFromId(window.target_mix) || "default");
   updateClassDisplay(page + "-element","unset");
 };
 
