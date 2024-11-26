@@ -87,8 +87,10 @@ function setMixDetails(id) {
         //document.getElementById("mix-name").style.color = "black";
         info("setMixDetails", "data received from API call");
         //if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
-          mixRenderFunction[getMixFromId(id)]();
-          document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
+        if (window.target_page == "mix") {
+          ifmixRenderFunction[getMixFromId(id)]();
+        };
+        document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         //};
       })
   }
@@ -148,11 +150,11 @@ function initSpotifyPlayer() {
         window.player_loaded = true;
         if (window.current_page == "loading") {
             info("ready", "current_page: " + window.current_page + ", target_page: " + window.target_page);
-            setAndDisplayPage(window.target_page);
             if (["mix", "play"].includes(window.target_page)) {
               // don't love doing this here tbh
               setMixDetails(window.target_mix);
             };
+            setAndDisplayPage(window.target_page);
         };
         });
     player.addListener('not_ready', ({ device_id }) => {
