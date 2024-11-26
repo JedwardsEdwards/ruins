@@ -142,6 +142,16 @@ function initSpotifyPlayer() {
         info("player_ready",'Ready with Device ID', device_id);
         transferPlayback(device_id);
         window.player.pause();
+
+        window.player_loaded = true;
+        if (window.current_page == "loading") {
+            info("ready", "current_page: " + window.current_page + ", target_page: " + window.target_page);
+            if (["mix", "play"].includes(window.target_page)) {
+              // don't love doing this here tbh
+              setMix(window.target_mix);
+            };
+            setAndDisplayPage(window.target_page);
+        };
         });
     player.addListener('not_ready', ({ device_id }) => {
         info("player_not_ready",'Device ID has gone offline', device_id);
@@ -162,21 +172,24 @@ function initSpotifyPlayer() {
             stateObj) => {
             info("player_state_changed","called player state changed");
             console.log(stateObj);
+            if (stateObj == null){
+                return null
+            };
             if (!stateObj["loading"]) {
-                if (!window.player_loaded) {
-                    window.player_loaded = true;
-                };
+                //if (!window.player_loaded) {
+                //    window.player_loaded = true;
+                //};
                 //if (!Object.values(allowed_mixes).includes(stateObj.context.uri)) {
                 //    logout();
                 //};
-                if (window.current_page == "loading") {
-                    info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
-                    if (["mix", "play"].includes(window.target_page)) {
+                //if (window.current_page == "loading") {
+                //    info("player_state_changed", "current_page: " + window.current_page + ", target_page: " + window.target_page);
+                //    if (["mix", "play"].includes(window.target_page)) {
                       // don't love doing this here tbh
-                      setMix(window.target_mix);
-                    };
-                    setAndDisplayPage(window.target_page);
-                };
+                //      setMix(window.target_mix);
+                //    };
+                //    setAndDisplayPage(window.target_page);
+                //};
                 if (stateObj["shuffle"]) {
                     toggleShuffle(false)
                 };
