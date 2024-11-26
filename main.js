@@ -179,6 +179,10 @@ document
   .addEventListener('click', toMixOne, false);
 
 document
+  .getElementById('mix-two-button')
+  .addEventListener('click', toMixTwo, false);
+
+document
   .getElementById('start-mix-button')
   .addEventListener('click', toPlay, false);
 
