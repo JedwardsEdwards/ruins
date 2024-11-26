@@ -32,6 +32,23 @@ function getMixFromId(id) {
 // 1 - errors, 2 - info, 3 - debug
 const log_level = 3;
 
+const display_palettes = {
+  "default" : {
+    "color" : "black",
+    "background-color" : "white",
+    "hightlight-color" : "white"
+  },
+  "slime" : {
+    "color" : "#4AC176";
+    "background-color" : "#191C1A",
+    "hightlight-color" : "#0BEA5E"
+  },
+  "rancid" : {
+    "color" : "#815555";
+    "background-color" : "#272222",
+    "hightlight-color" : "#FF3333"
+  }};
+
 // Restore tokens from localStorage
 window.access_token = localStorage.getItem('access_token') || null;
 window.refresh_token = localStorage.getItem('refresh_token') || null;
@@ -77,8 +94,14 @@ function hideAll() {
   };
 };
 
+function setPalette(name) {
+  document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"]
+  document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"]
+};
+  
 function displayPage(page) {
   hideAll();
+  setPalette(getMixFromIdwindow.target_mix) || "default");
   updateClassDisplay(page + "-element","unset");
 };
 
