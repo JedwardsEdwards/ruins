@@ -160,6 +160,7 @@ function initSpotifyPlayer() {
         //track_window: { current_track }
           //  }) => {
             stateObj) => {
+            info("player_state_changed","called player state changed");
             console.log(stateObj);
             if (!stateObj["loading"]) {
                 if (!window.player_loaded) {
