@@ -1,4 +1,4 @@
-const mixRenderFunctions = {};
+const mixRenderFunction = {};
 
 function createElement(id, text, styles) {
    const element = document.createElement("div");
@@ -132,4 +132,4 @@ function renderSlimy() {
   //*/
 };
 
-mixRenderFunctions["slimy"] = renderSlimy;
+mixRenderFunction["slimy"] = renderSlimy;
