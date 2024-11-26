@@ -148,7 +148,7 @@ function initSpotifyPlayer() {
             info("ready", "current_page: " + window.current_page + ", target_page: " + window.target_page);
             if (["mix", "play"].includes(window.target_page)) {
               // don't love doing this here tbh
-              setMix(window.target_mix);
+              setMixDetails(window.target_mix);
             };
             setAndDisplayPage(window.target_page);
         };
