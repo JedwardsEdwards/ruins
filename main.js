@@ -38,7 +38,7 @@ const display_palettes = {
     "background-color" : "white",
     "hightlight-color" : "white"
   },
-  "slime" : {
+  "slimy" : {
     "color" : "#4AC176",
     "background-color" : "#191C1A",
     "hightlight-color" : "#0BEA5E"
@@ -95,6 +95,7 @@ function hideAll() {
 };
 
 function setPalette(name) {
+  info("setPalette", "name is: " + name);
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"]
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"]
 };
