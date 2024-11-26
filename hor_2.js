@@ -2,7 +2,7 @@ function renderRancid() {
   info("renderRancid", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "30% 50% 20%";
+  container.style["grid-template-rows"] = "20% 30% 30% 20%";
   
   const firstRow = createRow("first-row", row_styles);
   firstRow.style["grid-template-columns"] = "35% 10% 50% 5%";
@@ -18,13 +18,18 @@ function renderRancid() {
 
   const secondRow = createRow("second-row", "");
   container.appendChild(secondRow);
-  const rancid_div = createElement("rancid", "RANCID TECHNO", hidden_styles);
+  const rancid_div = createElement("rancid", "RANCID", hidden_styles);
   appendAndFit(secondRow,rancid_div);
   
   const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
+  const techno_div = createElement("techno", "TECHNO", hidden_styles);
+  appendAndFit(thirdRow,techno_div);
+   
+  const fourthRow = createRow("fourth-row", "");
+  container.appendChild(fourthRow);
   const courtesy_div = createElement("courtesy", "COURTESY OF SYD.", hidden_styles);
-  appendAndFit(thirdRow,courtesy_div);
+  appendAndFit(fourthRow,courtesy_div);
 
   setTimeout(() => {hour_div.style.color = "inherit"}, 1000);
   setTimeout(() => {and_div.style.color = "inherit"}, 2000);
