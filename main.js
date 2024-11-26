@@ -204,8 +204,6 @@ function initPlayerPage() {
   };
 };
 
-function updateButtonStyles(name) {
-
 document
   .getElementById('login-button')
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
