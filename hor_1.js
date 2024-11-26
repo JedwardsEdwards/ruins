@@ -109,10 +109,10 @@ function renderMixName() {
   setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
   setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
-  setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
-  setTimeout(() => {firstHeart.style.color = "inherit"}, 4500);
-  setTimeout(() => {sticky.style.color = "inherit"}, 5000);
-  setTimeout(() => {slimy.style.color = "inherit"}, 6000);
+  setTimeout(() => {sweaty.style.color = "inherit"}, 3000);
+  setTimeout(() => {firstHeart.style.color = "inherit"}, 3250);
+  setTimeout(() => {sticky.style.color = "inherit"}, 3500);
+  setTimeout(() => {slimy.style.color = "inherit"}, 4250);
 
   /*
   setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
