@@ -46,15 +46,15 @@ function updatePlayer(track) {
         setGlobal("current_track", track["id"]);
         let name = document.getElementById('track-name');
         let artist = document.getElementById('track-artist');
-        name.style.color = "white";
-        artist.style.color = "white";
+        name.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
+        artist.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
         name.innerHTML= track.name.toUpperCase();
         artist.innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
         if (window.current_page == "play") {
           textFit(name);
           textFit(artist);
-          name.style.color = "inherit";
-          artist.style.color = "inherit";
+          name.style.color = display_palettes[getMixFromId(window.current_mix)]["highlight-color"];
+          artist.style.color = display_palettes[getMixFromId(window.current_mix)]["highlight-color"];
         }
     };
 };
