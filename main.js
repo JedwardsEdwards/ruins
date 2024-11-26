@@ -103,7 +103,7 @@ function setPalette(name, hide) {
   document.getElementById("loading-logo").src = "ruins_logo_small_" + name + ".png";
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"];
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"];
-  document.querySelector(".button").forEach(b => {
+  document.querySelectorAll(".button").forEach(b => {
     b.addEventListener("mousenter", function( event ) {event.target.style.color = display_palettes[name]["hover"]}, false);
     b.addEventListener("mouseleave", function( event ) {event.target.style.color = display_palettes[name]["background-color"]}, false);
     b.addEventListener("click", function( event ) {event.target.style.color = display_palettes[name]["highlight-color"]}, false)
