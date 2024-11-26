@@ -85,7 +85,7 @@ function setMixDetails(id) {
         //};
         //document.getElementById("mix-name").style.color = "black";
         if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
-          renderMixName();
+          //renderMixName();
           document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         };
       })
