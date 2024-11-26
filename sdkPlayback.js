@@ -88,7 +88,7 @@ function setMixDetails(id) {
         info("setMixDetails", "data received from API call");
         //if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
         if (window.target_page == "mix") {
-          ifmixRenderFunction[getMixFromId(id)]();
+          mixRenderFunction[getMixFromId(id)]();
         };
         document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         //};
