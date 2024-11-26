@@ -110,7 +110,7 @@ function renderMixName() {
   setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
   setTimeout(() => {sweaty.style.color = "inherit"}, 3000);
-  //setTimeout(() => {firstHeart.style.color = "inherit"}, 3250);
+  setTimeout(() => {firstHeart.style.color = "inherit"}, 3500);
   setTimeout(() => {sticky.style.color = "inherit"}, 4000);
   setTimeout(() => {slimy.style.color = "inherit"}, 5000);
 
