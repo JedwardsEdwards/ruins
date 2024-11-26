@@ -73,6 +73,10 @@ body {
   font-family:inherit;
 }
 
+.mix-button {
+  margin:50px;
+}
+
 .button:hover {
   background-color: grey;
 }
