@@ -96,9 +96,9 @@ function hideAll() {
 
 function setPalette(name, hide) {
   info("setPalette", "name is: " + name);
+  document.getElementById("banner-logo").src = "ruins_logo_name_" + name + ".png";
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"];
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"];
-  document.getElementById("banner-logo").src = "ruins_logo_name_" + name + ".png";
   if (hide) {
     document.querySelectorAll(".page").forEach(p => p.style.color = display_palettes[name]["background-color"]);
   };
