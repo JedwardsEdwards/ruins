@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "30% 40% 15% 15%";
+  container.style["grid-template-rows"] = "30% 40% 30%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
@@ -98,9 +98,9 @@ function renderSlimy() {
   setTimeout(() => {secondHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 5500);
   setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 6000);
   setTimeout(() => {thirdRow.append(slimeParty)}, 7000);
-  setTimeout(() => {fourthRow.append(puke1)}, 8000);
-  setTimeout(() => {fourthRow.append(puke2)}, 8500);
-  setTimeout(() => {fourthRow.append(puke3)}, 9000);
+  //setTimeout(() => {fourthRow.append(puke1)}, 8000);
+  //setTimeout(() => {fourthRow.append(puke2)}, 8500);
+ // setTimeout(() => {fourthRow.append(puke3)}, 9000);
   //*/
 };
 
