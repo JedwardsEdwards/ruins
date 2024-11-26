@@ -33,8 +33,8 @@ function renderSlimy() {
   container.innerHTML = "";
   container.style = "";
   
-  //container.style["grid-template-rows"] = "30% 40% 15% 15%";
-  container.style["grid-template-rows"] = "20% 30% 50%";
+  container.style["grid-template-rows"] = "30% 40% 15% 15%";
+  //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
   firstRow.style["grid-template-columns"] = "90% 10%";
@@ -117,6 +117,8 @@ function renderSlimy() {
   setTimeout(() => {slimy.style.color = "inherit"}, 5000);
   */
   ///*
+  setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
+  setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
   setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
   setTimeout(() => {secondBracket.style.color = "inherit"}, 3000);
   setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
