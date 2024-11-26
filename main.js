@@ -126,7 +126,7 @@ function setPalette(name, hide) {
   
 function displayPage(page) {
   hideAll();
-  if (page == "home") {
+  if (["home", "login"].includes(page)) {
     hide = false;
   } else {
     hide = true;
