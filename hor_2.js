@@ -22,7 +22,7 @@ function renderRancid() {
   appendAndFit(secondRow,rancid_div);
   
   const thirdRow = createRow("third-row", "display: grid; align-items: start");
-  thirdRow.style["grid-template-columns"] = "70% 30%";
+  thirdRow.style["grid-template-columns"] = "50% 50%";
   container.appendChild(thirdRow);
   const courtesy_div = createElement("courtesy", "COURTESY OF", "height:50%; width:100%; color:white; text-align:center");
   appendAndFit(thirdRow,courtesy_div);
