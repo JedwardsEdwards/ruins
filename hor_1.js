@@ -1,3 +1,5 @@
+const mixRenderFunctions = {};
+
 function createElement(id, text, styles) {
    const element = document.createElement("div");
    element.id = "hor-1-" + id;
@@ -22,7 +24,7 @@ function createRow(id, styles) {
 
 const row_styles = "display: grid; align-items: end";
 
-function renderMixName() {
+function renderSlimy() {
   info("renderMixName", "called");
   const container = document.getElementById("mix-name");
 
@@ -129,3 +131,5 @@ function renderMixName() {
   setTimeout(() => {fourthRow.append(puke3)}, 9000);
   //*/
 };
+
+mixRenderFunctions["slimy"] = renderSlimy;
