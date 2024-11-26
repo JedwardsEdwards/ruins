@@ -135,7 +135,7 @@ function initSpotifyPlayer() {
     info("initSpotifyPlayer", "init called for player");
     const token = window.access_token;
     const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
+        name: 'RUINS',
         getOAuthToken: cb => { cb(token); },
         volume: 0.5
         });
