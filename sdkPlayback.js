@@ -130,6 +130,7 @@ function resetMix() {
 };
 
 function initSpotifyPlayer() {
+    info("initSpotifyPlayer", "init called for player");
     const token = window.access_token;
     const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
