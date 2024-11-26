@@ -36,17 +36,17 @@ const display_palettes = {
   "default" : {
     "color" : "black",
     "background-color" : "white",
-    "hightlight-color" : "white"
+    "highlight-color" : "white"
   },
   "slimy" : {
     "color" : "#4AC176",
     "background-color" : "#191C1A",
-    "hightlight-color" : "#0BEA5E"
+    "highlight-color" : "#0BEA5E"
   },
   "rancid" : {
     "color" : "#815555",
     "background-color" : "#272222",
-    "hightlight-color" : "#FF3333"
+    "highlight-color" : "#FF3333"
   }};
 
 // Restore tokens from localStorage
