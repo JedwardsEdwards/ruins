@@ -104,6 +104,7 @@ function setPalette(name, hide) {
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"];
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"];
   document.querySelectorAll(".button").forEach(b => {
+    b.style["background-color"] = display_palettes[name]["background-color"];
     b.addEventListener("mouseenter", function( event ) {event.target.style["background-color"] = display_palettes[name]["hover"]}, false);
     b.addEventListener("mouseleave", function( event ) {event.target.style["background-color"]  = display_palettes[name]["background-color"]}, false);
     b.addEventListener("click", function( event ) {event.target.style["background-color"]  = display_palettes[name]["highlight-color"]}, false)
