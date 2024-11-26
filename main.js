@@ -127,6 +127,7 @@ function transitionToPage(page) {
 };
 
 function toHome() {
+  setGlobal("target_mix", "");
   if (window.current_page == "play") {
   window.player.pause();
   };
