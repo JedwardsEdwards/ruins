@@ -107,7 +107,7 @@ function displayPage(page) {
   hideAll();
   if (page == "home") {
     hide = false;
-  else {
+  } else {
     hide = true;
   };
   setPalette(getMixFromId(window.target_mix) || "default", hide);
