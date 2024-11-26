@@ -21,8 +21,7 @@ function renderRancid() {
   const rancid_div = createElement("rancid", "RANCID TECHNO", hidden_styles);
   appendAndFit(secondRow,rancid_div);
   
-  const thirdRow = createRow("third-row", "display: grid; align-items: start");
-  thirdRow.style["grid-template-columns"] = "50% 50%";
+  const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
   const courtesy_div = createElement("courtesy", "COURTESY OF SYD.", hidden_styles);
   appendAndFit(thirdRow,courtesy_div);
