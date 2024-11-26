@@ -14,7 +14,7 @@ function renderSlimy() {
   const dj_div = createElement("dj", "DJ Incredibly Annoying", getHiddenStyles());
   appendAndFit(firstRow,dj_div);
   
-  const presents_div = createElement("presents", "presents", "height:50%; width:100%; color:white; text-align:center");
+  const presents_div = createElement("presents", "presents", "height:50%; width:100%; text-align:center");
   appendAndFit(firstRow,presents_div);
 
   
