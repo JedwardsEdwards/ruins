@@ -84,6 +84,7 @@ function setMixDetails(id) {
         //  textFit(document.getElementById('mix-name'));
         //};
         //document.getElementById("mix-name").style.color = "black";
+        info("setMixDetails", "data received from API call");
         if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
           renderMixName();
           document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
