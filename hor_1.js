@@ -48,7 +48,7 @@ function renderMixName() {
   
   const secondRow = createRow("second-row", "");
   container.appendChild(secondRow);
-
+  /*
   const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.82 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
@@ -69,7 +69,7 @@ function renderMixName() {
   container.appendChild(thirdRow);
   const slimy = createElement("slimy", "SLIMY", hidden_styles);
   appendAndFit(thirdRow,slimy);
-  /*
+  */
   const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
@@ -103,9 +103,10 @@ function renderMixName() {
   const puke1 = createElement("puke1", "🤮", "");
   const puke2 = createElement("puke2", "🤮", "");
   const puke3 = createElement("puke3", "🤮", "");
-  */
+  
    
   // could try css animations, don't know how they play when appending but might be easier??
+  /*
   setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
   setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
@@ -113,8 +114,8 @@ function renderMixName() {
   setTimeout(() => {firstHeart.style.color = "inherit"}, 3500);
   setTimeout(() => {sticky.style.color = "inherit"}, 4000);
   setTimeout(() => {slimy.style.color = "inherit"}, 5000);
-
-  /*
+  */
+  ///*
   setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
   setTimeout(() => {secondBracket.style.color = "inherit"}, 3000);
   setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
@@ -126,5 +127,5 @@ function renderMixName() {
   setTimeout(() => {fourthRow.append(puke1)}, 8000);
   setTimeout(() => {fourthRow.append(puke2)}, 8500);
   setTimeout(() => {fourthRow.append(puke3)}, 9000);
-  */
+  //*/
 };
