@@ -112,7 +112,7 @@ function setMix(id) {
 function toMixOne() {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   if (window.player_loaded) {
-    setMixDetails(id);
+    setMixDetails(allowed_mixes["slimy"]);
   } 
   //setAndDisplayPage("mix");
   transitionToPage("mix");
