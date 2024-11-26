@@ -11,7 +11,7 @@ function renderSlimy() {
   firstRow.style["grid-template-columns"] = "90% 10%";
   container.appendChild(firstRow);
 
-  const dj_div = createElement("dj", "DJ Incredibly Annoying", hidden_styles);
+  const dj_div = createElement("dj", "DJ Incredibly Annoying", getHiddenStyles());
   appendAndFit(firstRow,dj_div);
   
   const presents_div = createElement("presents", "presents", "height:50%; width:100%; color:white; text-align:center");
@@ -42,7 +42,7 @@ function renderSlimy() {
   const slimy = createElement("slimy", "SLIMY", hidden_styles);
   appendAndFit(thirdRow,slimy);
   */
-  const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", hidden_styles);
+  const sss_sizer_div = createElement("sizer", "[ Sweaty ♡ Sticky ♡ Slimy ]", getHiddenStyles());
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
   secondRow.innerHTML = "";
@@ -51,19 +51,19 @@ function renderSlimy() {
   secondRow.style["margin-top"] = "auto";
   secondRow.style["margin-bottom"] = "auto";
    
-  const firstBracket = createElement("fb", "[", hidden_styles + "; font-size: " + secondRowFontSize);
+  const firstBracket = createElement("fb", "[", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(firstBracket);
-  const sweaty = createElement("sweaty", "Sweaty", hidden_styles + "; font-size: " + secondRowFontSize);
+  const sweaty = createElement("sweaty", "Sweaty", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(sweaty);
-  const firstHeart = createElement("fh", "♡", hidden_styles + "; font-size: " + secondRowFontSize);
+  const firstHeart = createElement("fh", "♡", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(firstHeart);
-  const sticky = createElement("sticky", "Sticky", hidden_styles + "; font-size: " + secondRowFontSize);
+  const sticky = createElement("sticky", "Sticky", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(sticky);
-  const secondHeart = createElement("sh", "♡", hidden_styles + "; font-size: " + secondRowFontSize);
+  const secondHeart = createElement("sh", "♡", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(secondHeart);
-  const slimy = createElement("slimy", "Slimy", hidden_styles + "; font-size: " + secondRowFontSize);
+  const slimy = createElement("slimy", "Slimy", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(slimy);
-  const secondBracket = createElement("fb", "]", hidden_styles + "; font-size: " + secondRowFontSize);
+  const secondBracket = createElement("fb", "]", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(secondBracket);
 
   const thirdRow = createRow("thirdRow", "margin: auto; font-size: 35px");
