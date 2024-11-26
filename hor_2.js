@@ -21,10 +21,10 @@ function renderRancid() {
   const rancid_div = createElement("rancid", "RANCID TECHNO", hidden_styles);
   appendAndFit(secondRow,rancid_div);
   
-  const thirdRow = createRow("third-row", row_styles);
+  const thirdRow = createRow("third-row", "display: grid; align-items: start");
   thirdRow.style["grid-template-columns"] = "70% 30%";
   container.appendChild(thirdRow);
-  const courtesy_div = createElement("courtesy", "COURTESY OF", hidden_styles);
+  const courtesy_div = createElement("courtesy", "COURTESY OF", "height:50%; width:100%; color:white; text-align:center");
   appendAndFit(thirdRow,courtesy_div);
   const syd_div = createElement("syd", "SYD", hidden_styles);
   appendAndFit(thirdRow,syd_div);
