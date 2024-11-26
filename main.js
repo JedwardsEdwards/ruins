@@ -22,7 +22,12 @@ const display_classes = ["login-element", "home-element", "mix-element", "loadin
 
 const allowed_mixes = {
   "test" : "73p0zWLYMp2Rs2Kh3PM5Le",
-  "slimy" : "5MrDj4GwlY8WBRNzVHtE6Y"
+  "slimy" : "5MrDj4GwlY8WBRNzVHtE6Y",
+  "rancid" : "5zKYErTXVpyRj9LGDP0RX0"
+};
+
+function getMixFromId(id) {
+  return Object.keys(allowed_mixes).find(key => allowed_mixes[key] == id); 
 };
 
 // 1 - errors, 2 - info, 3 - debug
@@ -113,6 +118,15 @@ function toMixOne() {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["slimy"]);
+  } 
+  //setAndDisplayPage("mix");
+  transitionToPage("mix");
+};
+
+function toMixTwo() {
+  setGlobal("target_mix", allowed_mixes["rancid"]);
+  if (window.player_loaded) {
+    setMixDetails(allowed_mixes["rancid"]);
   } 
   //setAndDisplayPage("mix");
   transitionToPage("mix");
