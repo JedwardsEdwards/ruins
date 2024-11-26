@@ -36,17 +36,20 @@ const display_palettes = {
   "default" : {
     "color" : "black",
     "background-color" : "white",
-    "highlight-color" : "white"
+    "highlight-color" : "white",
+    "hover" : "#dddddd"
   },
   "slimy" : {
     "color" : "#4AC176",
     "background-color" : "#191C1A",
-    "highlight-color" : "#0BEA5E"
+    "highlight-color" : "#0BEA5E",
+    "hover" : "#1E2C26"
   },
   "rancid" : {
     "color" : "#815555",
     "background-color" : "#272222",
-    "highlight-color" : "#FF3333"
+    "highlight-color" : "#FF3333",
+    "hover" : "#402B2B"
   }};
 
 // Restore tokens from localStorage
@@ -99,6 +102,11 @@ function setPalette(name, hide) {
   document.getElementById("banner-logo").src = "ruins_logo_name_" + name + ".png";
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"];
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"];
+  document.querySelector(".button").forEach(b => {
+    b.addEventListener("mousenter", function( event ) {event.target.style.color = display_palettes[name]["hover"]}, false);
+    b.addEventListener("mouseleave", function( event ) {event.target.style.color = display_palettes[name]["background-color"]}, false);
+    b.addEventListener("click", function( event ) {event.target.style.color = display_palettes[name]["highlight-color"]}, false)
+  });
   if (hide) {
     document.querySelectorAll(".page").forEach(p => p.style.color = display_palettes[name]["background-color"]);
   };
@@ -134,7 +142,7 @@ function transitionToPage(page) {
   loadPage(page);
 };
 
-function toHome() {
+function toHome(event) {
   setGlobal("target_mix", "");
   if (window.current_page == "play") {
   window.player.pause();
@@ -147,7 +155,7 @@ function setMix(id) {
   setMixDetails(id);
 };
 
-function toMixOne() {
+function toMixOne(event) {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["slimy"]);
@@ -156,7 +164,7 @@ function toMixOne() {
   transitionToPage("mix");
 };
 
-function toMixTwo() {
+function toMixTwo(event) {
   setGlobal("target_mix", allowed_mixes["rancid"]);
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["rancid"]);
@@ -165,7 +173,7 @@ function toMixTwo() {
   transitionToPage("mix");
 };
 
-function toPlay() {
+function toPlay(event) {
     info("toPlay","current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
     // all the stuff commented out here was for persisting the mix between moving to home and back, but bugs with already playing stuff, so this is cleaner for now
     // can always hack it from the phone
@@ -194,7 +202,9 @@ function initPlayerPage() {
     loadPage("play");
   };
 };
-  
+
+function updateButtonStyles(name) {
+
 document
   .getElementById('login-button')
   .addEventListener('click', redirectToSpotifyAuthorizeEndpoint, false);
