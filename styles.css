@@ -78,12 +78,7 @@ body {
   margin:50px;
 }
 
-.button:hover {
-  background-color: #dddddd;
-}
-
 .button:active {
-  background-color: #eeeeee;
   transition: none;
 }
 
