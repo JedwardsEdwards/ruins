@@ -159,7 +159,7 @@ function toHome(event) {
   if (window.current_page == "play") {
   window.player.pause();
   };
-  setAndDisplayPage("home");
+  transitionToPage("home");
 };
 
 function setMix(id) {
