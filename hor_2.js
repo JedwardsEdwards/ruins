@@ -31,13 +31,13 @@ function renderRancid() {
   const courtesy_div = createElement("courtesy", "COURTESY OF SYD.", getHiddenStyles());
   appendAndFit(fourthRow,courtesy_div);
 
-  setTimeout(() => {hour_div.style.color = "inherit"}, 1000);
-  setTimeout(() => {and_div.style.color = "inherit"}, 2000);
-  setTimeout(() => {min_div.style.color = "inherit"}, 3000);
-  setTimeout(() => {of_div.style.color = "inherit"}, 4000);
-  setTimeout(() => {rancid_div.style.color = "inherit"}, 5000);
-  setTimeout(() => {techno_div.style.color = "inherit"}, 5000);
-  setTimeout(() => {courtesy_div.style.color = "inherit"}, 6000);
+  setTimeout(() => {hour_div.style.color = display_palettes["rancid"]["highlight-color"]}, 1000);
+  setTimeout(() => {and_div.style.color = display_palettes["rancid"]["highlight-color"]}, 2000);
+  setTimeout(() => {min_div.style.color = display_palettes["rancid"]["highlight-color"]}, 3000);
+  setTimeout(() => {of_div.style.color = display_palettes["rancid"]["highlight-color"]}, 4000);
+  setTimeout(() => {rancid_div.style.color = display_palettes["rancid"]["highlight-color"]}, 5000);
+  setTimeout(() => {techno_div.style.color = display_palettes["rancid"]["highlight-color"]}, 5000);
+  setTimeout(() => {courtesy_div.style.color = display_palettes["rancid"]["highlight-color"]}, 6000);
 };
 
 mixRenderFunction["rancid"] = renderRancid;
