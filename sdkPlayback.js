@@ -65,6 +65,9 @@ function resetPlayer() {
 
 function setMixDetails(id) {
     info("setMixDetails", "updating mix info for play/mix page");
+    if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
+        document.getElementById("mix-name").innerHTML = "";
+    };
     fetch("https://api.spotify.com/v1/playlists/" + id + "?fields=name", {
         headers: {
         Authorization: 'Bearer ' + window.access_token,
