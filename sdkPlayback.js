@@ -65,9 +65,7 @@ function resetPlayer() {
 
 function setMixDetails(id) {
     info("setMixDetails", "updating mix info for play/mix page");
-    if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
-        document.getElementById("mix-name").innerHTML = "";
-    };
+    clearRender();
     fetch("https://api.spotify.com/v1/playlists/" + id + "?fields=name", {
         headers: {
         Authorization: 'Bearer ' + window.access_token,
@@ -88,10 +86,10 @@ function setMixDetails(id) {
         //};
         //document.getElementById("mix-name").style.color = "black";
         info("setMixDetails", "data received from API call");
-        if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
+        //if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
           mixRenderFunction[getMixFromId(id)]();
           document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
-        };
+        //};
       })
   }
 
