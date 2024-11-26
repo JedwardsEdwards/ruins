@@ -9,11 +9,11 @@ function renderRancid() {
   container.appendChild(firstRow);
   const hour_div = createElement("hour", "1 HOUR", getHiddenStyles());
   appendAndFit(firstRow,hour_div);
-  const and_div = createElement("and", "AND", "height:80%; width:100%; color:white; text-align:center");
+  const and_div = createElement("and", "AND", "height:80%; width:100%; text-align:center");
   appendAndFit(firstRow,and_div);
   const min_div = createElement("min", "58 MINUTES", getHiddenStyles());
   appendAndFit(firstRow,min_div);
-  const of_div = createElement("of", "OF", "height:80%; width:100%; color:white; text-align:center");
+  const of_div = createElement("of", "OF", "height:80%; width:100%; text-align:center");
   appendAndFit(firstRow,of_div);
 
   const secondRow = createRow("second-row", "");
