@@ -25,10 +25,12 @@ function createRow(id, styles) {
 const row_styles = "display: grid; align-items: end";
 
 function clearRender() {
-  const container = document.getElementById("mix-name");
-
-  // clean up from last run - probably need to do this before moving to the page
-  // also need to check how many times this render is run depending on where it is 
+  let container = document.getElementById("mix-name");
   container.innerHTML = "";
   container.style = "";
+   
+  let name = document.getElementById('track-name');
+  let artist = document.getElementById('track-artist');
+  name.innerHTML= "";
+  artist.innerHTML= "";
 };
