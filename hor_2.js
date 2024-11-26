@@ -36,6 +36,7 @@ function renderRancid() {
   setTimeout(() => {min_div.style.color = "inherit"}, 3000);
   setTimeout(() => {of_div.style.color = "inherit"}, 4000);
   setTimeout(() => {rancid_div.style.color = "inherit"}, 5000);
+  setTimeout(() => {techno_div.style.color = "inherit"}, 5000);
   setTimeout(() => {courtesy_div.style.color = "inherit"}, 6000);
 };
 
