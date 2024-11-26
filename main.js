@@ -202,16 +202,16 @@ function toPlay(event) {
 };
 
 function initPlayerPage() {
-  if (["home", "loading"].includes(window.current_page)) {
+  if (window.current_page == "loading") {
     initSpotifyPlayerProtected();
     displayPage(window.current_page);
   } else if (window.current_page == "mix") {
     initSpotifyPlayerProtected();
     setMix(window.target_mix);
-    displayPage("mix");
-  } else if (window.current_page == "play") {
+    loadPage("mix");
+  } else {
     initSpotifyPlayerProtected();
-    loadPage("play");
+    loadPage(window.current_page);
   };
 };
 
