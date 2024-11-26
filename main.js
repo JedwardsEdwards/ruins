@@ -97,6 +97,19 @@ function hideAll() {
   };
 };
 
+function buttonMouseDown(event) {
+  event.target.style["background-color"]  = display_palettes[getMixFromId(window.target_mix) || "default"]["highlight-color"]
+};
+function buttonMouseUp(event) {
+  event.target.style["background-color"]  = display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"]
+};
+function buttonMouseEnter(event) {
+  event.target.style["background-color"]  = display_palettes[getMixFromId(window.target_mix) || "default"]["hover"]
+};
+function buttonMouseLeave(event) {
+  event.target.style["background-color"]  = display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"]
+};
+
 function setPalette(name, hide) {
   info("setPalette", "name is: " + name);
   document.getElementById("banner-logo").src = "ruins_logo_name_" + name + ".png";
@@ -104,12 +117,7 @@ function setPalette(name, hide) {
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"];
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"];
   document.querySelectorAll(".button").forEach(b => {
-    //b.style.transition = "none";
     b.style["background-color"] = display_palettes[name]["background-color"];
-    //b.style.transition = "background-color 0.5s";
-    b.addEventListener("mouseenter", function( event ) {event.target.style["background-color"] = display_palettes[name]["hover"]}, false);
-    b.addEventListener("mouseleave", function( event ) {event.target.style["background-color"]  = display_palettes[name]["background-color"]}, false);
-    b.addEventListener("click", function( event ) {event.target.style["background-color"]  = display_palettes[name]["highlight-color"]}, false)
   });
   if (hide) {
     document.querySelectorAll(".page").forEach(p => p.style.color = display_palettes[name]["background-color"]);
@@ -230,6 +238,13 @@ document
 document
   .getElementById('start-mix-button')
   .addEventListener('click', toPlay, false);
+
+document.querySelectorAll(".button").forEach(b => {
+  b.addEventListener("mouseenter", buttonMouseEnter, false);
+  b.addEventListener("mouseleave", buttonMouseLeave, false);
+  b.addEventListener("mousedown", buttonMouseDown, false);
+  b.addEventListener("mouseup", buttonMouseUp, false)
+});
 
 // just set this to empty, we set up the player when we've sure log in is successful
 window.onSpotifyWebPlaybackSDKReady = () => {};
