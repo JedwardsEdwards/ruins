@@ -68,7 +68,7 @@ function renderSlimy() {
 
   const thirdRow = createRow("thirdRow", "margin: auto; font-size: 35px");
   container.appendChild(thirdRow);
-  const slimeParty = createElement("slime-party", "welcome 💚 to the slime party", "");
+  const slimeParty = createElement("slime-party", "welcome 💚 to the slime party", "color: " + display_palettes["slimy"]["highlight-color"]);
 
   const fourthRow = createRow("fourth-row", "margin: auto; display: flex; font-size: 35px");
   container.appendChild(fourthRow);
@@ -88,15 +88,15 @@ function renderSlimy() {
   setTimeout(() => {slimy.style.color = "inherit"}, 5000);
   */
   ///*
-  setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
-  setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
-  setTimeout(() => {firstBracket.style.color = "inherit"}, 3000);
-  setTimeout(() => {secondBracket.style.color = "inherit"}, 3000);
-  setTimeout(() => {sweaty.style.color = "inherit"}, 4000);
-  setTimeout(() => {firstHeart.style.color = "inherit"}, 4500);
-  setTimeout(() => {sticky.style.color = "inherit"}, 5000);
-  setTimeout(() => {secondHeart.style.color = "inherit"}, 5500);
-  setTimeout(() => {slimy.style.color = "inherit"}, 6000);
+  setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
+  setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
+  setTimeout(() => {firstBracket.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
+  setTimeout(() => {secondBracket.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
+  setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 4000);
+  setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 4500);
+  setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 5000);
+  setTimeout(() => {secondHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 5500);
+  setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 6000);
   setTimeout(() => {thirdRow.append(slimeParty)}, 7000);
   setTimeout(() => {fourthRow.append(puke1)}, 8000);
   setTimeout(() => {fourthRow.append(puke2)}, 8500);
