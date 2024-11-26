@@ -8,7 +8,6 @@
 // mix color palettes
 // welcome page
 // animated text loading
-// update begin button text based on mix
 // Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content.
 
 // testing
