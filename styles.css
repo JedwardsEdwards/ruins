@@ -71,7 +71,6 @@ body {
   text-decoration: none;
   font-size: inherit;
   font-family:inherit;
-  transition: background-color 0.5s;
 }
 
 .mix-button {
