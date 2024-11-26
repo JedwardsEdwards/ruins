@@ -71,7 +71,7 @@ body {
   text-decoration: none;
   font-size: inherit;
   font-family:inherit;
-  transition: background-color 1s;
+  transition: background-color 0.5s;
 }
 
 .mix-button {
@@ -79,11 +79,12 @@ body {
 }
 
 .button:hover {
-  background-color: grey;
+  background-color: #dddddd;
 }
 
 .button:active {
-  background-color: lightgrey;
+  background-color: #eeeeee;
+  transition: none;
 }
 
 #banner-logo {
