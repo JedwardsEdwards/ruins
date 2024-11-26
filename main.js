@@ -94,16 +94,23 @@ function hideAll() {
   };
 };
 
-function setPalette(name) {
+function setPalette(name, hide) {
   info("setPalette", "name is: " + name);
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"];
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"];
-  document.querySelectorAll(".page").forEach(p => p.style.color = display_palettes[name]["background-color"]);
+  if (hide) {
+    document.querySelectorAll(".page").forEach(p => p.style.color = display_palettes[name]["background-color"]);
+  };
 };
   
 function displayPage(page) {
   hideAll();
-  setPalette(getMixFromId(window.target_mix) || "default");
+  if (page == "home") {
+    hide = false;
+  else {
+    hide = true;
+  };
+  setPalette(getMixFromId(window.target_mix) || "default", hide);
   updateClassDisplay(page + "-element","unset");
 };
 
