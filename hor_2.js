@@ -9,11 +9,11 @@ function renderRancid() {
   container.appendChild(firstRow);
   const hour_div = createElement("hour", "1 HOUR", hidden_styles);
   appendAndFit(firstRow,hour_div);
-  const and_div = createElement("and", "AND", "height:50%; width:100%; color:white; text-align:center");
+  const and_div = createElement("and", "AND", "height:80%; width:100%; color:white; text-align:center");
   appendAndFit(firstRow,and_div);
   const min_div = createElement("min", "58 MINUTES", hidden_styles);
   appendAndFit(firstRow,min_div);
-  const of_div = createElement("of", "OF", "height:50%; width:100%; color:white; text-align:center");
+  const of_div = createElement("of", "OF", "height:80%; width:100%; color:white; text-align:center");
   appendAndFit(firstRow,of_div);
 
   const secondRow = createRow("second-row", "");
@@ -21,7 +21,8 @@ function renderRancid() {
   const rancid_div = createElement("rancid", "RANCID TECHNO", hidden_styles);
   appendAndFit(secondRow,rancid_div);
   
-  const thirdRow = createRow("third-row", "");
+  const thirdRow = createRow("third-row", row_styles);
+  thirdRow.style["grid-template-columns"] = "70% 30%";
   container.appendChild(thirdRow);
   const courtesy_div = createElement("courtesy", "COURTESY OF", hidden_styles);
   appendAndFit(thirdRow,courtesy_div);
