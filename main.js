@@ -39,12 +39,12 @@ const display_palettes = {
     "hightlight-color" : "white"
   },
   "slime" : {
-    "color" : "#4AC176";
+    "color" : "#4AC176",
     "background-color" : "#191C1A",
     "hightlight-color" : "#0BEA5E"
   },
   "rancid" : {
-    "color" : "#815555";
+    "color" : "#815555",
     "background-color" : "#272222",
     "hightlight-color" : "#FF3333"
   }};
