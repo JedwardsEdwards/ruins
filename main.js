@@ -98,10 +98,12 @@ function setPalette(name) {
   info("setPalette", "name is: " + name);
   document.getElementsByTagName("html")["0"].style["color"] = display_palettes[name]["color"]
   document.getElementsByTagName("html")["0"].style["background-color"] = display_palettes[name]["background-color"]
+  document.getElementsByClass("page")["0"].style["color"] = display_palettes[name]["background-color"]
 };
   
 function displayPage(page) {
   hideAll();
+  setPalette(getMixFromId(window.target_mix) || "default");
   updateClassDisplay(page + "-element","unset");
 };
 
@@ -128,7 +130,6 @@ function toHome() {
   if (window.current_page == "play") {
   window.player.pause();
   };
-  setPalette("default");
   setAndDisplayPage("home");
 };
 
@@ -139,7 +140,6 @@ function setMix(id) {
 
 function toMixOne() {
   setGlobal("target_mix", allowed_mixes["slimy"]);
-  setPalette("slimy");
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["slimy"]);
   } 
@@ -149,7 +149,6 @@ function toMixOne() {
 
 function toMixTwo() {
   setGlobal("target_mix", allowed_mixes["rancid"]);
-  setPalette("rancid");
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["rancid"]);
   } 
