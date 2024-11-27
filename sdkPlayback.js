@@ -93,10 +93,7 @@ function setMixDetails(id) {
         //document.getElementById("mix-name").style.color = "black";
         info("setMixDetails", "data received from API call");
         //if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
-        if (window.target_page == "mix") {
-          mixRenderFunction[getMixFromId(id)]();
-     
-        };
+   
         document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         //};
       })
@@ -112,6 +109,9 @@ function startMix() {
     })
       .then(async (response) => {
         setGlobal("current_mix", window.target_mix);
+        if (window.target_page == "mix") {
+          mixRenderFunction[getMixFromId(id)]();
+        };
         //return response.json();
       })
       .catch((error) => {
