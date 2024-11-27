@@ -42,11 +42,11 @@ function renderSlimy() {
   const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
   const slimy_sizer = createElement("slimy", "SLIMY", getHiddenStyles());
-  appendAndFit(thirdRow,slimy);
+  appendAndFit(thirdRow,slimy_sizer);
   thirdRowFontSize = Number(slimy_sizer.children["0"].style["font-size"].slice(0, -2))+ "px";
   thirdRow.innerHTML = "";
   const slimy = createElement("slimy", "SLIMY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "; line-height: " + 0.8 * thirdRowFontSize);
-  thirdRow.append(slimy)
+  thirdRow.append(slimy);
   /*
   // this is sss on one line
   const sss_sizer_div = createElement("sizer", "[ SWEATY ♡ STICKY ♡ SLIMY ]", getHiddenStyles());
