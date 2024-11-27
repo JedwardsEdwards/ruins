@@ -119,6 +119,23 @@ function startMix() {
       })
 };
 
+function startMixFromTrack() {
+    fetch("https://api.spotify.com/v1/me/player/play", {
+       method: "PUT",
+       headers: {
+         Authorization: 'Bearer ' + window.access_token,
+       },
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix, "offset": {"uri": "spotify:track:" + window.current_track["id"]}})
+    })
+      .then(async (response) => {
+        //return response.json();
+      })
+      .catch((err) => {
+        error("startMixFromTrack", err);
+      })
+};
+
+
 function playPause() {
     info("playPause","play/pause button hit, current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
     window.player.togglePlay();
