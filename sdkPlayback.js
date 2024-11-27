@@ -185,7 +185,7 @@ function initSpotifyPlayer() {
             setAndDisplayPage(window.target_page);
             if (window.target_page == "play") {
               renderTrackDetails(window.current_track);
-              startMixFromTrack();
+              //startMixFromTrack();
             };
         };
         });
