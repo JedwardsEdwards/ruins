@@ -2,7 +2,9 @@
 
 // functions
 // auto log out after a period of time
-// what happens listening for more than 1hr?
+// what happens listening for more than 1hr? - stops playing apparently
+// phone view
+// proper site 
 
 // styles
 // favicon on white background
