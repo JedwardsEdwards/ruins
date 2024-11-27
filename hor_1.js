@@ -22,7 +22,7 @@ function renderSlimy() {
   container.appendChild(secondRow);
 
   // this is sss on two lines
-  const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", hidden_styles);
+  const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", getHiddenStyles());
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.82 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
   secondRow.innerHTML = "";
@@ -31,16 +31,16 @@ function renderSlimy() {
   secondRow.style["margin-top"] = "auto";
   secondRow.style["margin-bottom"] = "auto";
 
-  const sweaty = createElement("sweaty", "SWEATY", hidden_styles + "; font-size: " + secondRowFontSize);
+  const sweaty = createElement("sweaty", "SWEATY", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(sweaty);
-  const firstHeart = createElement("fh", "♡", hidden_styles + "; font-size: " + secondRowFontSize);
+  const firstHeart = createElement("fh", "♡", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(firstHeart);
-  const sticky = createElement("sticky", "STICKY", hidden_styles + "; font-size: " + secondRowFontSize);
+  const sticky = createElement("sticky", "STICKY", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(sticky);
 
   const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
-  const slimy = createElement("slimy", "SLIMY", hidden_styles);
+  const slimy = createElement("slimy", "SLIMY", getHiddenStyles());
   appendAndFit(thirdRow,slimy);
   
   /*
