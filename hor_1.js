@@ -23,7 +23,7 @@ function renderSlimy() {
   // this is sss on two lines
   const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", getHiddenStyles());
   appendAndFit(secondRow,sss_sizer_div);
-  secondRowFontSize = Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))+ "px";
+  secondRowFontSize = Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2));
   secondRow.innerHTML = "";
   secondRow.style = row_styles;
   secondRow.style["grid-template-columns"] = "45% 10% 45%";
@@ -31,7 +31,7 @@ function renderSlimy() {
   secondRow.style["margin-bottom"] = "auto";
   secondRow.style["text-align"] = "center";
 
-  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * secondRowFontSize + "; line-height: " + 0.8 * secondRowFontSize;
+  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * secondRowFontSize + "px; line-height: " + 0.8 * secondRowFontSize + "px";
   console.log(secondRowStyles);
   const sweaty = createElement("sweaty", "SWEATY", secondRowStyles);
   secondRow.append(sweaty);
@@ -44,9 +44,9 @@ function renderSlimy() {
   container.appendChild(thirdRow);
   const slimy_sizer = createElement("slimy", "SLIMY", getHiddenStyles());
   appendAndFit(thirdRow,slimy_sizer);
-  thirdRowFontSize = Number(slimy_sizer.children["0"].style["font-size"].slice(0, -2))+ "px";
+  thirdRowFontSize = Number(slimy_sizer.children["0"].style["font-size"].slice(0, -2));
   thirdRow.innerHTML = "";
-  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "; line-height: " + 0.8 * thirdRowFontSize;
+  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "px; line-height: " + 0.8 * thirdRowFontSize + "px";
   console.log(thirdRowStyles);
   const slimy = createElement("slimy", "SLIMY", thirdRowStyles);
   thirdRow.append(slimy);
