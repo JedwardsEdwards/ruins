@@ -88,7 +88,7 @@ function setMixDetails(id) {
         info("setMixDetails", "data received from API call");
         document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         if (window.target_page == "play") {
-          startMixFromTrack();
+          //startMixFromTrack();
         } else if (window.target_page == "mix") {
           startMix();
         };        
