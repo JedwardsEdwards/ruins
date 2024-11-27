@@ -160,14 +160,14 @@ function initSpotifyPlayer() {
             if (["mix", "play"].includes(window.target_page)) {
               // don't love doing this here tbh
               setMixDetails(window.target_mix);
-              if (window.target_page == "play") {
-                renderTrackDetails(window.current_track);
-              };
               if (window.target_page == "mix") {
                 startMix();
               };
             };
             setAndDisplayPage(window.target_page);
+            if (window.target_page == "play") {
+              renderTrackDetails(window.current_track);
+            };
         };
         });
     player.addListener('not_ready', ({ device_id }) => {
