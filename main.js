@@ -171,7 +171,6 @@ function toHome(event) {
 function toMixOne(event) {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   transitionToPage("mix");
-  startMix();
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["slimy"]);
   } 
@@ -180,7 +179,6 @@ function toMixOne(event) {
 function toMixTwo(event) {
   setGlobal("target_mix", allowed_mixes["rancid"]);
   transitionToPage("mix");
-  startMix();
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["rancid"]);
   } 
