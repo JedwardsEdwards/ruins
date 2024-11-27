@@ -120,6 +120,7 @@ function startMix() {
 };
 
 function startMixFromTrack() {
+    info("startMixFromTrack","called");
     fetch("https://api.spotify.com/v1/me/player/play", {
        method: "PUT",
        headers: {
@@ -128,7 +129,9 @@ function startMixFromTrack() {
        body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix, "offset": {"uri": "spotify:track:" + window.current_track["id"]}})
     })
       .then(async (response) => {
+        info("startMixFromTrack", "response received");
         //return response.json();
+        //window.mix_started = true;
       })
       .catch((err) => {
         error("startMixFromTrack", err);
@@ -139,7 +142,6 @@ function startMixFromTrack() {
 function playPause() {
     info("playPause","play/pause button hit, current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
     window.player.togglePlay();
-    
 };
 
 function nextTrack() {
@@ -185,7 +187,7 @@ function initSpotifyPlayer() {
             setAndDisplayPage(window.target_page);
             if (window.target_page == "play") {
               renderTrackDetails(window.current_track);
-              //startMixFromTrack();
+              startMixFromTrack();
             };
         };
         });
