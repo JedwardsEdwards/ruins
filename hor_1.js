@@ -94,12 +94,12 @@ function renderSlimy() {
   
   // two lines
   setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
-  setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1500);
+  setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 200);
 
-  setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
-  setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 2250);
-  setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 2500);
-  setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
+  setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
+  setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 3500);
+  setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 4000);
+  setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 5000);
   
 
   /*
@@ -117,6 +117,6 @@ function renderSlimy() {
   //setTimeout(() => {fourthRow.append(puke1)}, 8000);
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
- setTimeout(() => {fourthRow.append(slimeParty)}, 4000);};
+ setTimeout(() => {fourthRow.append(slimeParty)}, 6000);};
 
 mixRenderFunction["slimy"] = renderSlimy;
