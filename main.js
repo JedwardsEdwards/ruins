@@ -1,12 +1,10 @@
 // TODO
 
 // functions
-// auto log out after a period of timee
+// auto log out after a period of time
+// what happens listening for more than 1hr?
 
 // styles
-// welcome page
-// animated text loading
-// Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content.
 // favicon on white background
 
 // testing
