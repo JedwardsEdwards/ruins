@@ -41,7 +41,8 @@ const display_palettes = {
   "slimy" : {
     "color" : "#4AC176",
     "background-color" : "#191C1A",
-    "highlight-color" : "#0BEA5E",
+    //"highlight-color" : "#0BEA5E",
+    "highlight-color" : "#00FC42",
     "hover" : "#1E2C26"
   },
   "rancid" : {
