@@ -120,6 +120,7 @@ function setPalette(name, hide) {
     b.style["background-color"] = display_palettes[name]["background-color"];
   });
   if (hide) {
+    info("setPalette", "page elements will be hidden");
     document.querySelectorAll(".page").forEach(p => p.style.color = display_palettes[name]["background-color"]);
   };
 };
