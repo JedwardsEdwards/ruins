@@ -164,11 +164,6 @@ function toHome(event) {
   transitionToPage("home");
 };
 
-function setMix(id) {
-  setGlobal("target_mix", id);
-  setMixDetails(id);
-};
-
 function toMixOne(event) {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   if (window.player_loaded) {
@@ -209,7 +204,9 @@ function initPlayerPage() {
     displayPage(window.current_page);
   } else if (window.current_page == "mix") {
     initSpotifyPlayerProtected();
-    setMix(window.target_mix);
+    if (window.player_loaded) {
+      setMixDetails(window.target_mix);
+    };
     loadPage("mix");
   } else {
     initSpotifyPlayerProtected();
