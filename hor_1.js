@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "30% 40% 30%";
+  container.style["grid-template-rows"] = "20% 30% 30% 20%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
@@ -20,7 +20,8 @@ function renderSlimy() {
   
   const secondRow = createRow("second-row", "");
   container.appendChild(secondRow);
-  /*
+
+  // this is sss on two lines
   const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", hidden_styles);
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.82 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
@@ -41,7 +42,9 @@ function renderSlimy() {
   container.appendChild(thirdRow);
   const slimy = createElement("slimy", "SLIMY", hidden_styles);
   appendAndFit(thirdRow,slimy);
-  */
+  
+  /*
+  // this is sss on one line
   const sss_sizer_div = createElement("sizer", "[ SWEATY ♡ STICKY ♡ SLIMY ]", getHiddenStyles());
   appendAndFit(secondRow,sss_sizer_div);
   secondRowFontSize = (0.85 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
@@ -65,20 +68,22 @@ function renderSlimy() {
   secondRow.append(slimy);
   const secondBracket = createElement("fb", "]", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(secondBracket);
-
-  const thirdRow = createRow("thirdRow", "margin: auto; font-size: 35px");
-  container.appendChild(thirdRow);
+  */
+  const fourthRow = createRow("fourthRow", "margin: auto; font-size: 35px");
+  container.appendChild(fourthRow);
   const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", "color: " + display_palettes["slimy"]["highlight-color"]);
 
+  /*
   const fourthRow = createRow("fourth-row", "margin: auto; display: flex; font-size: 35px");
   container.appendChild(fourthRow);
   const puke1 = createElement("puke1", "🤮", "");
   const puke2 = createElement("puke2", "🤮", "");
   const puke3 = createElement("puke3", "🤮", "");
-  
+  */
    
   // could try css animations, don't know how they play when appending but might be easier??
-  /*
+  
+  // two lines
   setTimeout(() => {dj_div.style.color = "inherit"}, 1000);
   setTimeout(() => {presents_div.style.color = "inherit"}, 2000);
 
@@ -86,8 +91,10 @@ function renderSlimy() {
   setTimeout(() => {firstHeart.style.color = "inherit"}, 3500);
   setTimeout(() => {sticky.style.color = "inherit"}, 4000);
   setTimeout(() => {slimy.style.color = "inherit"}, 5000);
-  */
-  ///*
+  
+
+  /*
+  // one line
   setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
   setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
   setTimeout(() => {firstBracket.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
@@ -97,11 +104,11 @@ function renderSlimy() {
   setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 5000);
   setTimeout(() => {secondHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 5500);
   setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 6000);
-  setTimeout(() => {thirdRow.append(slimeParty)}, 7000);
+  */
   //setTimeout(() => {fourthRow.append(puke1)}, 8000);
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
-  //*/
+  setTimeout(() => {fourthRow.append(slimeParty)}, 7000);
 };
 
 mixRenderFunction["slimy"] = renderSlimy;
