@@ -171,6 +171,7 @@ function toMixOne(event) {
   } 
   //setAndDisplayPage("mix");
   transitionToPage("mix");
+  startMix();
 };
 
 function toMixTwo(event) {
@@ -180,6 +181,7 @@ function toMixTwo(event) {
   } 
   //setAndDisplayPage("mix");
   transitionToPage("mix");
+  startMix();
 };
 
 function toPlay(event) {
@@ -190,7 +192,6 @@ function toPlay(event) {
     //    resetPlayer();
     //};
     transitionToPage("play");
-    startMix();
     //if ( window.target_mix != window.current_mix) {
     //    startMix();
     //} else {
