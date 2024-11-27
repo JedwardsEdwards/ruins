@@ -139,6 +139,7 @@ function startMixFromTrack() {
 function playPause() {
     info("playPause","play/pause button hit, current_mix: " + window.current_mix + ", target_mix: " + window.target_mix);
     window.player.togglePlay();
+    
 };
 
 function nextTrack() {
@@ -184,6 +185,7 @@ function initSpotifyPlayer() {
             setAndDisplayPage(window.target_page);
             if (window.target_page == "play") {
               renderTrackDetails(window.current_track);
+              startMixFromTrack();
             };
         };
         });
