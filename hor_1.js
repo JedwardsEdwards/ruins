@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "15% 25% 50% 10%";
+  container.style["grid-template-rows"] = "20% 20% 50% 10%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
@@ -70,7 +70,7 @@ function renderSlimy() {
   */
   const fourthRow = createRow("fourthRow", "margin: auto; font-size: 35px");
   container.appendChild(fourthRow);
-  const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", getHiddenStyles());
+  const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", "color: " + display_palettes["slimy"]["highlight-color"]);
   appendAndFit(fourthRow,slimeParty);
 
   /*
@@ -108,7 +108,6 @@ function renderSlimy() {
   //setTimeout(() => {fourthRow.append(puke1)}, 8000);
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
-  setTimeout(() => {slimyParty.style.color = display_palettes["slimy"]["highlight-color"]}, 7000);
-};
+setTimeout(() => {fourthRow.append(slimeParty)}, 6000);};
 
 mixRenderFunction["slimy"] = renderSlimy;
