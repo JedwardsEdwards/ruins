@@ -9,7 +9,7 @@ function createElement(id, text, styles) {
 };
 
 function getHiddenStyles() {
-   return "height:100%; width:100%; text-align:center" + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"];
+   return "height:100%; width:100%; text-align:center; color:" + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"];
 };
 
 function appendAndFit(parent, child) {
