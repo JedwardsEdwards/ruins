@@ -59,7 +59,7 @@ function updatePlayer(track) {
             refreshToken();
             return;
         }
-        setGlobal("current_track", track["id"]);
+        setGlobal("current_track", track);
         renderTrackDetails(track);
     };
 };
