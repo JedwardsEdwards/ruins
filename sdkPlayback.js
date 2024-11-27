@@ -85,19 +85,13 @@ function setMixDetails(id) {
         }
       })
       .then((data) => {
-        //document.getElementById("mix-name").style.color = "white";
-        //document.getElementById('mix-name').innerHTML = data.name.toUpperCase();
-        //if (window.current_page == "mix") {
-        //  textFit(document.getElementById('mix-name'));
-        //};
-        //document.getElementById("mix-name").style.color = "black";
         info("setMixDetails", "data received from API call");
-        //if (document.getElementById('mix-details').innerHTML != data.name.toUpperCase()) {
+        document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         if (window.target_page == "play") {
           startMixFromTrack();
-        };
-        document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
-        //};
+        } else if (window.target_page == "mix") {
+          startMix();
+        };        
       })
   }
 
@@ -182,14 +176,11 @@ function initSpotifyPlayer() {
             if (["mix", "play"].includes(window.target_page)) {
               // don't love doing this here tbh
               setMixDetails(window.target_mix);
-              if (window.target_page == "mix") {
-                startMix();
-              };
+
             };
             setAndDisplayPage(window.target_page);
             if (window.target_page == "play") {
               renderTrackDetails(window.current_track);
-              startMixFromTrack();
             };
         };
         });
