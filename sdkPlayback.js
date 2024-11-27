@@ -44,7 +44,8 @@ function updatePlayer(track) {
             refreshToken();
             return;
         }
-        setGlobal("current_track", track["id"]);
+        //setGlobal("current_track", track["id"]);
+        window.current_track = track["id"];
         let name = document.getElementById('track-name');
         let artist = document.getElementById('track-artist');
         name.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
