@@ -31,12 +31,13 @@ function renderSlimy() {
   secondRow.style["margin-bottom"] = "auto";
   secondRow.style["text-align"] = "center";
 
-  const secondLineStyles = display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * secondRowFontSize + "; line-height: " + 0.8 * secondRowFontSize
-  const sweaty = createElement("sweaty", "SWEATY", secondLineStyles);
+  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * secondRowFontSize + "; line-height: " + 0.8 * secondRowFontSize;
+  console.log(secondRowStyles);
+  const sweaty = createElement("sweaty", "SWEATY", secondRowStyles);
   secondRow.append(sweaty);
-  const firstHeart = createElement("fh", "♡", secondLineStyles);
+  const firstHeart = createElement("fh", "♡", secondRowStyles);
   secondRow.append(firstHeart);
-  const sticky = createElement("sticky", "STICKY", secondLineStyles);
+  const sticky = createElement("sticky", "STICKY", secondRowStyles);
   secondRow.append(sticky);
 
   const thirdRow = createRow("third-row", "");
@@ -45,7 +46,9 @@ function renderSlimy() {
   appendAndFit(thirdRow,slimy_sizer);
   thirdRowFontSize = Number(slimy_sizer.children["0"].style["font-size"].slice(0, -2))+ "px";
   thirdRow.innerHTML = "";
-  const slimy = createElement("slimy", "SLIMY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "; line-height: " + 0.8 * thirdRowFontSize);
+  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "; line-height: " + 0.8 * thirdRowFontSize;
+  console.log(thirdRowStyles);
+  const slimy = createElement("slimy", "SLIMY", thirdRowStyles);
   thirdRow.append(slimy);
   /*
   // this is sss on one line
