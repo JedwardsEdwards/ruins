@@ -94,7 +94,7 @@ function renderSlimy() {
   
   // two lines
   setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
-  setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 200);
+  setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
 
   setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
   setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 3500);
