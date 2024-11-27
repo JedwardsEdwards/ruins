@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "20% 30% 30% 20%";
+  container.style["grid-template-rows"] = "20% 20% 40% 20%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
