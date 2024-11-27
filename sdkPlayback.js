@@ -38,6 +38,7 @@ function toggleShuffle(on) {
 };
 
 function renderTrackDetails(track) {
+    info("renderTrackDetails", "track: " + track["id"]);
     let name = document.getElementById('track-name');
     let artist = document.getElementById('track-artist');
     name.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
