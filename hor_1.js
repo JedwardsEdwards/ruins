@@ -31,7 +31,7 @@ function renderSlimy() {
   secondRow.style["margin-bottom"] = "auto";
   secondRow.style["text-align"] = "center";
 
-  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 0.5 * secondRowFontSize + "px;
+  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + ";font-size: " + 0.5 * secondRowFontSize + "px";
   console.log(secondRowStyles);
   const sweaty = createElement("sweaty", "SWEATY", secondRowStyles);
   secondRow.append(sweaty);
