@@ -158,7 +158,7 @@ function transitionToPage(page) {
 
 function toHome(event) {
   setGlobal("target_mix", "");
-  if (window.current_page == "play") {
+  if (["mix", "play"].includes(window.current_page)) {
   window.player.pause();
   };
   transitionToPage("home");
