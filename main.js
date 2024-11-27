@@ -208,10 +208,8 @@ function initPlayerPage() {
     displayPage(window.current_page);
   } else if (window.current_page == "mix") {
     initSpotifyPlayerProtected();
-      setGlobal("target_mix", "");
-      transitionToPage("home");
-  };
-  transitionToPage("home");
+    setGlobal("target_mix", "");
+    transitionToPage("home");
   } else {
     initSpotifyPlayerProtected();
     loadPage(window.current_page);
