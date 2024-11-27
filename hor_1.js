@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "20% 20% 45% 15%";
+  container.style["grid-template-rows"] = "25% 15% 45% 15%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
@@ -31,7 +31,7 @@ function renderSlimy() {
   secondRow.style["margin-bottom"] = "auto";
   secondRow.style["text-align"] = "center";
 
-  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * secondRowFontSize + "px; line-height: " + 0.8 * secondRowFontSize + "px";
+  const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 0.5 * secondRowFontSize + "px;
   console.log(secondRowStyles);
   const sweaty = createElement("sweaty", "SWEATY", secondRowStyles);
   secondRow.append(sweaty);
@@ -49,7 +49,7 @@ function renderSlimy() {
   thirdRow.style["margin-top"] = "auto";
   thirdRow.style["margin-bottom"] = "auto";
   thirdRow.style["text-align"] = "center";
-  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "px; line-height: " + 0.8 * thirdRowFontSize + "px";
+  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.5 * thirdRowFontSize + "px; line-height: " + 0.8 * thirdRowFontSize + "px";
   console.log(thirdRowStyles);
   const slimy = createElement("slimy", "SLIMY", thirdRowStyles);
   thirdRow.append(slimy);
