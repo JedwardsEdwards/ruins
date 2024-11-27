@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "20% 20% 50% 10%";
+  container.style["grid-template-rows"] = "20% 20% 50% 15%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
@@ -31,18 +31,22 @@ function renderSlimy() {
   secondRow.style["margin-bottom"] = "auto";
   secondRow.style["text-align"] = "center";
 
-  const sweaty = createElement("sweaty", "SWEATY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + secondRowFontSize);
+  const secondLineStyles = display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * secondRowFontSize + "; line-height: " + 0.8 * secondRowFontSize
+  const sweaty = createElement("sweaty", "SWEATY", secondLineStyles);
   secondRow.append(sweaty);
-  const firstHeart = createElement("fh", "♡", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + secondRowFontSize);
+  const firstHeart = createElement("fh", "♡", secondLineStyles);
   secondRow.append(firstHeart);
-  const sticky = createElement("sticky", "STICKY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + secondRowFontSize);
+  const sticky = createElement("sticky", "STICKY", secondLineStyles);
   secondRow.append(sticky);
 
   const thirdRow = createRow("third-row", "");
   container.appendChild(thirdRow);
-  const slimy = createElement("slimy", "SLIMY", getHiddenStyles());
+  const slimy_sizer = createElement("slimy", "SLIMY", getHiddenStyles());
   appendAndFit(thirdRow,slimy);
-  
+  thirdRowFontSize = Number(slimy_sizer.children["0"].style["font-size"].slice(0, -2))+ "px";
+  thirdRow.innerHTML = "";
+  const slimy = createElement("slimy", "SLIMY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "; line-height: " + 0.8 * thirdRowFontSize);
+  thirdRow.append(slimy)
   /*
   // this is sss on one line
   const sss_sizer_div = createElement("sizer", "[ SWEATY ♡ STICKY ♡ SLIMY ]", getHiddenStyles());
