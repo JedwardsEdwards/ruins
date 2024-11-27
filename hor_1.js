@@ -46,6 +46,9 @@ function renderSlimy() {
   appendAndFit(thirdRow,slimy_sizer);
   thirdRowFontSize = Number(slimy_sizer.children["0"].style["font-size"].slice(0, -2));
   thirdRow.innerHTML = "";
+  secondRow.style["margin-top"] = "auto";
+  secondRow.style["margin-bottom"] = "auto";
+  secondRow.style["text-align"] = "center";
   const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.2 * thirdRowFontSize + "px; line-height: " + 0.8 * thirdRowFontSize + "px";
   console.log(thirdRowStyles);
   const slimy = createElement("slimy", "SLIMY", thirdRowStyles);
