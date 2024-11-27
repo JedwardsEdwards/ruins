@@ -88,7 +88,7 @@ function setMixDetails(id) {
         info("setMixDetails", "data received from API call");
         document.getElementById('mix-details').innerHTML = data.name.toUpperCase();
         if (window.target_page == "play") {
-          //startMixFromTrack();
+          startMixFromTrack();
         } else if (window.target_page == "mix") {
           startMix();
         };        
@@ -108,7 +108,6 @@ function startMix() {
         if (window.target_page == "mix") {
           mixRenderFunction[getMixFromId(window.target_mix)]();
         };
-        //return response.json();
       })
       .catch((err) => {
         error("startMix", err);
@@ -126,8 +125,6 @@ function startMixFromTrack() {
     })
       .then(async (response) => {
         info("startMixFromTrack", "response received");
-        //return response.json();
-        //window.mix_started = true;
       })
       .catch((err) => {
         error("startMixFromTrack", err);
@@ -176,7 +173,6 @@ function initSpotifyPlayer() {
             if (["mix", "play"].includes(window.target_page)) {
               // don't love doing this here tbh
               setMixDetails(window.target_mix);
-
             };
             setAndDisplayPage(window.target_page);
             if (window.target_page == "play") {
