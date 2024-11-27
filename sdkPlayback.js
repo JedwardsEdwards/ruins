@@ -155,6 +155,9 @@ function initSpotifyPlayer() {
               setMixDetails(window.target_mix);
             };
             setAndDisplayPage(window.target_page);
+            if (["play"].includes(window.target_page)) {
+                startMix();
+            };
         };
         });
     player.addListener('not_ready', ({ device_id }) => {
