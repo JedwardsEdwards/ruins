@@ -37,27 +37,31 @@ function toggleShuffle(on) {
       })
 };
 
+function renderTrackDetails(track) {
+    let name = document.getElementById('track-name');
+    let artist = document.getElementById('track-artist');
+    name.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
+    artist.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
+    name.innerHTML= track.name.toUpperCase();
+    artist.innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
+    if (window.current_page == "play") {
+      textFit(name);
+      textFit(artist);
+      name.style.color = display_palettes[getMixFromId(window.current_mix)]["highlight-color"];
+      artist.style.color = display_palettes[getMixFromId(window.current_mix)]["highlight-color"];
+    }
+};
+
 function updatePlayer(track) {
     info("updatePlayer", "track: " + track["id"] + ", current track: " + window.current_track);
-    if (track["id"] != window.current_track) {
+    if (track["id"] != window.current_track["id"]) {
         if (window.expires_at < Date.now()) {
             refreshToken();
             return;
         }
         //setGlobal("current_track", track["id"]);
-        window.current_track = track["id"];
-        let name = document.getElementById('track-name');
-        let artist = document.getElementById('track-artist');
-        name.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
-        artist.style.color = display_palettes[getMixFromId(window.current_mix)]["background-color"];
-        name.innerHTML= track.name.toUpperCase();
-        artist.innerHTML= track.artists.map(a => a.name).join(", ").toUpperCase();
-        if (window.current_page == "play") {
-          textFit(name);
-          textFit(artist);
-          name.style.color = display_palettes[getMixFromId(window.current_mix)]["highlight-color"];
-          artist.style.color = display_palettes[getMixFromId(window.current_mix)]["highlight-color"];
-        }
+        window.current_track = track;
+        renderTrackDetails(track);
     };
 };
 
