@@ -110,12 +110,12 @@ function startMix() {
       .then(async (response) => {
         setGlobal("current_mix", window.target_mix);
         if (window.target_page == "mix") {
-          mixRenderFunction[getMixFromId(id)]();
+          mixRenderFunction[getMixFromId(window.target_mix)]();
         };
         //return response.json();
       })
-      .catch((error) => {
-        error(error);
+      .catch((err) => {
+        error("startMix", err);
       })
 };
 
