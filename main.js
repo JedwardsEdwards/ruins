@@ -4,11 +4,10 @@
 // auto log out after a period of timee
 
 // styles
-// test out fonts
-// mix color palettes
 // welcome page
 // animated text loading
 // Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content.
+// favicon on white background
 
 // testing
 // reload from each page
