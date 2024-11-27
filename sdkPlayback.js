@@ -122,7 +122,7 @@ function startMixFromTrack() {
        headers: {
          Authorization: 'Bearer ' + window.access_token,
        },
-       body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix, "offset": {"uri": "spotify:track:" + window.current_track["id"]}})
+       body: JSON.stringify({"context_uri": "spotify:playlist:" + window.target_mix, "offset": {"uri": "spotify:track:" + window.current_track["linked_from"]["id"]}})
     })
       .then(async (response) => {
         info("startMixFromTrack", "response received");
