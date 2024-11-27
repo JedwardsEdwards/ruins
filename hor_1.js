@@ -23,18 +23,19 @@ function renderSlimy() {
   // this is sss on two lines
   const sss_sizer_div = createElement("sizer", "Sweaty ♡ Sticky", getHiddenStyles());
   appendAndFit(secondRow,sss_sizer_div);
-  secondRowFontSize = (0.82 * Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))) + "px";
+  secondRowFontSize = Number(sss_sizer_div.children["0"].style["font-size"].slice(0, -2))+ "px";
   secondRow.innerHTML = "";
   secondRow.style = row_styles;
   secondRow.style["grid-template-columns"] = "45% 10% 45%";
   secondRow.style["margin-top"] = "auto";
   secondRow.style["margin-bottom"] = "auto";
+  secondRow.style["text-align"] = "center";
 
-  const sweaty = createElement("sweaty", "SWEATY", getHiddenStyles() + "; font-size: " + secondRowFontSize);
+  const sweaty = createElement("sweaty", "SWEATY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + secondRowFontSize);
   secondRow.append(sweaty);
-  const firstHeart = createElement("fh", "♡", getHiddenStyles() + "; font-size: " + secondRowFontSize);
+  const firstHeart = createElement("fh", "♡", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + secondRowFontSize);
   secondRow.append(firstHeart);
-  const sticky = createElement("sticky", "STICKY", getHiddenStyles() + "; font-size: " + secondRowFontSize);
+  const sticky = createElement("sticky", "STICKY", display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + secondRowFontSize);
   secondRow.append(sticky);
 
   const thirdRow = createRow("third-row", "");
@@ -68,11 +69,9 @@ function renderSlimy() {
   const secondBracket = createElement("fb", "]", getHiddenStyles() + "; font-size: " + secondRowFontSize);
   secondRow.append(secondBracket);
   */
-  const fourthRow = createRow("fourthRow", "margin: auto; font-size: 35px");
+  const fourthRow = createRow("fourthRow", "margin: auto; font-size: 25px");
   container.appendChild(fourthRow);
   const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", "color: " + display_palettes["slimy"]["highlight-color"]);
-  appendAndFit(fourthRow,slimeParty);
-
   /*
   const fourthRow = createRow("fourth-row", "margin: auto; display: flex; font-size: 35px");
   container.appendChild(fourthRow);
@@ -108,6 +107,6 @@ function renderSlimy() {
   //setTimeout(() => {fourthRow.append(puke1)}, 8000);
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
-setTimeout(() => {fourthRow.append(slimeParty)}, 6000);};
+ setTimeout(() => {fourthRow.append(slimeParty)}, 6000);};
 
 mixRenderFunction["slimy"] = renderSlimy;
