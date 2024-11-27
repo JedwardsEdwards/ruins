@@ -38,7 +38,8 @@ function toggleShuffle(on) {
 };
 
 function updatePlayer(track) {
-    if (track["id"] != window.current_track["id"]) {
+    info("updatePlayer", "track: " + track["id"] + ", current track: " + window.current_track);
+    if (track["id"] != window.current_track) {
         if (window.expires_at < Date.now()) {
             refreshToken();
             return;
