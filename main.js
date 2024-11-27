@@ -62,7 +62,7 @@ window.target_page = localStorage.getItem("target_page") || null;
 
 window.current_mix = localStorage.getItem("current_mix") || "";
 window.target_mix = localStorage.getItem("target_mix") || "";
-window.current_track = localStorage.getItem('current_track') || {id: null};
+window.current_track = JSON.parse(localStorage.getItem('current_track')) || {id: null};
 window.player_loaded = false;
 
 function log(sig, msg, level) {
@@ -81,7 +81,11 @@ function error(sig, msg) {log(sig, msg, 1)};
 
 function setGlobal(name, value) {
   info("setGlobal", name + " is set to " + value);
-  localStorage.setItem(name, value);
+  if (typeof(value) == "object") {
+    localStorage.setItem(name, JSON.stringify(value));
+  } else {
+    localStorage.setItem(name, value);
+  }
   window[name] = value;
 };
 
