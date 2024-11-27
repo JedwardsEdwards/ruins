@@ -4,7 +4,7 @@ function renderSlimy() {
   info("renderSlimy", "called");
   const container = document.getElementById("mix-name");
   
-  container.style["grid-template-rows"] = "20% 30% 40% 10%";
+  container.style["grid-template-rows"] = "15% 25% 50% 10%";
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
@@ -17,7 +17,6 @@ function renderSlimy() {
   const presents_div = createElement("presents", "PRESENTS", "height:50%; width:100%; text-align:center");
   appendAndFit(firstRow,presents_div);
 
-  
   const secondRow = createRow("second-row", "");
   container.appendChild(secondRow);
 
@@ -71,7 +70,8 @@ function renderSlimy() {
   */
   const fourthRow = createRow("fourthRow", "margin: auto; font-size: 35px");
   container.appendChild(fourthRow);
-  const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", "color: " + display_palettes["slimy"]["highlight-color"]);
+  const slimeParty = createElement("slime-party", "WELCOME 💚 TO THE SLIME PARTY", getHiddenStyles());
+  appendAndFit(fourthRow,slimeParty);
 
   /*
   const fourthRow = createRow("fourth-row", "margin: auto; display: flex; font-size: 35px");
@@ -108,7 +108,7 @@ function renderSlimy() {
   //setTimeout(() => {fourthRow.append(puke1)}, 8000);
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
-  setTimeout(() => {fourthRow.append(slimeParty)}, 7000);
+  setTimeout(() => {slimyParty.style.color = display_palettes["slimy"]["highlight-color"]}, 7000);
 };
 
 mixRenderFunction["slimy"] = renderSlimy;
