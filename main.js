@@ -190,6 +190,7 @@ function toPlay(event) {
     //    resetPlayer();
     //};
     transitionToPage("play");
+    renderTrackDetails(window.current_track);
     //if ( window.target_mix != window.current_mix) {
     //    startMix();
     //} else {
