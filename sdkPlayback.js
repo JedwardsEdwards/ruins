@@ -166,7 +166,7 @@ function initSpotifyPlayer() {
         });
     
     player.addListener('ready', ({ device_id }) => {
-        info("player_ready",'Ready with Device ID' + device_id);
+        info("player_ready",'Ready with Device ID ' + device_id);
         transferPlayback(device_id);
         window.player.pause();
 
