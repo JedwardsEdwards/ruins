@@ -44,7 +44,7 @@
           client_id,
           // TODO check if any can be removed.
           //scope: 'user-read-private user-read-email streaming user-read-playback-state user-modify-playback-state',
-          scope: 'user-read-private streaming user-read-playback-state user-modify-playback-state',
+          scope: 'user-read-email streaming user-read-playback-state user-modify-playback-state',
           code_challenge_method: 'S256',
           code_challenge,
           redirect_uri,
