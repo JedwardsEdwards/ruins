@@ -209,8 +209,10 @@ function refreshLIT() {
 function checkAutoLogout() {
   //if ((Date.now() - window.last_interaction_time) > 86400000) {
   if ((Date.now() - window.last_interaction_time) > 60000) {
+    return true;
     logout();
   };
+  return false;
 };
 
 function initPlayerPage() {
@@ -268,7 +270,10 @@ window.onSpotifyWebPlaybackSDKReady = () => {};
 function init() {
   info("init", "current_page: " + window.current_page + ", target_page: " + window.target_page);
 
-  checkAutoLogout();
+  if (checkAutoLogout()) {
+    console.log("should log out here");
+    return;
+  };
   args = new URLSearchParams(window.location.search);
   code = args.get('code');
 
