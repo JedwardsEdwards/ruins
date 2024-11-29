@@ -168,6 +168,7 @@ function toHome(event) {
   window.player.pause();
   };
   transitionToPage("home");
+  document.getElementById("start-mix-button").style.display = "none";
 };
 
 function toMixOne(event) {
