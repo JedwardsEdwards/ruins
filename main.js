@@ -207,7 +207,8 @@ function refreshLIT() {
 };
 
 function checkAutoLogout() {
-  if ((Date.now() - window.last_interaction_time) > 86400000) {
+  //if ((Date.now() - window.last_interaction_time) > 86400000) {
+  if ((Date.now() - window.last_interaction_time) > 60000) {
     logout();
   };
 };
