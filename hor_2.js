@@ -38,6 +38,8 @@ function renderRancid() {
   setTimeout(() => {rancid_div.style.color = display_palettes["rancid"]["highlight-color"]}, 5000);
   setTimeout(() => {techno_div.style.color = display_palettes["rancid"]["highlight-color"]}, 5000);
   setTimeout(() => {courtesy_div.style.color = display_palettes["rancid"]["highlight-color"]}, 6000);
+  setTimeout(() => {document.getElementById("start-mix-button").style.display = "unset"},7000);
+
 };
 
 mixRenderFunction["rancid"] = renderRancid;
