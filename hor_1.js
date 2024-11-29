@@ -104,7 +104,7 @@ function renderSlimy() {
   setTimeout(() => {if (cycle == window.render_cycle) {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}}, 3500);
   setTimeout(() => {if (cycle == window.render_cycle) {sticky.style.color = display_palettes["slimy"]["highlight-color"]}}, 4000);
   setTimeout(() => {if (cycle == window.render_cycle) {slimy.style.color = display_palettes["slimy"]["highlight-color"]}}, 5000);
-  setTimeout(() => {if (cycle == window.render_cycle) {fourthRow.append(slimeParty)}, 6000);
+  setTimeout(() => {if (cycle == window.render_cycle) {fourthRow.append(slimeParty)}}, 6000);
   setTimeout(() => {if (cycle == window.render_cycle) { document.getElementById("start-mix-button").style.display = "unset"}},7000);  
 
   /*
