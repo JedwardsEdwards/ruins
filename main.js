@@ -64,6 +64,7 @@ window.current_mix = localStorage.getItem("current_mix") || "";
 window.target_mix = localStorage.getItem("target_mix") || "";
 window.current_track = JSON.parse(localStorage.getItem('current_track')) || {id: null};
 window.player_loaded = false;
+window.last_interaction_time = localStorage.getItem("last_interaction_time") || Date.now();
 
 function log(sig, msg, level) {
   if (level <= log_level) {
@@ -200,6 +201,16 @@ function toPlay(event) {
     //};
 };
 
+function refreshLIT() {
+  setGlobal("last_interaction_time", Date.now());
+};
+
+function checkAutoLogout() {
+  if ((Date.now() - window.last_interaction_time) > 86400000) {
+    logout();
+  };
+};
+
 function initPlayerPage() {
   if (window.current_page == "loading") {
     initSpotifyPlayerProtected();
@@ -245,11 +256,17 @@ document.querySelectorAll(".button").forEach(b => {
   b.addEventListener("mouseup", buttonMouseUp, false)
 });
 
+document
+  .getElementById('body')
+  .addEventListener('click', refreshLIT, false);
+
 // just set this to empty, we set up the player when we've sure log in is successful
 window.onSpotifyWebPlaybackSDKReady = () => {};
 
 function init() {
   info("init", "current_page: " + window.current_page + ", target_page: " + window.target_page);
+
+  checkAutoLogout();
   args = new URLSearchParams(window.location.search);
   code = args.get('code');
 
