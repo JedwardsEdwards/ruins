@@ -97,8 +97,9 @@ function renderSlimy() {
   // could try css animations, don't know how they play when appending but might be easier??
   
   // two lines
-  window.rendering = false;
+  info("renderSlimy", "cycle: " + cycle + ", global: " + window.render_cycle);
   if (cycle == window.render_cycle) {
+    info("renderSlimy", "should render");
     setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
     setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
   
