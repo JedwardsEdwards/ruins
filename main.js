@@ -1,11 +1,11 @@
 // TODO
 
 // functions
-// auto log out after a period of time
 // what happens listening for more than 1hr? - stops playing apparently, refresh fixes the issue - need to check for token refresh on track change (< 10 mins left or similar)
 // phone view
-// proper site 
 // errors moving to now playing too quickly
+// home page
+// video
 
 // styles
 // favicon on white background
@@ -208,8 +208,7 @@ function refreshLIT() {
 };
 
 function shouldAutoLogOut() {
-  //return (Date.now() - window.last_interaction_time) > 86400000;
-  return (Date.now() - window.last_interaction_time) > 6000;
+  return (Date.now() - window.last_interaction_time) > 86400000;
 };
 
 function initPlayerPage() {
