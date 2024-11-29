@@ -161,13 +161,14 @@ function transitionToPage(page) {
   setGlobal("target_page", page);
   loadPage(page);
 };
-
+  
 function toHome(event) {
   setGlobal("target_mix", "");
   if (["mix", "play"].includes(window.current_page)) {
   window.player.pause();
   };
   transitionToPage("home");
+  window.render_cycle = "";
   document.getElementById("start-mix-button").style.display = "none";
 };
 
@@ -196,6 +197,7 @@ function toPlay(event) {
     //};
     transitionToPage("play");
     renderTrackDetails(window.current_track);
+    window.render_cycle = "";
     document.getElementById("start-mix-button").style.display = "none";
     //if ( window.target_mix != window.current_mix) {
     //    startMix();
