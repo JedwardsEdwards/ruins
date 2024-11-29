@@ -118,7 +118,7 @@ function renderSlimy() {
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
  setTimeout(() => {fourthRow.append(slimeParty)}, 6000);
- setTimeout(() => {if (fourthRow.innerHTML != "") { document.getElementById("start-mix-button").style.display = "unset"}},7000);
+ setTimeout(() => {if (fourthRow.innerHTML != "" and window.current_page == "mix") { document.getElementById("start-mix-button").style.display = "unset"}},7000);
 };
 
 mixRenderFunction["slimy"] = renderSlimy;
