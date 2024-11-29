@@ -54,7 +54,7 @@ function renderTrackDetails(track) {
 };
 
 function updatePlayer(track) {
-    info("updatePlayer", "track: " + track["id"] + ", current track: " + window.current_track);
+    //info("updatePlayer", "track: " + track["id"] + ", current track: " + window.current_track);
     if (track["id"] != window.current_track["id"]) {
         if ((window.expires_at - Date.now()) < track.duration_ms) {
             refreshToken();
@@ -194,7 +194,7 @@ function initSpotifyPlayer() {
         //track_window: { current_track }
           //  }) => {
             stateObj) => {
-            info("player_state_changed","called player state changed");
+            //info("player_state_changed","called player state changed");
             if (stateObj == null){
                 return null
             };
