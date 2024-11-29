@@ -34,7 +34,7 @@ body {
   padding:20px;
   justify-items: center;
 }
-@media (max-width: 800px) {
+@media (orientation:portrait) {
   html {
     font-size:30px;
   }
