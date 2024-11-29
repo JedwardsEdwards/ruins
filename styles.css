@@ -74,6 +74,10 @@ body {
   font-family:inherit;
 }
 
+#start-mix-button {
+  display:none;
+}
+
 .mix-button {
   margin:150px;
 }
