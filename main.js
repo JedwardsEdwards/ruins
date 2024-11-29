@@ -207,13 +207,9 @@ function refreshLIT() {
   setGlobal("last_interaction_time", Date.now());
 };
 
-function checkAutoLogout() {
-  //if ((Date.now() - window.last_interaction_time) > 86400000) {
-  if ((Date.now() - window.last_interaction_time) > 60000) {
-    return true;
-    logout();
-  };
-  return false;
+function shouldAutoLogOut() {
+  //return (Date.now() - window.last_interaction_time) > 86400000;
+  return (Date.now() - window.last_interaction_time) > 6000;
 };
 
 function initPlayerPage() {
@@ -271,11 +267,11 @@ window.onSpotifyWebPlaybackSDKReady = () => {};
 function init() {
   info("init", "current_page: " + window.current_page + ", target_page: " + window.target_page);
 
-  if (checkAutoLogout()) {
-    console.log("should log out here");
+  if (shouldAutoLogOut()) {
     logout();
     return;
   };
+  
   args = new URLSearchParams(window.location.search);
   code = args.get('code');
 
