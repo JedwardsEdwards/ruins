@@ -3,8 +3,6 @@
 // functions
 // what happens listening for more than 1hr? - stops playing apparently, refresh fixes the issue - need to check for token refresh on track change (< 10 mins left or similar)
 // phone view
-// errors moving to now playing too quickly
-// home page
 // video
 
 // styles
