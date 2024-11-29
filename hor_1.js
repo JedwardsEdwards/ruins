@@ -97,20 +97,15 @@ function renderSlimy() {
   // could try css animations, don't know how they play when appending but might be easier??
   
   // two lines
-  info("renderSlimy", "cycle: " + cycle + ", global: " + window.render_cycle);
-  if (cycle == window.render_cycle) {
-    info("renderSlimy", "should render");
-    setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
-    setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
-  
-    setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
-    setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 3500);
-    setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 4000);
-    setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 5000);
-    setTimeout(() => {fourthRow.append(slimeParty)}, 6000);
-    setTimeout(() => {if (cycle == window.render_cycle) { document.getElementById("start-mix-button").style.display = "unset"}},7000);
-  };
-  
+  setTimeout(() => {if (cycle == window.render_cycle) {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}}, 1000);
+  setTimeout(() => {if (cycle == window.render_cycle) {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}}, 2000);
+
+  setTimeout(() => {if (cycle == window.render_cycle) {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}}, 3000);
+  setTimeout(() => {if (cycle == window.render_cycle) {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}}, 3500);
+  setTimeout(() => {if (cycle == window.render_cycle) {sticky.style.color = display_palettes["slimy"]["highlight-color"]}}, 4000);
+  setTimeout(() => {if (cycle == window.render_cycle) {slimy.style.color = display_palettes["slimy"]["highlight-color"]}}, 5000);
+  setTimeout(() => {if (cycle == window.render_cycle) {fourthRow.append(slimeParty)}, 6000);
+  setTimeout(() => {if (cycle == window.render_cycle) { document.getElementById("start-mix-button").style.display = "unset"}},7000);  
 
   /*
   // one line
