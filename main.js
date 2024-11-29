@@ -202,6 +202,7 @@ function toPlay(event) {
 };
 
 function refreshLIT() {
+  info("refreshLIT", "called at:" + Date.now());
   setGlobal("last_interaction_time", Date.now());
 };
 
