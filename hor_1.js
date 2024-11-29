@@ -2,6 +2,10 @@
 
 function renderSlimy() {
   info("renderSlimy", "called");
+
+  const cycle = crypto.randomUUID()
+  window.render_cycle = cycle;
+  
   const container = document.getElementById("mix-name");
   
   container.style["grid-template-rows"] = "25% 15% 45% 15%";
@@ -93,13 +97,18 @@ function renderSlimy() {
   // could try css animations, don't know how they play when appending but might be easier??
   
   // two lines
-  setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
-  setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
-
-  setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
-  setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 3500);
-  setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 4000);
-  setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 5000);
+  window.rendering = false;
+  if (cycle == window.render_cycle) {
+    setTimeout(() => {dj_div.style.color = display_palettes["slimy"]["highlight-color"]}, 1000);
+    setTimeout(() => {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}, 2000);
+  
+    setTimeout(() => {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}, 3000);
+    setTimeout(() => {firstHeart.style.color = display_palettes["slimy"]["highlight-color"]}, 3500);
+    setTimeout(() => {sticky.style.color = display_palettes["slimy"]["highlight-color"]}, 4000);
+    setTimeout(() => {slimy.style.color = display_palettes["slimy"]["highlight-color"]}, 5000);
+    setTimeout(() => {fourthRow.append(slimeParty)}, 6000);
+    setTimeout(() => {if (cycle == window.render_cycle) { document.getElementById("start-mix-button").style.display = "unset"}},7000);
+  };
   
 
   /*
@@ -117,8 +126,7 @@ function renderSlimy() {
   //setTimeout(() => {fourthRow.append(puke1)}, 8000);
   //setTimeout(() => {fourthRow.append(puke2)}, 8500);
  // setTimeout(() => {fourthRow.append(puke3)}, 9000);
- setTimeout(() => {fourthRow.append(slimeParty)}, 6000);
- setTimeout(() => {if (fourthRow.innerHTML != "" and window.current_page == "mix") { document.getElementById("start-mix-button").style.display = "unset"}},7000);
+
 };
 
 mixRenderFunction["slimy"] = renderSlimy;
