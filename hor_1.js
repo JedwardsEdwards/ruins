@@ -5,7 +5,7 @@ function renderSlimy() {
 
   const cycle = crypto.randomUUID()
   window.render_cycle = cycle;
-  info("renderSlimy start","local: " + cycle + ", global: " + window.render_cycle")
+  info("renderSlimy start","local: " + cycle + ", global: " + window.render_cycle)
   
   const container = document.getElementById("mix-name");
   
@@ -98,7 +98,7 @@ function renderSlimy() {
   // could try css animations, don't know how they play when appending but might be easier??
   
   // two lines
-  setTimeout(() => {if (cycle == window.render_cycle) {info("renderSlimy","local: " + cycle + ", global: " + window.render_cycle");dj_div.style.color = display_palettes["slimy"]["highlight-color"]}}, 1000);
+  setTimeout(() => {if (cycle == window.render_cycle) {info("renderSlimy","local: " + cycle + ", global: " + window.render_cycle);dj_div.style.color = display_palettes["slimy"]["highlight-color"]}}, 1000);
   setTimeout(() => {if (cycle == window.render_cycle) {presents_div.style.color = display_palettes["slimy"]["highlight-color"]}}, 2000);
 
   setTimeout(() => {if (cycle == window.render_cycle) {sweaty.style.color = display_palettes["slimy"]["highlight-color"]}}, 3000);
