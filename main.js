@@ -14,7 +14,7 @@
 // navigate between pages
 
 const client_id = '5b705282459d426f99205ec01cbc31fa';
-const redirect_uri = 'https://jedwardsedwards.github.io/ruins/'; // Your redirect uri
+const redirect_uri = 'https://welcometoruins.com'; // Your redirect uri
 
 const display_classes = ["login-element", "home-element", "mix-element", "loading-element", "play-element"];
 
