@@ -104,9 +104,7 @@ function startMix() {
     })
       .then(async (response) => {
         setGlobal("current_mix", window.target_mix);
-        if (window.target_page == "mix") {
-          setTimeout(() => {mixRenderFunction[getMixFromId(window.target_mix)]()}, 2000)
-        };
+        setTimeout(() => {if (window.target_page == "mix") {mixRenderFunction[getMixFromId(window.target_mix)]()}}, 2000)
       })
       .catch((err) => {
         error("startMix", err);
