@@ -173,7 +173,6 @@ function toHome(event) {
 function toMixOne(event) {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   transitionToPage("mix");
-  document.getElementById("start-mix-button").style.display = "none";
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["slimy"]);
   } 
@@ -196,6 +195,7 @@ function toPlay(event) {
     //};
     transitionToPage("play");
     renderTrackDetails(window.current_track);
+    document.getElementById("start-mix-button").style.display = "none";
     //if ( window.target_mix != window.current_mix) {
     //    startMix();
     //} else {
