@@ -78,6 +78,13 @@ body {
   display:none;
 }
 
+#home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .mix-button {
   /*margin:150px;*/
 }
