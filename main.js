@@ -173,6 +173,7 @@ function toHome(event) {
 function toMixOne(event) {
   setGlobal("target_mix", allowed_mixes["slimy"]);
   transitionToPage("mix");
+  document.getElementById("start-mix-button").style.display = "none"
   if (window.player_loaded) {
     setMixDetails(allowed_mixes["slimy"]);
   } 
