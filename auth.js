@@ -129,7 +129,7 @@
     
     const t = new Date();
     setGlobal("expires_at", t.setSeconds(t.getSeconds() + data.expires_in));
-    setGlobal("last_interaction_time", Date.now());
+    refreshLIT();
 
     initSpotifyPlayerProtected();
   }
