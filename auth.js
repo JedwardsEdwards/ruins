@@ -77,7 +77,7 @@
         processTokenResponse(data);
         toHome();
         // TODO - this should be updated when custom domain is used
-        window.history.replaceState({},"","/ruins/");
+        //window.history.replaceState({},"","/ruins/");
       })
       .catch(handleError);
   }
