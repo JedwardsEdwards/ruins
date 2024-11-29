@@ -56,9 +56,8 @@ function renderTrackDetails(track) {
 function updatePlayer(track) {
     info("updatePlayer", "track: " + track["id"] + ", current track: " + window.current_track);
     if (track["id"] != window.current_track["id"]) {
-        if (window.expires_at < Date.now()) {
+        if ((window.expires_at - Date.now()) < track.duration_ms) {
             refreshToken();
-            return;
         }
         setGlobal("current_track", track);
         renderTrackDetails(track);
