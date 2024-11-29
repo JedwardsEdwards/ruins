@@ -197,7 +197,6 @@ function initSpotifyPlayer() {
           //  }) => {
             stateObj) => {
             info("player_state_changed","called player state changed");
-            console.log(stateObj);
             if (stateObj == null){
                 return null
             };
