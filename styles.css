@@ -50,6 +50,14 @@ body {
   font-size: inherit;
   font-family:inherit;
 }
+#page-container {
+  grid-row-start:2;
+  display:flex;
+  border-top: solid 0.5px;
+  border-bottom: solid 0.5px;
+  margin-left: 20px;
+  margin-right:20px;
+}
 
 @media (orientation:portrait) {
   html {
@@ -72,6 +80,10 @@ body {
   #screen {
     grid-template-rows: 30% 40% 30%;
   }
+  #page-container {
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+  }
 }
 #myVideo {
   width: 100vw;
@@ -85,15 +97,6 @@ body {
   z-index: -1;
   max-width: 100%;
   opacity: 10%;
-}
-
-#page-container {
-  grid-row-start:2;
-  display:flex;
-  border-top: solid 0.5px;
-  border-bottom: solid 0.5px;
-  margin-left: 20px;
-  margin-right:20px;
 }
 #footer {
   grid-row-start: 3;
