@@ -13,7 +13,11 @@ function renderSlimy() {
   //container.style["grid-template-rows"] = "20% 30% 50%";
 
   const firstRow = createRow("first-row", row_styles);
-  firstRow.style["grid-template-columns"] = "90% 10%";
+  if (window.innerHeight > window.innerWidth) {
+    firstRow.style["grid-template-columns"] = "80% 20%";
+  } else {
+    firstRow.style["grid-template-columns"] = "90% 10%";
+  };
   container.appendChild(firstRow);
 
   const dj_div = createElement("dj", "DJ INCREDIBLY ANNOYING", getHiddenStyles());
