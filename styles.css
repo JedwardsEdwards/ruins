@@ -52,6 +52,7 @@ body {
   #banner-logo-container {
     scale: 60%;
     grid-row: 1;
+  }
 }
 #myVideo {
   width: 100vw;
