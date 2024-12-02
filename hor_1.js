@@ -54,7 +54,14 @@ function renderSlimy() {
   thirdRow.style["margin-top"] = "auto";
   thirdRow.style["margin-bottom"] = "auto";
   thirdRow.style["text-align"] = "center";
-  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + 1.5 * thirdRowFontSize + "px; line-height: " + 0.8 * thirdRowFontSize + "px";
+  if (window.innerHeight > window.innerWidth) {
+    fontMultiplier = 1;
+    lineMultiplier = 1;
+  } else {
+    fontMultiplier = 1.5;
+    lineMultiplier = 0.8;
+  };
+  const thirdRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + "; font-size: " + fontMultiplier * thirdRowFontSize + "px; line-height: " + lineMultiplier * thirdRowFontSize + "px";
   console.log(thirdRowStyles);
   const slimy = createElement("slimy", "SLIMY", thirdRowStyles);
   thirdRow.append(slimy);
