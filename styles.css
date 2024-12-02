@@ -34,6 +34,10 @@ body {
   padding:20px;
   justify-items: center;
 }
+#banner-logo-container {
+  text-align: center;
+  overflow: hidden;
+}
 @media (orientation:portrait) {
   html {
     font-size:25px;
@@ -48,10 +52,6 @@ body {
   #banner-logo-container {
     scale: 60%;
     grid-row: 1;
-}
-#banner-logo-container {
-  text-align: center;
-  overflow: hidden;
 }
 #myVideo {
   width: 100vw;
