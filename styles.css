@@ -38,9 +38,22 @@ body {
   text-align: center;
   overflow: hidden;
 }
+
+.button {
+  background-color: inherit;
+  border: 1px solid;
+  border-color:inherit;
+  color: inherit;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: inherit;
+  font-family:inherit;
+}
+
 @media (orientation:portrait) {
   html {
-    font-size:25px;
+    font-size:40px;
   }
   body {
     grid-template-columns: 5% 90% 5%;
@@ -52,6 +65,9 @@ body {
   #banner-logo-container {
     scale: 60%;
     grid-row: 1;
+  }
+  .button {
+    border: 2px solid;
   }
 }
 #myVideo {
@@ -92,17 +108,6 @@ body {
 }
 .page {
   margin:auto;
-}
-.button {
-  background-color: inherit;
-  border: 1px solid;
-  border-color:inherit;
-  color: inherit;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: inherit;
-  font-family:inherit;
 }
 
 #start-mix-button {
