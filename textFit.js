@@ -183,8 +183,8 @@
     if (settings.alignVert) {
       addStyleSheet();
       console.log("TEST TEXT FIT | scroll height: " + innerSpan.scrollHeight );
-      //var height = innerSpan.scrollHeight;
-      var height = Math.min(innerSpan.scrollHeight,originalHeight);
+      var height = innerSpan.scrollHeight;
+      //var height = Math.min(innerSpan.scrollHeight,originalHeight);
       if (window.getComputedStyle(el)['position'] === "static"){
         el.style['position'] = 'relative';
       }
