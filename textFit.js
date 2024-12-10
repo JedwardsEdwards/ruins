@@ -160,8 +160,9 @@
       innerSpan.style.fontSize = mid + 'px';
       var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
       console.log("TEST TEXT FIT | span length:" + innerSpan.getClientRects().length);
+      console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
       if (
-        innerSpanBoundingClientRect.width <= originalWidth 
+        innerSpanBoundingClientRect.width <= originalWidth;
         && (settings.widthOnly || innerSpanBoundingClientRect.height <= originalHeight)
       ) {
         size = mid;
@@ -172,7 +173,7 @@
       // await injection point
     }
     console.log("TEST TEXT FIT | final size: " + size);
-
+    console.log("TEST TEXT FIT | final scroll height: " + innerSpan.scrollHeight );
     // found, updating font if differs:
     if( innerSpan.style.fontSize != size + 'px' ) {
       console.log("TEST TEXT FIT | had to do the last adjustment");
