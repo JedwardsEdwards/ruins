@@ -162,7 +162,7 @@
       console.log("TEST TEXT FIT | span length:" + innerSpan.getClientRects().length);
       console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
       if (
-        innerSpanBoundingClientRect.width <= originalWidth;
+        innerSpanBoundingClientRect.width <= originalWidth
         && (settings.widthOnly || innerSpanBoundingClientRect.height <= originalHeight)
       ) {
         size = mid;
