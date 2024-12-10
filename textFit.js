@@ -159,6 +159,7 @@
       mid = (high + low) >> 1;
       innerSpan.style.fontSize = mid + 'px';
       var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
+      console.log("TEST TEXT FIT | span length:" + innerSpan.getClientRects().length);
       if (
         innerSpanBoundingClientRect.width <= originalWidth 
         && (settings.widthOnly || innerSpanBoundingClientRect.height <= originalHeight)
@@ -170,8 +171,13 @@
       }
       // await injection point
     }
+    console.log("TEST TEXT FIT | final size: " + size);
+
     // found, updating font if differs:
-    if( innerSpan.style.fontSize != size + 'px' ) innerSpan.style.fontSize = size + 'px';
+    if( innerSpan.style.fontSize != size + 'px' ) {
+      console.log("TEST TEXT FIT | had to do the last adjustment");
+      innerSpan.style.fontSize = size + 'px';
+    };
 
     // Our height is finalized. If we are aligning vertically, set that up.
     if (settings.alignVert) {
