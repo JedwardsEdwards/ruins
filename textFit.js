@@ -114,7 +114,7 @@
       innerSpan.className = 'textFitted';
       // Inline block ensure it takes on the size of its contents, even if they are enclosed
       // in other tags like <p>
-      innerSpan.style['display'] = 'inline-block';
+      //innerSpan.style['display'] = 'inline-block';
       innerSpan.innerHTML = originalHTML;
       el.innerHTML = '';
       el.appendChild(innerSpan);
