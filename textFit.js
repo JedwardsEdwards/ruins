@@ -159,7 +159,7 @@
       mid = (high + low) >> 1;
       innerSpan.style.fontSize = mid + 'px';
       var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
-      console.log("TEST TEXT FIT | size:" + size);
+      console.log("TEST TEXT FIT | size / mid / high/ low: " + size + "/" + mid + "/" + high + "/" + low);
       console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
       console.log("TEST TEXT FIT | boundingheight:" + innerSpanBoundingClientRect.height);
       if (
