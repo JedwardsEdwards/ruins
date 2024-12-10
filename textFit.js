@@ -97,6 +97,8 @@
     originalHTML = el.innerHTML;
     originalWidth = innerWidth(el);
     originalHeight = innerHeight(el);
+    console.log("TEST TEXT FIT | old width: " + originalWidth);
+    console.log("TEST TEXT FIT | old height: " + originalHeight);
 
     // Don't process if we can't find box dimensions
     if (!originalWidth || (!settings.widthOnly && !originalHeight)) {
@@ -174,6 +176,7 @@
     // Our height is finalized. If we are aligning vertically, set that up.
     if (settings.alignVert) {
       addStyleSheet();
+      console.log("TEST TEXT FIT | scroll height: " + innerSpan.scrollHeight );
       var height = innerSpan.scrollHeight;
       if (window.getComputedStyle(el)['position'] === "static"){
         el.style['position'] = 'relative';
