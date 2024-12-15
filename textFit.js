@@ -176,6 +176,8 @@
     while (innerSpanBoundingClientRect.height > originalHeight) {
       var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
       console.log("TEST TEXT FIT | second loop, height: " + innerSpanBoundingClientRect.height);
+      console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
+      console.log("TEST TEXT FIT | font size: " + innerSpan.style.fontSize );
       innerSpan.style.fontSize =  innerSpan.style.fontSize - 1;
     }
     console.log("TEST TEXT FIT | final size: " + size);
