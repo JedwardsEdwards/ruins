@@ -173,9 +173,9 @@
       }
       // await injection point
     }
-    while (false && innerSpanBoundingClientRect.height > originalHeight) {
-      var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
-      console.log("TEST TEXT FIT | second loop, height: " + innerSpanBoundingClientRect.height);
+    while (innerSpan.scrollHeight > originalHeight) {
+      //var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
+      //console.log("TEST TEXT FIT | second loop, height: " + innerSpanBoundingClientRect.height);
       console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
       console.log("TEST TEXT FIT | font size: " + innerSpan.style.fontSize );
       innerSpan.style.fontSize =  innerSpan.style.fontSize - 1;
