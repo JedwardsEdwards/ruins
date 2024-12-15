@@ -173,6 +173,9 @@
       }
       // await injection point
     }
+    while (innerSpanBoundingClientRect.height >= originalHeight) {
+      innerSpan.style.fontSize =  innerSpan.style.fontSize - 1;
+    }
     console.log("TEST TEXT FIT | final size: " + size);
     console.log("TEST TEXT FIT | final scroll height: " + innerSpan.scrollHeight );
     // found, updating font if differs:
