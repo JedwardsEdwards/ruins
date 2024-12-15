@@ -173,7 +173,8 @@
       }
       // await injection point
     }
-    while (innerSpanBoundingClientRect.height >= originalHeight) {
+    while (innerSpanBoundingClientRect.height > originalHeight) {
+      console.log("TEST TEXT FIT | second loop, height: " + innerSpanBoundingClientRect.height);
       innerSpan.style.fontSize =  innerSpan.style.fontSize - 1;
     }
     console.log("TEST TEXT FIT | final size: " + size);
