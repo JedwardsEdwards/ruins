@@ -178,7 +178,8 @@
       console.log("TEST TEXT FIT | second loop, height: " + innerSpanBoundingClientRect.height);
       console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
       console.log("TEST TEXT FIT | font size: " + innerSpan.style.fontSize );
-      innerSpan.style.fontSize =  innerSpan.style.fontSize - 1;
+      size = innerSpan.style.fontSize - 1;
+      innerSpan.style.fontSize =  size;
     }
     console.log("TEST TEXT FIT | final size: " + size);
     console.log("TEST TEXT FIT | final scroll height: " + innerSpan.scrollHeight );
