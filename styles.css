@@ -116,7 +116,11 @@ body {
 .page {
   margin:auto;
 }
-
+#access-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 #start-mix-button {
   display:none;
 }
