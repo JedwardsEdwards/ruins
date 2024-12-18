@@ -80,6 +80,7 @@ function setMixDetails(id) {
         if (response.ok) {
           return response.json();
         } else {
+          document.getElementById("mix-name").innerHTML = "ACCESS DENIED";
           throw await response.json();
         }
       })
