@@ -121,6 +121,10 @@ body {
   align-items:center;
   justify-content:center;
 }
+#access-denied {
+  margin:auto;
+  position:relative;
+}
 #start-mix-button {
   display:none;
 }
