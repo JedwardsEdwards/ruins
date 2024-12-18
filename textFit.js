@@ -97,8 +97,6 @@
     originalHTML = el.innerHTML;
     originalWidth = innerWidth(el);
     originalHeight = innerHeight(el);
-    console.log("TEST TEXT FIT | old width: " + originalWidth);
-    console.log("TEST TEXT FIT | old height: " + originalHeight);
 
     // Don't process if we can't find box dimensions
     if (!originalWidth || (!settings.widthOnly && !originalHeight)) {
@@ -159,9 +157,6 @@
       mid = (high + low) >> 1;
       innerSpan.style.fontSize = mid + 'px';
       var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
-      console.log("TEST TEXT FIT | size / mid / high/ low: " + size + "/" + mid + "/" + high + "/" + low);
-      console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
-      console.log("TEST TEXT FIT | boundingheight:" + innerSpanBoundingClientRect.height);
       if (
         innerSpanBoundingClientRect.width <= originalWidth
         && (settings.widthOnly || innerSpanBoundingClientRect.height <= originalHeight)
@@ -176,23 +171,19 @@
     while (innerSpan.scrollHeight > originalHeight) {
       //var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
       //console.log("TEST TEXT FIT | second loop, height: " + innerSpanBoundingClientRect.height);
-      console.log("TEST TEXT FIT | loop scroll height: " + innerSpan.scrollHeight );
-      console.log("TEST TEXT FIT | font size: " + innerSpan.style.fontSize );
+
       size = size - 1;
       innerSpan.style.fontSize = size + "px";
     }
-    console.log("TEST TEXT FIT | final size: " + size);
-    console.log("TEST TEXT FIT | final scroll height: " + innerSpan.scrollHeight );
+
     // found, updating font if differs:
     if( innerSpan.style.fontSize != size + 'px' ) {
-      console.log("TEST TEXT FIT | had to do the last adjustment");
       innerSpan.style.fontSize = size + 'px';
     };
 
     // Our height is finalized. If we are aligning vertically, set that up.
     if (settings.alignVert) {
       addStyleSheet();
-      console.log("TEST TEXT FIT | scroll height: " + innerSpan.scrollHeight );
       var height = innerSpan.scrollHeight;
       //var height = Math.min(innerSpan.scrollHeight,originalHeight);
       if (window.getComputedStyle(el)['position'] === "static"){
