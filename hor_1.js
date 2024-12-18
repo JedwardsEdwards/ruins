@@ -43,10 +43,12 @@ function renderSlimy() {
   const secondRowStyles = "color: " + display_palettes[getMixFromId(window.target_mix) || "default"]["background-color"] + ";font-size: " + 0.7 * secondRowFontSize + "px";
   console.log(secondRowStyles);
   const sweaty = createElement("sweaty", "SWEATY", secondRowStyles);
+  sweaty.style["text-align"] = "right";
   secondRow.append(sweaty);
   const firstHeart = createElement("fh", "♡", secondRowStyles);
   secondRow.append(firstHeart);
   const sticky = createElement("sticky", "STICKY", secondRowStyles);
+  sticky.style["text-align"] = "left";
   secondRow.append(sticky);
 
   const thirdRow = createRow("third-row", "");
