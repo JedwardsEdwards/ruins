@@ -80,6 +80,7 @@ function setMixDetails(id) {
         if (response.ok) {
           return response.json();
         } else {
+          document.getElementById("access-container").style.display = "flex";
           document.getElementById("access-denied").style.color = display_palettes[getMixFromId(window.target_mix)]["highlight-color"];
           throw await response.json();
         }
